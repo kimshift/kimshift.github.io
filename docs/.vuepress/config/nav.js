@@ -5,8 +5,8 @@ module.exports = [
     icon: 'reco-api',
     items: [
       {
-        text: 'Java',
-        items: [{ text: 'JavaEE', link: '/views/technique/java/javaee' }],
+        text: '后端',
+        items: [{ text: 'Java', link: '/views/technique/java/javaee' }],
       },
       {
         text: '前端',

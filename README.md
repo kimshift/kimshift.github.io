@@ -23,22 +23,33 @@
 Dev
 ├─── docs
 │   └── .vuepress   // 配置目录
-│   │    ├── public // 静态资源
-│   │    ├── theme  // 主题
+│   │    ├── components // vue组件
+│   │    ├── config     // 配置文件
+│   │    │   ├── head.js    //网站头部配置
+│   │    │   ├── nav.js     //导航栏配置
+│   │    │   ├── plugins.js //插件配置
+│   │    │   ├── theme.js   //主题配置
+│   │    │   ├── valine.js  //评论配置
+│   │    ├── plugins    // 自定义插件
+│   │    ├── public     // 静态资源
+│   │    ├── styles     // 主题样式修改
+│   │    ├── theme      // 主题
 │   │    │   ├── components // 组件
 │   │    │   ├── global-components // 全局组件
 │   │    │   ├── layouts // 布局(包括首页在内)
 │   │    │   ├── styles  // 样式
-│   │    │   ├── util 	 // 工具
 │   │    │   ├── index.js // 入口配置
 │   │    │   ├── noopModule.js // 依赖注入
 │   │    │   ├── package.json  // 主题依赖
 │   │    │   ├── README.md     // 主题说明
-│   │    └── config.js
-│   ├── about   // 项目模块
-│   ├── views   // 项目模块
+│   │    ├── config.js      // 配置文件入口
+│   │    └── enhanceApp.js  // 百度统计注入
+│   ├── about       // 关于博主
+│   ├── order       // 友链模块
+│   ├── views       // 内容模块
 │   └── README.md   // 首页
-└── package.json //项目依赖
+├───deploy.sh    // 部署文件脚本
+└── package.json // 项目依赖
 ```
 
 ### 约定路由模式
@@ -76,7 +87,7 @@ isShowComments: false //是否开启评论
 publish: true //文章是否发布
 ---
 
-<Boxx/> //随机展示名人名言
+<Boxx /> //随机展示名人名言
 
 [[toc]] //目录链接
 
@@ -93,4 +104,4 @@ publish: true //文章是否发布
 
 - 在项目文件夹下执行命令，安装依赖：`npm install`
 - 在项目文件夹下执行命令，运行项目：`npm start`
-- 编译完成访问：[http://localhost:8080](http://localhost:8080)`
+- 编译完成访问：[http://localhost:8080](http://localhost:8080)
