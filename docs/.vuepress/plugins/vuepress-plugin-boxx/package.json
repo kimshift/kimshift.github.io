@@ -1,0 +1,57 @@
+{
+  "_from": "vuepress-plugin-boxx@0.0.7",
+  "_id": "vuepress-plugin-boxx@0.0.7",
+  "_inBundle": false,
+  "_integrity": "sha512-UeBl8ZCSy4wT2uh9lsO0GpIC3QaVI5gcZbs4TZ/2wMNHJ71IRXorisGe9DDSjlTU8q3vNq837tBnC8Jyq3cVXA==",
+  "_location": "/vuepress-plugin-boxx",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "vuepress-plugin-boxx@0.0.7",
+    "name": "vuepress-plugin-boxx",
+    "escapedName": "vuepress-plugin-boxx",
+    "rawSpec": "0.0.7",
+    "saveSpec": null,
+    "fetchSpec": "0.0.7"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vuepress-plugin-boxx/-/vuepress-plugin-boxx-0.0.7.tgz",
+  "_shasum": "8337d27eaf5b3f609eb7befdb3681ce5f0eac17c",
+  "_spec": "vuepress-plugin-boxx@0.0.7",
+  "_where": "E:\\recordsCenter\\workplace\\vuepress",
+  "author": {
+    "name": "zpj80231",
+    "email": "zpj80231@163.com"
+  },
+  "bugs": {
+    "url": "https://github.com/zpj80231/vuepress-plugin-boxx/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Simplification of VuePress Custom Containers!",
+  "devDependencies": {
+    "vuepress-plugin-boxx": "^0.0.7"
+  },
+  "homepage": "https://zpj80231.github.io/znote",
+  "keywords": [
+    "vuepress-theme-reco",
+    "boxx",
+    "vuepress"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vuepress-plugin-boxx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zpj80231/vuepress-plugin-boxx.git"
+  },
+  "scripts": {
+    "eslint-ext": "eslint --ext .js,.vue ./",
+    "eslint-fix": "eslint --fix --ext .js,.vue ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.7"
+}
