@@ -67,3 +67,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#或略临时生成文件
+tempCodeRunnerFile.sh
