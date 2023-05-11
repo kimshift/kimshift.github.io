@@ -15,7 +15,7 @@ isShowComments: false
 
 | 功能               | 热键（Windows / Linux） | 热键（macOS）       |
 | :----------------- | :---------------------- | ------------------- |
-| 新                 | Ctrl + N                | Command + N         |
+| 新窗户             | Ctrl + N                | Command + N         |
 | 新窗户             | Ctrl + Shift + N        | Command + Shift + N |
 | 新标签             | _（不支持）_            | Command + T         |
 | 打开               | Ctrl + O                | Command + O         |
@@ -24,7 +24,7 @@ isShowComments: false
 | 保存               | Ctrl + S                | Command + S         |
 | 另存为/重复        | Ctrl + Shift + S        | Command + Shift + S |
 | 偏爱               | Ctrl +，                | Command + ,         |
-| 关                 | Ctrl + W                | Command + W         |
+| 关闭               | Ctrl + W                | Command + W         |
 
 ### 编辑
 
