@@ -2,12 +2,14 @@
 title: 'Markdown常用快捷键'
 date: 2023-05-10 18:29:09
 tags:
-  - 'typora'
-  - '快捷键'
+  - typora
+  - 快捷键
 categories:
-  - '工具类'
+  - 工具类
 isShowComments: false
 ---
+
+## 快捷键功能分类
 
 ### 文件
 

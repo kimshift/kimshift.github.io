@@ -40,6 +40,7 @@ module.exports = {
   searchMaxSuggestions: 10,
   record: '粤ICP备2021069222号', // 备案号
   recordLink: 'https://beian.miit.gov.cn', //备案号对应跳转链接
+  noFoundPageByTencent: false,
   //友链
   friendLink: [
     {

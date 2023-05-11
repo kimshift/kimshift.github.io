@@ -26,23 +26,24 @@ module.exports = [
   ],
   ['meta', { name: 'robots', content: 'all' }],
   ['meta', { name: 'author', content: '琴时' }],
+  ['meta', { name: 'baidu-site-verification', content: 'codeva-TuWgWudEPI' }],
   ['link', { rel: 'stylesheet', href: '/css/style.css' }], //显示nav小logo
   // ['script', { charset: 'utf-8', src: '/js/custom.js' }], //加载右侧菜单栏广告图片
   // 百度统计
-  [
-    'script',
-    {},
-    `
-            var _hmt = _hmt || [];
+  // [
+  //   'script',
+  //   {},
+  //   `
+  //           var _hmt = _hmt || [];
 
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?b7ef24aef41bd3fa4670947b1d7a6e18";
-              var s = document.getElementsByTagName("script")[0]; 
-              s.parentNode.insertBefore(hm, s);
-            })();
-        `,
-  ],
+  //           (function() {
+  //             var hm = document.createElement("script");
+  //             hm.src = "https://hm.baidu.com/hm.js?b7ef24aef41bd3fa4670947b1d7a6e18";
+  //             var s = document.getElementsByTagName("script")[0];
+  //             s.parentNode.insertBefore(hm, s);
+  //           })();
+  //       `,
+  // ],
   [
     'meta',
     {
@@ -67,5 +68,6 @@ module.exports = [
       src: 'https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js',
     },
   ],
+  ['script', { src: '/js/baidu.js' }, ``], //引入百度统计
   ['script', { src: '/js/mouseClick.js' }, ``], //鼠标点击特效
 ]

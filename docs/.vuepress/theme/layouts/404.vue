@@ -2,8 +2,8 @@
   <div class="theme-container" v-if="!noFoundPageByTencent">
     <div class="content">
       <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
+      <blockquote>您访问的网页丢失了......</blockquote>
+      <router-link to="/">回到首页</router-link>
     </div>
   </div>
 </template>
@@ -13,31 +13,35 @@ const msgs = [
   `There's nothing here.`,
   `How did we get here?`,
   `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
-]
+  `Looks like we've got some broken links.`,
+];
 
 export default {
   computed: {
-    noFoundPageByTencent () {
-      return this.$themeConfig.noFoundPageByTencent !== false
-    }
+    noFoundPageByTencent() {
+      return this.$themeConfig.noFoundPageByTencent !== false;
+    },
   },
-  mounted () {
+  mounted() {
+    console.log('测试noFoundPageByTencent:', this.noFoundPageByTencent);
     if (this.noFoundPageByTencent) {
-      const dom = document.createElement('script')
-      dom.setAttribute('homePageName', '回到首页')
-      dom.setAttribute('homePageUrl', '/')
-      dom.setAttribute('src', '//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js')
+      const dom = document.createElement('script');
+      dom.setAttribute('homePageName', '回到首页');
+      dom.setAttribute('homePageUrl', '/');
+      dom.setAttribute(
+        'src',
+        '//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js'
+      );
 
-      document.body.append(dom)
+      document.body.append(dom);
     }
   },
   methods: {
-    getMsg () {
-      return msgs[Math.floor(Math.random() * msgs.length)]
-    }
-  }
-}
+    getMsg() {
+      return msgs[Math.floor(Math.random() * msgs.length)];
+    },
+  },
+};
 </script>
 
 <style src="../styles/theme.styl" lang="stylus"></style>
@@ -66,4 +70,3 @@ export default {
       margin 0!important
       padding-top 20px
 </style>
-

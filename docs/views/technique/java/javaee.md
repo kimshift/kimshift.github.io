@@ -1,11 +1,11 @@
 ---
-title: 'Java高级'
+title: Java高级
 date: 2022-05-20 12:44:15
 tags:
-  - 'Spring'
-  - 'SpringBoot'
+  - Spring
+  - SpringBoot
 categories:
-  - '后端'
+  - 后端
 ---
 
 ::: tip 说明

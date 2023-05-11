@@ -5,8 +5,8 @@
  */
 /* 建议自己去官网生成一个方便管理 */
 /* {appId,appKey}获取方式可看官网文档: https://valine.js.org/ */
-const appId = 'U6ejz3UN0qSzrlMsr7dHKE0X-gzGzoHsz'
-const appKey = 'qjJMuW6WjtTHParN2FsNMSR2'
+const appId = 'RYGIQjB8yc993bparbVds98w-gzGzoHsz'
+const appKey = 'Wvz8zlU8DvwjNBjkkARRMeWF'
 module.exports = {
   appId: appId,
   appKey: appKey,

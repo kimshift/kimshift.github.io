@@ -1,11 +1,10 @@
 ---
-title: ' 分享生活'
+title: 分享动态
 date: 2021-05-01 12:44:15
 tags:
-  - '生活'
-  - '分享生活'
+  - 生活
 categories:
-  - '生活'
+  - 生活篇
 isShowComments: false
 ---
 

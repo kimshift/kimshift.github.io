@@ -1,11 +1,10 @@
 ---
-title: '前端基础'
+title: 前端基础
 date: 2021-05-20 12:44:15
 tags:
-  - 'html'
-
+  - html
 categories:
-  - '前端'
+  - 前端
 ---
 
 ::: danger 说明
