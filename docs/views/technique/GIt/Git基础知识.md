@@ -4,18 +4,13 @@ date: 2023-05-13 13:15:18
 tags:
   - git命令
 categories:
-  - Git
+  - Git知识
 isShowComments: false
 ---
 
 ## git 本地仓库命令
 
 ### 全局配置：
-
-- 用户名：
-  git config --global user.name "用户名"
-- 用户邮箱：git config --global user.email "邮箱"
-- ：git config --global --list
 
 ```sh
 #查看全局配置
@@ -76,10 +71,6 @@ git config --global --unset user.name
 - 查看当前分支：git branch -v
 - 克隆指定分支：git clone -b [分支名] [地址]
 
-```
-遇到多分支开发：先合并 a1 到 master 后再合并 a2 到 master;
-如果遇到冲突，先回滚到前一个版本，再切换 a2 分支。
-然后将 master 合并到 a2 进行修正
-```
-
--
+> 遇到多分支开发：先合并 a1 到 master 后再合并 a2 到 master;
+> 如果遇到冲突，先回滚到前一个版本，再切换 a2 分支。
+> 然后将 master 合并到 a2 进行修正
