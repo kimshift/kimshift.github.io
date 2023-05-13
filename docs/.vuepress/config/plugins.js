@@ -69,7 +69,7 @@ module.exports = [
   [
     'copyright',
     {
-      minLength: 30, //超出30个字符显示底注
+      minLength: 100, //超出100个字符显示底注
       clipboardComponent: path.resolve(
         __dirname,
         '../components/Copyright.vue'
