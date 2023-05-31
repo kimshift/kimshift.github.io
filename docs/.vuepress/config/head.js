@@ -36,6 +36,7 @@ module.exports = [
     `
       var _hmt = _hmt || [];
       (function() {
+        const { hostname, port } = window.location
         if (hostname === '127.0.0.1' || hostname === 'localhost' || port === '8080') {
           // 开发环境不执行百度统计
           return

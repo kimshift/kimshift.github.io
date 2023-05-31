@@ -13,7 +13,6 @@ export default {
     },
   },
   render(h, { props, slots }) {
-    console.log('测试props:', props);
     return h(
       'span',
       {

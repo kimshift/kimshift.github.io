@@ -1,6 +1,10 @@
 .content__default:not(.custom) {
   padding-top: initial !important;
+  max-width: 800px !important;
 }
+@media (min-width: $MQNarrow)
+  .content__default:not(.custom) 
+    max-width: 1000px !important;
 
 // 侧边栏样式
 .sidebar > .sidebar-links > li > a.sidebar-link {
@@ -33,17 +37,25 @@ blockquote {
 // tip,warning,danger容器样式
 .custom-block.tip {
     background-color: #f3f5f7 !important;
-    border-color: #42b983 !important;
+    border-color: #67C23A !important;
 }
 .custom-block.warning {
-    background-color: rgba(255,229,100,.3) !important;
-    border-color: #e7c000 !important;
+    background-color: #fdf6ec !important;
+    border-color: #E6A23C !important;
     color: #6b5900 !important;
 }
 .custom-block.danger {
-    background-color: #ffe6e6 !important;
-    border-color: #c00 !important;
+    background-color: #fef0f0 !important;
+    border-color: #F56C6C !important;
     color: #4d0000 !important;
+}
+.custom-block.details{
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    margin: 1.6em 0;
+    padding: 1.6em;
+    background-color: #eee;
 }
 // details容器样式
  summary {
@@ -52,7 +64,7 @@ blockquote {
     margin-top: 0.2rem;
     padding-top: 11px;
     padding-bottom: 11px;
-    background-color: #75826b42;
+    background-color: #eee;
     border-radius: 5px;
 }
 

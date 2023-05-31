@@ -6,7 +6,8 @@ sidebar: false
 isShowComments: false
 ---
 
-<p align="center"><img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" :src="$withBase('http://www.file.kim-shift.cn/assets/image/tx.jpg')" alt="kims-head" width=160></p>
+<!-- <p align="center"><img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" :src="$withBase('http://www.file.kim-shift.cn/assets/image/tx.jpg')" alt="kims-head" width=160></p> -->
+<p align="center"><img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="http://www.file.kim-shift.cn/assets/image/tx.jpg" alt="kims-head" width=160></p>
 <p align="center" style="margin-top: -15px;">
   <a href="https://www.kim-shift.cn" class="zi zi_textbook" target="_blank"></a> 
   <a href="mailto:710429093@qq.com" class="zi zi_envelope"></a> 
@@ -14,6 +15,7 @@ isShowComments: false
   <a href="https://gitee.com/piante" class="zi zi_tmGitee" target="_blank"></a>
   <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=710429093&website=www.oicqzone.com" class="zi zi_tmQq"></a>
 </p>
+
 <!-- 时间组件 -->
 <Time style="margin-bottom: -12px"/>
 
@@ -102,7 +104,6 @@ isShowComments: false
 <p align="right">
     <em>Thanks for you!</em>
 </p>
-
 <link rel="stylesheet" href="https://ico.z01.com/zico.min.css">
 
 <style lang="stylus" scoped> 

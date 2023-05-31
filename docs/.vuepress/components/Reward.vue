@@ -1,6 +1,6 @@
 <template>
   <div>
-    <details class="custom-block details">
+    <details class="custom-block summary_box">
       <summary>打赏一下</summary>
       <br />
       <p align="center" style="max-width: 200px; margin: 0 auto">
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.details {
+.summary_box {
     margin: 5% auto 0 auto;
     width: 100%;
 }
