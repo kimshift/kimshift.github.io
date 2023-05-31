@@ -5,7 +5,7 @@ tags:
   - Spring
   - SpringBoot
 categories:
-  - 后端
+  - 技术文章
 ---
 
 ::: tip 说明

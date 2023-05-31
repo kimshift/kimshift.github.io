@@ -5,7 +5,7 @@ tags:
   - typora
   - 快捷键
 categories:
-  - 工具类
+  - 其他
 isShowComments: false
 ---
 

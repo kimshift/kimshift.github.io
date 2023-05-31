@@ -6,7 +6,6 @@ sidebar: false
 isShowComments: false
 ---
 
-<!-- <p align="center"><img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" :src="$withBase('http://www.file.kim-shift.cn/assets/image/tx.jpg')" alt="kims-head" width=160></p> -->
 <p align="center"><img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="http://www.file.kim-shift.cn/assets/image/tx.jpg" alt="kims-head" width=160></p>
 <p align="center" style="margin-top: -15px;">
   <a href="https://www.kim-shift.cn" class="zi zi_textbook" target="_blank"></a> 

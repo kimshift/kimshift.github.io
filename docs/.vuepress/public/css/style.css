@@ -9,15 +9,7 @@
     background-size:100% 100%;
     vertical-align: middle;
 } */
-.page .page-title {
-  max-width: 840px !important;
-}
-.bilibili-player-video-recommend {
-  display: none !important;
-}
-.bilibili-player-video-recommend-container {
-  display: none !important;
-}
+
 /* 放开评论
 .valine-wrapper {
 	display:none !important;

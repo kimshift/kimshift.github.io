@@ -1,0 +1,29 @@
+---
+title: 解决vscode软件下载慢的问题
+date: 2023-05-31 15:20:45
+categories:
+  - 教程
+tags:
+  - vscode
+isShowComments: false
+sidebar: false
+---
+
+- 在官网找到需要下载的软件版本：[https://code.visualstudio.com](https://code.visualstudio.com)
+- 点击下载，大概率会出现如下情况：
+  - 下载慢
+  - 无法下载
+
+![1786770-20220815095335333-1237531324](https://www.file.kim-shift.cn/markdown/1786770-20220815095335333-1237531324.png)
+
+- 鼠标右键，复制下载地址
+
+![1786770-20220815095647101-1795883372](https://www.file.kim-shift.cn/markdown/1786770-20220815095647101-1795883372.png)
+
+- 将下载地址的前面域名部分进行更换成：vscode.cdn.azure.cn
+
+![1786770-20220815100614442-140680970](https://www.file.kim-shift.cn/markdown/1786770-20220815100614442-140680970.png)
+
+- 将修改后的下载地址，粘贴到浏览器回车下载即可
+
+  ![1786770-20220815094955163-1857073120](https://www.file.kim-shift.cn/markdown/1786770-20220815094955163-1857073120.png)

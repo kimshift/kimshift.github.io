@@ -27,7 +27,7 @@ module.exports = [
   ['meta', { name: 'robots', content: 'all' }],
   ['meta', { name: 'author', content: '琴时' }],
   ['meta', { name: 'baidu-site-verification', content: 'codeva-TuWgWudEPI' }],
-  ['link', { rel: 'stylesheet', href: '/css/style.css' }], //显示nav小logo
+  // ['link', { rel: 'stylesheet', href: '/css/style.css' }], //显示nav小logo
   // ['script', { charset: 'utf-8', src: '/js/custom.js' }], //加载右侧菜单栏广告图片
   // 百度统计
   [
