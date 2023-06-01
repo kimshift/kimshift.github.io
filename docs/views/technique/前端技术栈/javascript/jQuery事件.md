@@ -1,0 +1,141 @@
+---
+title: jQuery事件
+date: 2023-06-01 17:13:13
+categories:
+  - 技术文章
+tags:
+  - javascript
+  - jQuery
+---
+
+## 1. jQuery 事件注册
+
+### 单个事件注册
+
+语法：
+
+```
+element.事件(function(){})
+```
+
+```
+$("div").click(function(){  事件处理程序 })
+```
+
+其他事件和原生基本一致。
+比如 mouseover、mouseout、blur、focus、change、keydown、keyup、resize、scroll 等
+
+## 2. jQuery 事件处理
+
+### 2.1 事件处理 on() 绑定事件
+
+on() 方法在匹配元素上绑定一个或多个事件的事件处理函数
+
+语法：
+
+```
+element.on(events,[selector],fn)
+```
+
+1. events:一个或多个用空格分隔的事件类型，如"click"或"keydown" 。
+
+2. selector: 元素的子元素选择器 。
+
+3. fn:回调函数 即绑定在元素身上的侦听函数。
+
+**on() 方法优势 1：**
+
+可以绑定多个事件，多个处理事件处理程序。
+
+```
+ $("div").on({
+  mouseover: function(){},
+  mouseout: function(){},
+  click: function(){}
+});
+```
+
+如果事件处理程序相同
+
+```
+ $("div").on("mouseover mouseout", function() {
+   $(this).toggleClass("current");
+  });
+```
+
+**on() 方法优势 2：**
+
+可以事件委派操作 。事件委派的定义就是，把原来加给子元素身上的事件绑定在父元素身上，就是把事件委派给父元素。
+
+```
+$('ul').on('click', 'li', function() {
+    alert('hello world!');
+});
+```
+
+在此之前有 bind(), live() delegate()等方法来处理事件绑定或者事件委派，最新版本的请用 on 替代他们。
+
+**on() 方法优势 3：**
+
+动态创建的元素，click() 没有办法绑定事件， on() 可以给动态生成的元素绑定事件
+
+```
+ $("div").on("click","p", function(){
+     alert("俺可以给动态生成的元素绑定事件")
+ });
+```
+
+```
+ $("div").append($("<p>我是动态创建的p</p>"));
+```
+
+### 2.2 事件处理 off() 解绑事件
+
+off() 方法可以移除通过 on() 方法添加的事件处理程序。
+
+```
+$("p").off() // 解绑p元素所有事件处理程序
+
+$("p").off( "click")  // 解绑p元素上面的点击事件 后面的 foo 是侦听函数名
+
+$("ul").off("click", "li");   // 解绑事件委托
+```
+
+如果有的事件只想触发一次， 可以使用 one() 来绑定事件。
+
+### 2.3 自动触发事件 trigger()
+
+有些事件希望自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。
+
+```
+element.click()  // 第一种简写形式
+```
+
+```
+element.trigger("type") // 第二种自动触发模式
+```
+
+```
+$("p").on("click", function () {
+  alert("hi~");
+});
+
+$("p").trigger("click"); // 此时自动触发点击事件，不需要鼠标点击
+```
+
+```
+element.triggerHandler(type)  // 第三种自动触发模式
+```
+
+triggerHandler 模式不会触发元素的默认行为，这是和前面两种的区别。
+
+### 3. jQuery 事件对象
+
+事件被触发，就会有事件对象的产生。
+
+```
+element.on(events,[selector],function(event) {})
+```
+
+- 阻止默认行为：event.preventDefault() 或者 return false
+- 阻止冒泡： event.stopPropagation()

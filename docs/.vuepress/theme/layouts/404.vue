@@ -23,7 +23,6 @@ export default {
     },
   },
   mounted() {
-    console.log('测试noFoundPageByTencent:', this.noFoundPageByTencent);
     if (this.noFoundPageByTencent) {
       const dom = document.createElement('script');
       dom.setAttribute('homePageName', '回到首页');

@@ -86,8 +86,7 @@ export default {
   },
   methods: {
     goTags(tag) {
-      console.log('测试tag:', tag);
-      // this.$router.push({ path: `/tags/${tag}/` });
+      this.$router.push({ path: `/tags/${tag}/` });
     },
   },
 };
