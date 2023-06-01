@@ -2,8 +2,11 @@
   max-width: 800px !important;
 }
 .content__default:not(.custom) {
-  padding-top: initial !important;
   max-width: 800px !important;
+}
+.content__default:not(.custom) > h1:first-child, .content__default:not(.custom) > h2:first-child, .content__default:not(.custom) > h3:first-child, .content__default:not(.custom) > h4:first-child, .content__default:not(.custom) > h5:first-child, .content__default:not(.custom) > h6:first-child{
+  margin-top: -3rem !important;
+  padding-top: 2rem;
 }
 @media (min-width: 1600px)
   .content__default:not(.custom) 

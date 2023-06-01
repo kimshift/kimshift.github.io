@@ -70,7 +70,7 @@ Dev
 | 文件的相对路径     | 页面路由地址   |
 | ------------------ | -------------- |
 | `/README.md`       | `/`            |
-| `/guide/README.md` | `/guide/`      |
+| `/about/README.md` | `/about/`      |
 | `/config.md`       | `/config.html` |
 
 ### 如何使用

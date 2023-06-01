@@ -12,7 +12,15 @@
     <i v-if="showAccessNumber === true" class="iconfont reco-eye">
       <AccessNumber :idVal="pageInfo.path" :numStyle="numStyle" />
     </i>
-    <i v-if="pageInfo.frontmatter.tags" class="iconfont reco-tag tags ss">
+    <i
+      v-if="
+        pageInfo &&
+        pageInfo.frontmatter &&
+        pageInfo.frontmatter.tags &&
+        pageInfo.frontmatter.tags.length > 0
+      "
+      class="iconfont reco-tag tags"
+    >
       <span
         v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
         :key="subIndex"
@@ -76,13 +84,10 @@ export default {
       }
     },
   },
-  mounted() {
-    console.log('测试:', this.pageInfo);
-  },
   methods: {
     goTags(tag) {
       console.log('测试tag:', tag);
-      this.$router.push({ path: `/tags/${tag}/` });
+      // this.$router.push({ path: `/tags/${tag}/` });
     },
   },
 };
