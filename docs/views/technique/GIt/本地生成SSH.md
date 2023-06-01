@@ -1,11 +1,11 @@
 ---
 title: 本地生成SSH公钥
 date: 2023-05-13 13:20:23
+categories:
+  - 技术文章
 tags:
   - ssh
   - git
-categories:
-  - 技术文章
 isShowComments: false
 ---
 

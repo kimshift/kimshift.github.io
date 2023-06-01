@@ -1,11 +1,11 @@
 ---
 title: 'Markdown常用快捷键'
 date: 2023-05-10 18:29:09
+categories:
+  - 其他
 tags:
   - typora
   - 快捷键
-categories:
-  - 其他
 isShowComments: false
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Git基础知识
 date: 2023-05-13 13:15:18
-tags:
-  - git
 categories:
   - 技术文章
+tags:
+  - git
 isShowComments: false
 ---
 

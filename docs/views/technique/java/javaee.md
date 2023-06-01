@@ -1,11 +1,11 @@
 ---
 title: Java高级
 date: 2022-05-20 12:44:15
+categories:
+  - 技术文章
 tags:
   - Spring
   - SpringBoot
-categories:
-  - 技术文章
 ---
 
 ::: tip 说明
