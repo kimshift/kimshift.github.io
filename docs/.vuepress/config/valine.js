@@ -7,7 +7,8 @@
 /* {appId,appKey}获取方式可看官网文档: https://valine.js.org/ */
 const appId = 'RYGIQjB8yc993bparbVds98w-gzGzoHsz'
 const appKey = 'Wvz8zlU8DvwjNBjkkARRMeWF'
-module.exports = {
+const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
+const config = {
   appId: appId,
   appKey: appKey,
   placeholder: '填写邮箱可以及时收到回复噢...',
@@ -16,3 +17,4 @@ module.exports = {
   recordIP: true, //记录ip
   visitor: true, //统计文章访问量
 }
+module.exports = IS_PROD ? config : undefined
