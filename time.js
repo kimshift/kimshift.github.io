@@ -70,4 +70,4 @@ const dateFormat = (params, format = 'YYYY-MM-DD hh:mm:ss') => {
   if (!news) newDate = `${yy}-${mm}-${dd} ${hh}:${mi}:${ss}` //如果传过来的格式化标识符异常则默认返回:年-月-日 时:分:秒
   return newDate
 }
-console.log('当前时间:', dateFormat())
+console.log(dateFormat())

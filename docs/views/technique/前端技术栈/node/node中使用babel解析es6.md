@@ -2,7 +2,7 @@
 title: node中使用babel解析es6
 date: 2023-06-01 10:47:41
 categories:
-  - 技术文章
+  - 前端开发
 tags:
   - node
 sidebar: false

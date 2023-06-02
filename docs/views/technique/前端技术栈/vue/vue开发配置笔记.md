@@ -2,7 +2,7 @@
 title: vue开发配置笔记
 date: 2023-05-31 17:13:05
 categories:
-  - 技术文章
+  - 前端开发
 tags:
   - vue
 ---

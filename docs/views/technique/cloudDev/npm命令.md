@@ -2,7 +2,7 @@
 title: npm基础知识
 date: 2023-05-31 11:45:11
 categories:
-  - 技术文章
+  - 前端开发
 tags:
   - npm
 isShowComments: false
