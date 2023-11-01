@@ -30,7 +30,7 @@ module.exports = {
   // 项目开始时间
   startYear: '2021',
   nav: navConf, //导航栏
-  valineConfig: valineConf, //评论
+  // valineConfig: valineConf, //评论
   // 自动形成侧边导航
   sidebar: 'auto',
   sidebarDepth: 3,
@@ -51,10 +51,10 @@ module.exports = {
       link: 'https://www.kim-shift.cn',
     },
     {
-      title: '运动助手',
+      title: '小助手',
       desc: '日行一万步，吃动两平衡，健康一辈子。',
       logo: 'http://www.file.kim-shift.cn/assets/image/sports.png',
-      link: 'http://www.brushstep.kim-shift.cn',
+      link: 'http://www.utils.kim-shift.cn',
     },
   ],
 }
