@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-npm run gitee
+npm run build
 
 # 进入生成的文件夹
 cd dist/
@@ -13,13 +13,13 @@ git init
 git add -A
 git commit -m 'deploy'
 #关联远程仓库
-git remote add origin git@gitee.com:kimshift/vue-press.git
-git checkout -b pages
+git remote add origin git@gitee.com:kimshift/vuepress.git
+git checkout -b yun
 
-# 推送到部署分支
+# # 推送到部署分支
 git push -u origin pages -f
 
-cd ../../../
+cd ../
 #将源码推送的master
 git add .
 git commit -m 'update docs'

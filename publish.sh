@@ -7,7 +7,8 @@ set -e
 npm run gitee
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist/
+# cd docs/.vuepress/dist/
+cd dist/
 
 git init
 git add -A
@@ -19,7 +20,8 @@ git checkout -b pages
 # 推送到部署分支
 git push -u origin pages -f
 
-cd ../../../
+# cd ../../../
+cd ../
 # #将源码推送的master
 git add .
 git commit -m 'update docs'
