@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "start": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "start": "set YUN_ENV=false&&vuepress dev docs",
+    "build": "set YUN_ENV=true&&vuepress build docs ",
+    "gitee": "set YUN_ENV=false&&vuepress build docs",
+    "deploy": "sh deploy.sh",
+    "publish": "sh publish.sh"
   },
   "dependencies": {
     "@vuepress/plugin-medium-zoom": "^1.0.2",
@@ -12,6 +14,7 @@
     "axios": "^0.19.0",
     "js-yaml": "^4.1.0",
     "moment": "^2.24.0",
+    "valine": "^1.5.1",
     "vuepress": "^1.4.0",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-container": "^2.1.3",

@@ -7,20 +7,20 @@ set -e
 npm run gitee
 
 # 进入生成的文件夹
-cd dist/
+cd docs/.vuepress/dist/
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'publish'
 #关联远程仓库
-git remote add origin git@gitee.com:kimshift/vue-press.git
+git remote add origin git@gitee.com:kimshift/vuepress.git
 git checkout -b pages
 
 # 推送到部署分支
 git push -u origin pages -f
 
 cd ../../../
-#将源码推送的master
+# #将源码推送的master
 git add .
 git commit -m 'update docs'
 git push origin master
