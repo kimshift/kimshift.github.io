@@ -47,7 +47,7 @@ isShowComments: true
 
 ```yaml
 - img: /BASE_URL/img/other/yl001.jpg
-  link: /other/friends.html
+  link: /BASE_URL/other/friends.html
   name: For you
   desc: 你若盛开，清风自来。
 - img: /BASE_URL/img/other/yl002.jpg

@@ -17,5 +17,5 @@ BASE_URL='\/test_vuepress'
 # sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/about/me.html
 # sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/other/friends.html
 # sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/*.html
-find $path -type f -name "*.html" -exec sed -i 's/\/BASE_URL/'$BASE_URL'/g' {} +
-sed -i 's/\/BASE_URL/'$BASE_URL'/g' $path/assets/js/*.js
+# find $path -type f -name "*.html" -exec sed -i 's/\/BASE_URL/'$BASE_URL'/g' {} +
+# sed -i 's/\/BASE_URL/'$BASE_URL'/g' $path/assets/js/*.js
