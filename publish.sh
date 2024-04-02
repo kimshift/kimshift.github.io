@@ -1,3 +1,4 @@
+# 推送到Gitee---博客
 # 在Bash窗口执行 yarn publish 或者 npm run publish
 
 # 确保脚本抛出遇到的错误
@@ -10,6 +11,14 @@ npm run gitee
 # cd docs/.vuepress/dist/
 cd dist/
 
+# 处理yaml资源路径问题
+path=$(pwd)
+BASE_URL='\/vuepress'
+sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/about/me.html
+sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/other/friends.html
+# 处理yaml资源路径问题
+
+# 初始化项目仓库
 git init
 git add -A
 git commit -m 'publish'

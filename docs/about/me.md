@@ -69,12 +69,12 @@ isShowComments: false
 ::: cardImgList 2
 
 ```yaml
-- img: /img/other/yl003.jpg
-  link: /other/friends.html
+- img: /BASE_URL/img/other/yl003.jpg
+  link: /BASE_URL/other/friends.html
   name: For you
   desc: 你若盛开，清风自来。
-- img: /img/other/yl004.jpg
-  link: /other/friends.html
+- img: /BASE_URL/img/other/yl004.jpg
+  link: /BASE_URL/other/friends.html
   name: To me
   desc: 心若浮沉，浅笑安然。
 ```
