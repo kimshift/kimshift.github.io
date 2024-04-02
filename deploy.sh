@@ -11,6 +11,15 @@ npm run build
 # 进入生成的文件夹
 cd dist/
 
+# 处理yaml资源路径问题
+path=$(pwd)
+BASE_URL=''
+sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/about/me.html
+sed -i 's/\/BASE_URL/'"$BASE_URL"'/g' $path/other/friends.html
+sed -i 's/\/BASE_URL/'$BASE_URL'/g' $path/assets/js/*.js
+echo "路径替换完成"
+# 处理yaml资源路径问题
+
 git init
 git add -A
 git commit -m 'deploy'
