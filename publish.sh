@@ -1,4 +1,4 @@
-# 在Bash窗口执行 yarn deploy 或者 npm run deploy
+# 在Bash窗口执行 yarn publish 或者 npm run publish
 
 # 确保脚本抛出遇到的错误
 set -e

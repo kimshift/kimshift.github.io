@@ -4,11 +4,7 @@
       <summary>打赏一下</summary>
       <br />
       <p align="center" style="max-width: 200px; margin: 0 auto">
-        <img
-          :src="rewardImg"
-          style="border: 1px solid #dddddd"
-          class="medium-zoom-image"
-        />
+        <img :src="rewardImg" style="border: 1px solid #dddddd" class="medium-zoom-image" />
       </p>
       <p align="center">「真诚赞赏，手留余香」</p>
       <h3 id="打赏记录"><a href="#打赏记录" class="header-anchor">#</a> 打赏记录</h3>
@@ -48,7 +44,7 @@ export default {
   data() {
     return {
       rewarder,
-      rewardImg: 'http://www.file.kim-shift.cn/assets/image/receipt.jpg',
+      rewardImg: 'https://gitee.com/gzcc_kims/figure/raw/master/receipt.jpg',
     };
   },
 };
