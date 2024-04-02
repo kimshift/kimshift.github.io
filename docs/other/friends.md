@@ -60,7 +60,7 @@ isShowComments: true
 
 ### 友链互换
 
-如需友链，请 [联系我](tencent://message/?Menu=yes&uin=710429093&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45) 或 <a> 留言 </a> 告知，格式如下 👇：
+如需友链，请 [联系我](tencent://message/?Menu=yes&uin=710429093&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45) 或 <a href="/BASE_URL/about/msgBoard.html"> 留言 </a> 告知，格式如下 👇：
 
 ```yaml
 - name: 昵称
