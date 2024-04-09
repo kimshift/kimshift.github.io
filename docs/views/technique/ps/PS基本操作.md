@@ -19,7 +19,7 @@ tags:
 - 用选区拖动可以测量大小
 - Ctrl+ D 可以取消选区，或者在旁边空白处点击一下也可以取消选区
 
-![v7XwirszqbMJkc9](https://www.file.kim-shift.cn/markdown/v7XwirszqbMJkc9.png)
+![v7XwirszqbMJkc9](https://gitee.com/gzcc_kims/figure/raw/master/v7XwirszqbMJkc9.png)
 
 ## 2. PS 切图
 

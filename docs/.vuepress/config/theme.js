@@ -45,16 +45,16 @@ module.exports = {
   friendLink: [
     {
       title: "KimShift空间",
-      logo: "http://www.file.kim-shift.cn/assets/image/tx.jpg",
+      logo: "http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg",
       desc: "Enjoy when you can, and endure when you must.",
       email: "710429093@qq.com",
-      link: "https://www.kim-shift.cn",
+      link: "https://kimshift.gitee.io/vuepress",
     },
     {
       title: "小助手",
       desc: "日行一万步，吃动两平衡，健康一辈子。",
-      logo: "http://www.file.kim-shift.cn/assets/image/sports.png",
-      link: "http://www.utils.kim-shift.cn",
+      logo: "https://gitee.com/gzcc_kims/figure/raw/master/sports.png",
+      link: "http://106.52.141.30:8082",
     },
   ],
 };

@@ -36,3 +36,13 @@ ssh-keygen -t rsa -C "710429093@qq.com"
 ```sh
 cat ~/.ssh/id_rsa.pub
 ```
+
+### 一台设备生成多个ssh
+
+```sh
+#ssh-keygen -t rsa -C "710429093@qq.com" -f ~/.ssh/[新的ssh文件名]
+ssh-keygen -t rsa -C "710429093@qq.com" -f ~/.ssh/id_rsa_gitee
+#查看
+cat ~/.ssh/id_rsa_gitee.pub
+```
+

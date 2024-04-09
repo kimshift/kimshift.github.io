@@ -484,7 +484,7 @@ class Login extends React.Component {
 
 - 旧版生命周期流程图
 
-![react生命周期(旧)](https://www.file.kim-shift.cn/markdown/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F(%E6%97%A7).png)
+![react生命周期(旧)](https://gitee.com/gzcc_kims/figure/raw/master/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F(%E6%97%A7).png)
 
 ```javascript
 //创建组件
@@ -596,7 +596,7 @@ class B extends React.Component {
 ​                      一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
 ```
 
-![react生命周期(新)](https://www.file.kim-shift.cn/markdown/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F(%E6%96%B0).png)
+![react生命周期(新)](https://gitee.com/gzcc_kims/figure/raw/master/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F(%E6%96%B0).png)
 
 ## React 路由
 

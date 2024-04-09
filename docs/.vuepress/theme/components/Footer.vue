@@ -2,23 +2,23 @@
   <div class="footer-wrapper">
     <span>
       <i class="iconfont reco-theme"></i>
-      <a target="_blank" href="https://www.kim-shift.cn">
+      <a target="_blank" href="https://kimshift.gitee.io/vuepress">
         Powered by
-        <a href="https://www.kim-shift.cn" target="_blank"><b>琴时</b></a>
+        <a href="https://kimshift.gitee.io/vuepress" target="_blank"><b>琴时</b></a>
       </a>
     </span>
     <span v-if="$themeConfig.record">
       <i class="iconfont reco-beian"></i>
       <a :href="$themeConfig.recordLink || '#'" target="_blank">{{
-        $themeConfig.record
-      }}</a>
+      $themeConfig.record
+    }}</a>
     </span>
     <span>
       <i class="iconfont reco-copyright"></i>
       <a>
         <span v-if="$themeConfig.author || $site.title">{{
-          $themeConfig.author || $site.title
-        }}</span>
+      $themeConfig.author || $site.title
+    }}</span>
         &nbsp;&nbsp;
         <span v-if="$themeConfig.startYear">{{ $themeConfig.startYear }} - </span>
         {{ year }}
@@ -29,13 +29,10 @@
       <AccessNumber idVal="/" />
     </span>
     <p class="cyber-security" v-if="$themeConfig.cyberSecurityRecord">
-      <img
-        src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png"
-        alt=""
-      />
+      <img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" alt="" />
       <a :href="$themeConfig.cyberSecurityLink || '#'">{{
-        $themeConfig.cyberSecurityRecord
-      }}</a>
+      $themeConfig.cyberSecurityRecord
+    }}</a>
     </p>
   </div>
 </template>
