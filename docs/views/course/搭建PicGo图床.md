@@ -14,7 +14,7 @@ tags:
 ### 使用教程
 
 1.  安装
-    - 首先下载好 PicGo，下载地址：https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1
+    - 首先下载好 PicGo，下载地址：[https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1)
     - 下载并安装一个 Node.js
     - 在 PicGo 里面搜索"Gitee"，下载前面那个即可。
 
