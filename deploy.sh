@@ -13,7 +13,7 @@ git init
 git add -A
 git commit -m 'deploy'
 #关联远程仓库
-git remote add origin git@gitee.com:piante/vuepress.git
+git remote add origin git@gitee.com:kimshift/kimshift.git
 git checkout -b gh-pages
 
 # 推送到部署分支
