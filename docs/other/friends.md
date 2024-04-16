@@ -18,7 +18,7 @@ isShowComments: true
 - name: KimShift空间
   desc: 记得要奔走在自己的热爱里🌹
   avatar: http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg
-  link: https://kimshift.gitee.io/vuepress
+  link: https://kimshift.gitee.io
   bgColor: "#FCDBA0"
   textColor: "#A05F2C"
 - name: 午后南杂
@@ -46,12 +46,12 @@ isShowComments: true
 ::: cardImgList 2
 
 ```yaml
-- img: /BASE_URL/img/other/yl001.jpg
-  link: /BASE_URL/other/friends.html
+- img: /img/other/yl001.jpg
+  link: /other/friends.html
   name: For you
   desc: 你若盛开，清风自来。
-- img: /BASE_URL/img/other/yl002.jpg
-  link: /BASE_URL/other/friends.html
+- img: /img/other/yl002.jpg
+  link: /other/friends.html
   name: To me
   desc: 心若浮沉，浅笑安然。
 ```
@@ -60,7 +60,7 @@ isShowComments: true
 
 ### 友链互换
 
-如需友链，请 [联系我](tencent://message/?Menu=yes&uin=710429093&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45) 或 <a href="/BASE_URL/about/msgBoard.html"> 留言 </a> 告知，格式如下 👇：
+如需友链，请 [联系我](tencent://message/?Menu=yes&uin=710429093&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45) 或 <a href="/about/msgBoard.html"> 留言 </a> 告知，格式如下 👇：
 
 ```yaml
 - name: 昵称

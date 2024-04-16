@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "set YUN_ENV=false&&vuepress dev docs",
+    "start": "vuepress dev docs",
     "build": "set YUN_ENV=true&&vuepress build docs ",
-    "gitee": "set YUN_ENV=false&&vuepress build docs",
+    "yun": "set YUN_ENV=true&&vuepress build docs",
     "deploy": "sh deploy.sh",
     "publish": "sh publish.sh"
   },

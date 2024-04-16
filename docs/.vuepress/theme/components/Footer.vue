@@ -2,9 +2,9 @@
   <div class="footer-wrapper">
     <span>
       <i class="iconfont reco-theme"></i>
-      <a target="_blank" href="https://kimshift.gitee.io/vuepress">
+      <a target="_blank" href="https://kimshift.gitee.io">
         Powered by
-        <a href="https://kimshift.gitee.io/vuepress" target="_blank"><b>琴时</b></a>
+        <a href="https://kimshift.gitee.io" target="_blank"><b>琴时</b></a>
       </a>
     </span>
     <span v-if="$themeConfig.record">
@@ -32,7 +32,7 @@
       <img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" alt="" />
       <a :href="$themeConfig.cyberSecurityLink || '#'">{{
       $themeConfig.cyberSecurityRecord
-    }}</a>
+        }}</a>
     </p>
   </div>
 </template>

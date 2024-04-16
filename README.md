@@ -8,7 +8,7 @@
 
 ### `Vuepress`博客预览
 
-> gitee 预览地址：https://kimshift.gitee.io/vuepress
+> gitee 预览地址：https://kimshift.gitee.io
 
 > 琴时博客地址：---
 

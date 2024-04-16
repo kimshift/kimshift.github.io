@@ -48,7 +48,7 @@ module.exports = {
       logo: "http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg",
       desc: "Enjoy when you can, and endure when you must.",
       email: "710429093@qq.com",
-      link: "https://kimshift.gitee.io/vuepress",
+      link: "https://kimshift.gitee.io",
     },
     {
       title: "小助手",

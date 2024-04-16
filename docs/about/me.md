@@ -10,7 +10,7 @@ isShowComments: false
   <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg" alt="kims-head" width=160 />
 </p>
 <p align="center" style="margin-top: -15px;">
-  <a href="https://kimshift.gitee.io/vuepress" class="zi zi_textbook" target="_blank" title="博客"></a> 
+  <a href="https://kimshift.gitee.io" class="zi zi_textbook" target="_blank" title="博客"></a> 
   <a href="mailto:710429093@qq.com" class="zi zi_envelope" title="邮箱"></a> 
   <a href="https://github.com/kimshift" class="zi zi_tmGithub" target="_blank" title="GitHub"></a>
   <a href="https://gitee.com/kimshift" class="zi zi_tmGitee" target="_blank" title="Gitee"></a>
@@ -69,12 +69,12 @@ isShowComments: false
 ::: cardImgList 2
 
 ```yaml
-- img: /BASE_URL/img/other/yl003.jpg
-  link: /BASE_URL/other/friends.html
+- img: /img/other/yl003.jpg
+  link: /other/friends.html
   name: For you
   desc: 你若盛开，清风自来。
-- img: /BASE_URL/img/other/yl004.jpg
-  link: /BASE_URL/other/friends.html
+- img: /img/other/yl004.jpg
+  link: /other/friends.html
   name: To me
   desc: 心若浮沉，浅笑安然。
 ```

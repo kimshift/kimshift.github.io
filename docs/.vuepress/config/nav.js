@@ -19,7 +19,7 @@ module.exports = [
   //   icon: 'reco-faq',
   //   items: [{ text: '生活分享', link: '/views/life/' }],
   // },
-  { text: "留言板", link: "/about/msgBoard", icon: "iconfont reco-suggestion" },
+  { text: "留言板", link: "/about/message", icon: "iconfont reco-suggestion" },
   { text: "时间轴", link: "/timeline/", icon: "reco-date" },
   {
     text: "关于",
