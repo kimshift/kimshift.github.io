@@ -17,28 +17,28 @@ isShowComments: true
 ```yaml
 - name: KimShift空间
   desc: 记得要奔走在自己的热爱里🌹
-  avatar: http://www.file.kim-shift.cn/assets/image/tx.jpg
-  link: http://www.chenzhifeng.work
-  bgColor: '#FCDBA0'
-  textColor: '#A05F2C'
+  avatar: http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg
+  link: https://kimshift.gitee.io
+  bgColor: "#FCDBA0"
+  textColor: "#A05F2C"
 - name: 午后南杂
   avatar: https://www.recoluan.com/head.png
   desc: Enjoy when you can, and endure when you must.
   link: https://www.recoluan.com
-  bgColor: 'rgb(165 216 243)'
-  textColor: '#6854A1'
+  bgColor: "rgb(165 216 243)"
+  textColor: "#6854A1"
 - name: znote
   avatar: http://zpj80231.gitee.io/znote/vuepress/head-fish.jpg
   desc: 荷尽已无擎雨盖，菊残犹有傲霜枝。
   link: hhttp://zpj80231.gitee.io/znote/
-  bgColor: 'rgb(136,181,214)'
-  textColor: 'rgb(249,249,249)'
+  bgColor: "rgb(136,181,214)"
+  textColor: "rgb(249,249,249)"
 - name: 站位等待中...
   link:
   avatar:
   desc: 稍息，立正。欢迎入队！👍
-  bgColor: 'rgb(157 156 186)'
-  textColor: 'rgb(252 249 247)'
+  bgColor: "rgb(157 156 186)"
+  textColor: "rgb(252 249 247)"
 ```
 
 :::

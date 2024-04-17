@@ -6,13 +6,15 @@ sidebar: false
 isShowComments: false
 ---
 
-<p align="center"><img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" :src="$withBase('http://www.file.kim-shift.cn/assets/image/tx.jpg')" alt="kims-head" width=160></p>
+<p align="center">
+  <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg" alt="kims-head" width=160 />
+</p>
 <p align="center" style="margin-top: -15px;">
-  <a href="https://www.kim-shift.cn" class="zi zi_textbook" target="_blank"></a> 
-  <a href="mailto:710429093@qq.com" class="zi zi_envelope"></a> 
-  <a href="https://github.com/Zhif97" class="zi zi_tmGithub" target="_blank"></a>
-  <a href="https://gitee.com/piante" class="zi zi_tmGitee" target="_blank"></a>
-  <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=710429093&website=www.oicqzone.com" class="zi zi_tmQq"></a>
+  <a href="https://kimshift.gitee.io" class="zi zi_textbook" target="_blank" title="博客"></a> 
+  <a href="mailto:710429093@qq.com" class="zi zi_envelope" title="邮箱"></a> 
+  <a href="https://github.com/kimshift" class="zi zi_tmGithub" target="_blank" title="GitHub"></a>
+  <a href="https://gitee.com/kimshift" class="zi zi_tmGitee" target="_blank" title="Gitee"></a>
+  <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=710429093&website=www.oicqzone.com" class="zi zi_tmQq" title="QQ"></a>
 </p>
 <!-- 时间组件 -->
 <Time style="margin-bottom: -12px"/>
@@ -83,9 +85,9 @@ isShowComments: false
 <p align="center">
 <table style="display: contents;">
     <tr>
-        <td><img :src="$withBase('http://www.file.kim-shift.cn/assets/image/wechat_l.jpg')" width=160>
+        <td><img :src="$withBase('http://gitee.com/gzcc_kims/figure/raw/master/wechat_l.jpg')" width=160>
         </td>
-        <td><img :src="$withBase('http://www.file.kim-shift.cn/assets/image/gzh.jpg')" width=160>
+        <td><img :src="$withBase('http://gitee.com/gzcc_kims/figure/raw/master/gzh.jpg')" width=160>
         </td>
     </tr>
     <tr>

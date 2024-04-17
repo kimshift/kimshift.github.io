@@ -7,7 +7,8 @@ set -e
 npm run build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist/
+# cd docs/.vuepress/dist/
+cd dist/
 
 git init
 git add -A
@@ -24,3 +25,5 @@ cd ../../../
 git add .
 git commit -m 'update docs'
 git push origin master
+
+echo "推送结束---请前往更新:https://gitee.com/kimshift/kimshift/pages"

@@ -8,11 +8,11 @@ const pluginsConf = require("./config/plugins");
 const themeConf = require("./config/theme");
 
 module.exports = {
-  /* 如果需要打包部署到云服务器 -->将base: '/kimshift/'注释掉 */
-  // base: '/kimshift/', //gitee pages访问路径<仓库名称> 【打包至gitee.io才解开注释】
+  base: "/",
   title: "KimShift空间",
   description: "记得要奔走在自己的热爱里🌹",
-  port: "8080", //开发环境服务端口
+  dest: "dist", //打包到根路径dist目录
+  port: "8080",
   theme: "reco",
   head: headConf,
   themeConfig: themeConf,

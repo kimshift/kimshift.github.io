@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       rewarder,
-      rewardImg: 'http://www.file.kim-shift.cn/assets/image/receipt.jpg',
+      rewardImg: 'http://gitee.com/gzcc_kims/figure/raw/master/receipt.jpg',
     };
   },
 };
