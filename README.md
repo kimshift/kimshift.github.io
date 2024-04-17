@@ -1,6 +1,6 @@
 ### 介绍
 
-- 使用 vue-press 搭建的个人博客网站
+- 使用 vuepress 搭建的个人博客网站
 
 ### KimShift 博客
 

@@ -20,7 +20,7 @@ git checkout -b gh-pages
 # 推送到部署分支
 git push -u origin gh-pages -f
 
-cd ../../../
+cd ../
 #将源码推送的master
 git add .
 git commit -m 'update docs'
