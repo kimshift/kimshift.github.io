@@ -11,7 +11,6 @@ export YUN_ENV='false'
 npm run build
 
 # 进入生成的文件夹
-# cd docs/.vuepress/dist/
 cd dist/
 
 # 处理yaml资源路径问题
@@ -34,10 +33,9 @@ echo "推送到部署分支"
 
 # 强制推送到gitee部署分支
 git push -u origin pages -f
-# cd ../../../
 cd ../
 # #将源码推送的master
-# git add .
-# git commit -m 'update docs'
-# git push origin master
+git add .
+git commit -m 'update docs'
+git push origin master
 echo "推送结束---请前往更新:https://gitee.com/kimshift/kimshift/pages"
