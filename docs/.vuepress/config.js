@@ -7,10 +7,9 @@ const headConf = require("./config/head");
 const pluginsConf = require("./config/plugins");
 const themeConf = require("./config/theme");
 const { NODE_ENV, YUN_ENV } = process.env;
-console.log("当前环境:", YUN_ENV === "false", NODE_ENV);
+console.log("当前环境:", YUN_ENV, NODE_ENV);
 module.exports = {
-  // base: YUN_ENV === "false" && NODE_ENV === "production" ? "/vuepress/" : "/", //gitee pages访问路径<仓库名称> 【打包至gitee.io才需要路径】
-  base: "/",
+  base: "/", //gitee pages访问路径<仓库名称> 【打包至gitee.io才需要路径】
   title: YUN_ENV === "true" ? "圆梦琴时" : "KimShift 空间",
   description: "记得要奔走在自己的热爱里🌹",
   dest: "dist", //打包到根路径dist目录

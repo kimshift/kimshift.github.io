@@ -1,8 +1,11 @@
 # 推送到Gitee---博客
-# 在Bash窗口执行 yarn publish 或者 npm run publish
+# 在Bash窗口执行 npm run publish
 
 # 确保脚本抛出遇到的错误
 set -e
+
+#设置临时环境变量
+export YUN_ENV='false'
 
 # 生成静态文件
 npm run build
@@ -29,13 +32,12 @@ git remote add origin git@gitee.com:kimshift/kimshift.git
 git checkout -b pages
 echo "推送到部署分支"
 
-# 推送到部署分支
+# 强制推送到gitee部署分支
 git push -u origin pages -f
-
 # cd ../../../
 cd ../
 # #将源码推送的master
-git add .
-git commit -m 'update docs'
-git push origin master
+# git add .
+# git commit -m 'update docs'
+# git push origin master
 echo "推送结束---请前往更新:https://gitee.com/kimshift/kimshift/pages"

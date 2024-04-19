@@ -45,7 +45,7 @@ module.exports = {
   friendLink: [
     {
       title: "KimShift空间",
-      logo: "http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg",
+      logo: "https://gitee.com/gzcc_kims/figure/raw/master/tx.jpg",
       desc: "Enjoy when you can, and endure when you must.",
       email: "710429093@qq.com",
       link: "https://kimshift.gitee.io",
