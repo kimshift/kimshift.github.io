@@ -1,7 +1,6 @@
 ---
 title: 远程访问MySQL数据库篇
 date: 2024-04-19 09:22:15
-sticky: 1
 categories:
   - 教程
 tags:
@@ -10,9 +9,9 @@ tags:
 
 ### 本地连接远程数据库
 
-> 记得先把3306端口开放
+> 记得先把 3306 端口开放
 
-1. 使用FinalShell登录服务器，然后进入mysql
+1. 使用 FinalShell 登录服务器，然后进入 mysql
 
    ```sh
    mysql -u root -p
@@ -29,13 +28,11 @@ tags:
    FLUSH PRIVILEGES;
    ```
 
-![image-20240419105423167](https://gitee.com/gzcc_kims/figure/raw/master/image-20240419105423167.png)
+   ![image-20240419105423167](https://gitee.com/gzcc_kims/figure/raw/master/image-20240419105423167.png)
 
-3. 本地电脑使用Navicat测试
+3. 本地电脑使用 Navicat 测试
 
    ![image-20240419111014669](https://gitee.com/gzcc_kims/figure/raw/master/image-20240419111014669.png)
-
-   
 
 ### 本地使用 cmd 访问远程 MySQL 数据库
 
