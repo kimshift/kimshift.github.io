@@ -7,7 +7,8 @@ const headConf = require("./config/head");
 const pluginsConf = require("./config/plugins");
 const themeConf = require("./config/theme");
 const { NODE_ENV, YUN_ENV } = process.env;
-console.log("当前环境:", YUN_ENV, NODE_ENV);
+console.log("当前环境:", NODE_ENV);
+console.log("云服务器:", YUN_ENV);
 module.exports = {
   base: "/", //gitee pages访问路径<仓库名称> 【打包至gitee.io才需要路径】
   title: YUN_ENV === "true" ? "圆梦琴时" : "KimShift 空间",

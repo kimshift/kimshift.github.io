@@ -2,7 +2,6 @@
   "scripts": {
     "start": "vuepress dev docs",
     "build": "vuepress build docs ",
-    "test": "set YUN_ENV=true&&vuepress build docs",
     "deploy": "sh deploy.sh",
     "publish": "sh publish.sh"
   },
