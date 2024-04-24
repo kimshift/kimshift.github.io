@@ -89,11 +89,7 @@ npm config ls
 
 ![image-20220426094628236](https://gitee.com/gzcc_kims/figure/raw/master/image-20220426094628236.png)
 
-进入环境变量对话框，在【系统变量】下新建【NODE_PATH】，输入【D:\nodejs\node_global\node_modules】
-
-![image-20220426095023842](https://gitee.com/gzcc_kims/figure/raw/master/image-20220426095023842.png)
-
-将【用户变量】下的【Path】修改为【D:\nodejs\node_global】
+进入环境变量对话框，在【系统变量】->【Path】下新建【D:\nodejs\node_global】或者将【用户变量】->【Path】下`C:\Users\用户名\AppData\Roaming\npm`修改为【D:\nodejs\node_global】
 
 ![image-20220426095219005](https://gitee.com/gzcc_kims/figure/raw/master/image-20220426095219005.png)
 
