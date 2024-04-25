@@ -7,6 +7,9 @@ set -e
 #设置临时环境变量
 export YUN_ENV='false'
 
+# 切换node版本
+nvm use 14.18.1
+
 # 生成静态文件
 npm run build
 
