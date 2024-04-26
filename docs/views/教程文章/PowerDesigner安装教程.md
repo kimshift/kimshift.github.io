@@ -2,7 +2,7 @@
 title: PowerDesigner安装教程
 date: 2023-05-31 15:34:50
 categories:
-  - 教程
+  - 教程文章
 tags:
   - PowerDesigner
 isShowComments: false

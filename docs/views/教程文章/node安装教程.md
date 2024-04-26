@@ -2,7 +2,7 @@
 title: node安装教程
 date: 2023-06-01 10:34:58
 categories:
-  - 教程
+  - 教程文章
 tags:
   - node
 ---

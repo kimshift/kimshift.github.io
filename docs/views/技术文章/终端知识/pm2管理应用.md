@@ -2,7 +2,7 @@
 title: pm2基础知识
 date: 2023-05-31 14:10:03
 categories:
-  - 技术文章
+  - 终端知识
 tags:
   - pm2
 isShowComments: false

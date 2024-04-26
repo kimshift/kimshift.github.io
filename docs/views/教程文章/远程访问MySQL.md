@@ -2,7 +2,7 @@
 title: 远程访问MySQL数据库篇
 date: 2024-04-19 09:22:15
 categories:
-  - 教程
+  - 教程文章
 tags:
   - MySQL
 ---

@@ -2,7 +2,7 @@
 title: 利用PicGo+Gitee搭建图床
 date: 2024-04-02 12:23:06
 categories:
-  - 教程
+  - 教程文章
 tags:
   - PicGo图床
 ---

@@ -2,7 +2,7 @@
 title: Git基础知识
 date: 2023-05-13 13:15:18
 categories:
-  - 技术文章
+  - 终端知识
 tags:
   - git
 isShowComments: false

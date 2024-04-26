@@ -2,7 +2,7 @@
 title: 解决vscode软件下载慢的问题
 date: 2023-05-31 15:20:45
 categories:
-  - 教程
+  - 教程文章
 tags:
   - vscode
 isShowComments: false

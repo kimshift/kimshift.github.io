@@ -2,7 +2,7 @@
 title: 本地生成SSH公钥
 date: 2023-05-13 13:20:23
 categories:
-  - 技术文章
+  - 终端知识
 tags:
   - ssh
   - git
@@ -37,7 +37,7 @@ ssh-keygen -t rsa -C "710429093@qq.com"
 cat ~/.ssh/id_rsa.pub
 ```
 
-### 一台设备生成多个ssh
+### 一台设备生成多个 ssh
 
 ```sh
 #ssh-keygen -t rsa -C "710429093@qq.com" -f ~/.ssh/[新的ssh文件名]
@@ -45,4 +45,3 @@ ssh-keygen -t rsa -C "710429093@qq.com" -f ~/.ssh/id_rsa_gitee
 #查看
 cat ~/.ssh/id_rsa_gitee.pub
 ```
-

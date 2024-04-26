@@ -2,7 +2,7 @@
 title: 安装CentOS7.9教程
 date: 2023-06-01 09:36:18
 categories:
-  - 教程
+  - 教程文章
 tags:
   - linux
 sidebar: false

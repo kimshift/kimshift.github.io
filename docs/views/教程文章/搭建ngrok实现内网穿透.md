@@ -2,7 +2,7 @@
 title: 搭建ngrok内网穿透教程
 date: 2023-05-13 16:32:37
 categories:
-  - 教程
+  - 教程文章
 tags:
   - 内网穿透
   - ngrok
