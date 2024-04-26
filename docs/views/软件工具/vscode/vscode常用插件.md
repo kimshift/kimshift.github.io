@@ -2,9 +2,10 @@
 title: vscode常用插件
 date: 2023-05-11 09:07:02
 categories:
-  - 其他
+  - 软件工具
 tags:
   - vscode
+  - 插件
 
 isShowComments: false
 ---

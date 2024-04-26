@@ -2,9 +2,10 @@
 title: vscode 断点调试配置
 date: 2023-05-11 09:07:12
 categories:
-  - 其他
+  - 软件工具
 tags:
   - vscode
+  - 调试
 isShowComments: false
 ---
 
@@ -44,7 +45,7 @@ console.log('2 for 循环执行结束')
       // ts-node 命令： “直接”运行ts代码。
       // 作用：调试时加载ts-node包（在调试时“直接”运行ts代码）
       "runtimeArgs": ["-r", "ts-node/register"],
-      // 此处的 a.ts 表示要调试的 TS 文件（ 可修改为其他要调试的ts文件 ）
+      // 此处的 a.ts 表示要调试的 TS 文件（ 可修改为工具要调试的ts文件 ）
       "args": ["${workspaceFolder}/a.ts"]
     }
   ]
