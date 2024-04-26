@@ -6,7 +6,7 @@ set -e
 
 #设置临时环境变量
 export YUN_ENV='false'    # 部署到云服务
-export VALINE_ENV='false' # 关闭/开启评论
+export VALINE_ENV='true' # 关闭/开启评论
 
 # 切换node版本
 nvm use 14.18.1

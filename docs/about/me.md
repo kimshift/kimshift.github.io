@@ -18,7 +18,7 @@ isShowComments: false
 </p>
 
 <!-- 时间组件 -->
-<Time style="margin-bottom: -12px"/>
+<Time style="margin-bottom: -12px" />
 
 ::: theorem YOU AND ME
 世界上最远的距离是，我在 if 里你在 else 里，虽然经常一起出现，但却永不结伴执行。
