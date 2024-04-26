@@ -1,11 +1,3 @@
-/**
- * @Description:
- * @Version: 1.0
- * @Author: 琴时
- * @Date: 2023-05-08 10:00:53
- * @LastEditors: 琴时
- * @LastEditTime: 2023-05-08 10:01:01
- */
 let index = 0
 const getRandomColor = (max, min) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -36,10 +28,7 @@ jQuery(document).ready(function ($) {
       left: x,
       position: 'absolute',
       'font-weight': 'bold',
-      color: `rgba(${getRandomColor(255, 0)},${getRandomColor(
-        255,
-        0
-      )},${getRandomColor(255, 0)})`,
+      color: `rgba(${getRandomColor(255, 0)},${getRandomColor(255, 0)},${getRandomColor(255, 0)})`,
       'user-select': 'none',
       cursor: 'default',
     })

@@ -6,9 +6,13 @@
 module.exports = [
   ['link', { rel: 'icon', href: '/img/favicon.ico' }],
   [
-    'meta',
-    { name: 'keywords', content: 'KimShift空间,vuepress,自建博客,琴时' },
+    'link',
+    {
+      rel: 'apple-touch-icon',
+      href: '/img/favicon.ico',
+    },
   ],
+  ['meta', { name: 'keywords', content: 'KimShift空间,vuepress,自建博客,琴时' }],
   [
     'meta',
     {
@@ -57,21 +61,7 @@ module.exports = [
   ],
   ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
   ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-  [
-    'link',
-    {
-      rel: 'apple-touch-icon',
-      href: 'https://infinitypro-img.infinitynewtab.com/custom-icon/8001de1jd3n68lbfnxxt564xvb0vl5.png?imageMogr2/thumbnail/240x/format/webp/blur/1x0/quality/100|imageslim',
-    },
-  ],
-  [
-    'script',
-    {
-      language: 'javascript',
-      type: 'text/javascript',
-      src: 'https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js',
-    },
-  ],
+  ['script', { src: '/js/jquery.min.js' }],
   // ['script', { src: '/js/baidu.js' }, ``], //引入百度统计
   ['script', { src: '/js/mouseClick.js' }, ``], //鼠标点击特效
 ]

@@ -5,7 +5,8 @@
 set -e
 
 #设置临时环境变量
-export YUN_ENV='false'
+export YUN_ENV='false'    # 部署到云服务
+export VALINE_ENV='false' # 关闭/开启评论
 
 # 切换node版本
 nvm use 14.18.1
@@ -15,6 +16,9 @@ npm run build
 
 # 进入生成的文件夹
 cd dist/
+
+# 修改index.html 内容
+sed -i 's/en-US/zh-CN/g' index.html # 改为中文网站
 
 # 处理yaml资源路径问题
 # path=$(pwd)
