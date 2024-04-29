@@ -11,8 +11,8 @@ export VALINE_ENV='true' # 关闭/开启评论
 # 切换node版本
 nvm use 14.18.1
 
-# 生成静态文件
-npm run build
+# 构建静态文件
+vuepress build docs
 
 # 进入生成的文件夹
 cd dist/
