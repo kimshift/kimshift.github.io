@@ -52,8 +52,6 @@ git add .
 git commit -m 'update docs'
 # 将源码推送到Gitee
 git push origin master
-# 将源码推送到Github
-git push github master
 
 # echo "推送结束---请前往更新:https://gitee.com/kimshift/kimshift/pages"
-echo "推送结束---请前往更新:https://github.com/kimshift/kimshift.github.io/settings/pages"
+echo "推送结束---请前往更新:https://github.com/kimshift/kimshift.github.io/actions"
