@@ -11,7 +11,7 @@ console.log('当前环境:', NODE_ENV)
 console.log('云服务器:', YUN_ENV)
 console.log('开启评论:', VALINE_ENV)
 module.exports = {
-  base: '/', //gitee pages访问路径<仓库名称> 【打包至gitee.io才需要路径】
+  base: '/', //gitee pages访问路径<仓库名称> 【打包至github.io才需要路径】
   title: YUN_ENV === 'true' ? '圆梦琴时' : 'KimShift 空间',
   description: '记得要奔走在自己的热爱里🌹',
   dest: 'dist', //打包到根路径dist目录

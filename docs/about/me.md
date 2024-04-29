@@ -10,7 +10,7 @@ isShowComments: false
   <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg" alt="kims-head" width=160 />
 </p>
 <p align="center" style="margin-top: -15px;">
-  <a href="https://kimshift.gitee.io" class="zi zi_textbook" target="_blank" title="博客"></a> 
+  <a href="https://kimshift.github.io" class="zi zi_textbook" target="_blank" title="博客"></a> 
   <a href="mailto:710429093@qq.com" class="zi zi_envelope" title="邮箱"></a> 
   <a href="https://github.com/kimshift" class="zi zi_tmGithub" target="_blank" title="GitHub"></a>
   <a href="https://gitee.com/kimshift" class="zi zi_tmGitee" target="_blank" title="Gitee"></a>

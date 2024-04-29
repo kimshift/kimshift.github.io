@@ -18,7 +18,7 @@ isShowComments: true
 - name: KimShift空间
   desc: 记得要奔走在自己的热爱里🌹
   avatar: https://foruda.gitee.com/avatar/1714100998121138455/2340397_kimshift_1714100998.png
-  link: https://kimshift.gitee.io
+  link: https://kimshift.github.io
   bgColor: '#FCDBA0'
   textColor: '#A05F2C'
 - name: 站位等待中...

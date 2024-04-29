@@ -2,9 +2,9 @@
   <div class="footer-wrapper">
     <span>
       <i class="iconfont reco-theme"></i>
-      <a target="_blank" href="https://kimshift.gitee.io">
+      <a target="_blank" href="https://kimshift.github.io">
         Powered by
-        <a href="https://kimshift.gitee.io" target="_blank"><b>琴时</b></a>
+        <a href="https://kimshift.github.io" target="_blank"><b>琴时</b></a>
       </a>
     </span>
     <span v-if="$themeConfig.record">

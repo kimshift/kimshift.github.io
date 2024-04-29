@@ -35,7 +35,7 @@
   "devDependencies": {
     "vuepress-plugin-boxx": "^0.0.7"
   },
-  "homepage": "https://kimshift.gitee.io",
+  "homepage": "https://kimshift.github.io",
   "keywords": [
     "vuepress-theme-reco",
     "boxx",
