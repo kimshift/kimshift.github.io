@@ -20,17 +20,16 @@ isShowComments: false
 
 - Code Spell Checker:代码拼写检查器
 
-- **Setting Sync**（或者登陆 GitHub 账号进行同步:同步 VSCode 设置（插件同步到别的电脑）
-
 - **Prettier**:格式化代码-JavaScript / TypeScript / CSS //一般使用这个
 
   ```
-  ★ 安装 Prettier 后，可在在 vscode 设置保存后自动格式化（根据个人喜好，不想保存自动格式化的可以不配置这个）
+  ★ 安装 Prettier 后，可在 vscode 设置保存后自动格式化（根据个人喜好，不想保存自动格式化的可以不配置这个）
   	1.点击设置
-  	2.在搜索框输入 Format 或者 save，找到：Editor: Format On Save，将复选框踢 √
+  	2.在搜索框输入 Format 或者 save
+  	3.找到：Editor: Format On Save，将复选框踢 √
   ```
 
-  <img src="https://s2.loli.net/2022/08/15/LUOME9isGj4TAVH.png" alt="点击设置" style="zoom: 67%;" /><br />
+  ![o_2101251410491](https://gitee.com/gzcc_kims/figure/raw/master/o_2101251410491.png)
 
 - Vetur:语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger;vscode 官方钦定 Vue 插件，Vue 开发者必备。
 
@@ -46,13 +45,11 @@ isShowComments: false
 
 - Path Intellisense:自动提示文件路径，支持各种快速引入文件
 
-- vscode-icons:目录图标主题
-
 - Material Icon Theme:目录图标主题
 
 - One Dark Pro:vscode 主题
 
-- Auto Close Tag:自动闭合 HTML 标签
+- Auto Close Tag:自动闭合 HTML 标签 【已内置】
 
 - Auto Rename Tag:自动重命名 HTML 标签
 
@@ -64,7 +61,7 @@ isShowComments: false
 
 - Git History:查看 git 提交历史
 
-- GitLens: git 源代码管理插件
+- GitLens: 方便查看git日志，git重度使用者必备
 
 - cssrem:将 px 单位数据转换成 rem 单位
 
@@ -72,7 +69,9 @@ isShowComments: false
 
 - any-rule：正则表达式插件，安装使用快捷键：Ctrl+shift+p,在输入框输入你想要的正则比如：手机，找到后鼠标点击或者回车即可生成
 
-- background-cover：设置 vscode 背景插件如下图<br><img src="https://s2.loli.net/2022/08/15/eTbzZAuFHK7JDxn.png" alt="image-20210914161710541" style="zoom:67%;" />
+- background-cover：设置 vscode 背景插件如下图
+
+  ![image-20210914161710541](https://gitee.com/gzcc_kims/figure/raw/master/image-20210914161710541.png)
 
 - JS JSX Snippets：react-jsx 语法快捷插件
 
