@@ -34,16 +34,17 @@ git init
 git add -A
 git commit -m 'publish'
 #关联Gitee远程仓库
-git remote add origin git@gitee.com:kimshift/kimshift.git
+# git remote add origin git@gitee.com:kimshift/kimshift.git
 #关联Github远程仓库
 git remote add github git@github.com:kimshift/kimshift.github.io.git
 # 切换到镜像分支
 git checkout -b pages
 
-echo "推送到部署分支"
 # 强制推送到Gitee部署分支
-git push -u origin pages -f
+# echo "推送到Gitee部署分支"
+# git push -u origin pages -f
 # 强制推送到Github部署分支
+echo "推送到Github部署分支"
 git push -u github pages -f
 
 

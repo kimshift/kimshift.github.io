@@ -20,11 +20,11 @@ tags:
 
 1. 首先创建一个 gitee 仓库，例：vuepress
 
-![image-20240417092153109](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417092153109.png)
+![image-20240417092153109](../../../image/image-20240417092153109.png)
 
 2. 修改 vuepress 项目配置，将 base 的值修改成与仓库名路径一致即：/vuepress/
 
-![image-20240417092858861](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417092858861.png)
+![image-20240417092858861](../../../image/image-20240417092858861.png)
 
 3. 将 vuepress 项目打包->执行命令：npm run build，打包完成
 
@@ -44,19 +44,19 @@ tags:
 
 5. 在浏览器访问 gitee->vuepress 仓库，前往 Gitee Pages 部署项目
 
-![image-20240417094513002](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417094513002.png)
+![image-20240417094513002](../../../image/image-20240417094513002.png)
 
-![image-20240417094610831](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417094610831.png)
+![image-20240417094610831](../../../image/image-20240417094610831.png)
 
 6. 等等启动完成，即可正常访问：`https://kimshift.gitee.io/vuepress`
 
-   ![image-20240417094737480](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417094737480.png)
+   ![image-20240417094737480](../../../image/image-20240417094737480.png)
 
 ### 方式二：部署到 Gitee 根路径下
 
 1. 修改 vuepress 的 Gitee 仓库地址，将地址后缀修改成跟用户名一致
 
-   ![image-20240417095404721](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417095404721.png)
+   ![image-20240417095404721](../../../image/image-20240417095404721.png)
 
 2. 修改 vuepress 项目配置文件的 base 值，将之前的【/vuepress/】改成更路径【/】
 
@@ -78,8 +78,8 @@ tags:
 
 5. 更新完成后，即可正常访问：`https://kimshift.gitee.io`
 
-![image-20240417151702791](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417151702791.png)
+![image-20240417151702791](../../../image/image-20240417151702791.png)
 
 ### 博客预览
 
-![image-20240417152156895](https://gitee.com/gzcc_kims/figure/raw/master/image-20240417152156895.png)
+![image-20240417152156895](../../../image/image-20240417152156895.png)

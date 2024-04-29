@@ -69,5 +69,8 @@ dist
 # DynamoDB Local files
 .dynamodb/
 
-#或略临时生成文件
+# 忽略临时生成文件
 tempCodeRunnerFile.sh
+
+# 忽略根目录图床文件夹
+image
