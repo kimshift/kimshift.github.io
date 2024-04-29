@@ -12,7 +12,7 @@ export VALINE_ENV='true' # 关闭/开启评论
 nvm use 14.18.1
 
 # 构建静态文件
-vuepress build docs
+npm run build
 
 # 进入生成的文件夹
 cd dist/

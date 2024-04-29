@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "sh start.sh",
+    "build": "vuepress build docs",
     "deploy": "sh deploy.sh",
     "publish": "sh publish.sh"
   },
