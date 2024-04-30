@@ -8,9 +8,9 @@
 
 ### `Vuepress`博客预览
 
-> gitee 预览地址：https://kimshift.github.io
-
-> 琴时博客地址：---
+> github 预览地址：https://kimshift.github.io
+>
+> gitee 预览地址：https://kimshift.gitee.io
 
 **白嫖有罪，如有帮助，点赞收藏！**
 

@@ -78,7 +78,6 @@ export default {
     },
     getImgUrl(info) {
       const { logo, email } = info
-      console.log('测试logo:', logo)
       if (logo && /^http/.test(logo)) return logo
       if (logo && !/^http/.test(logo)) return this.$withBase(logo)
       return `//1.gravatar.com/avatar/${this.getMd5(email || '')}?s=50&amp;d=mm&amp;r=x`
