@@ -1,33 +1,20 @@
 <template>
   <div class="friend-link-wrapper">
-    <div
-      class="friend-link-item"
-      v-for="(item, index) in dataAddColor"
-      :key="index"
-      @mouseenter="showDetail($event)"
-      @mouseleave="hideDetail($event)"
-      target="_blank">
-      <span
-        class="list-style"
-        :style="{ 'backgroundColor': item.color }">
+    <div class="friend-link-item" v-for="(item, index) in dataAddColor" :key="index" @mouseenter="showDetail($event)"
+      @mouseleave="hideDetail($event)" target="_blank">
+      <span class="list-style" :style="{ 'backgroundColor': item.color }">
       </span>
-      {{item.title}}
+      {{ item.title }}
       <transition name="fade">
         <div class="popup-window-wrapper">
-          <div
-            class="popup-window"
-            :style="popupWindowStyle"
-            ref="popupWindow">
+          <div class="popup-window" :style="popupWindowStyle" ref="popupWindow">
             <div class="logo">
               <img :src="getImgUrl(item)" />
             </div>
             <div class="info">
               <div class="title">
                 <h4>{{ item.title }}</h4>
-                <a
-                  class="btn-go"
-                  :style="{ 'backgroundColor': item.color }"
-                  :href="item.link"
+                <a class="btn-go" :style="{ 'backgroundColor': item.color, 'fontSize': '11px' }" :href="item.link"
                   target="_blank">GO</a>
               </div>
               <p v-if="item.desc">{{ item.desc }}</p>
@@ -45,18 +32,18 @@ import md5 from 'md5'
 import { getOneColor } from '@theme/helpers/other'
 
 export default {
-  data () {
+  data() {
     return {
       popupWindowStyle: {}
     }
   },
   computed: {
-    dataAddColor () {
+    dataAddColor() {
       let { friendLink } = this.$themeConfig
       if (friendLink && friendLink.length > 0) {
         friendLink = friendLink.map(item => ({
           ...item,
-          color: getOneColor()
+          color: getOneColor(),
         }))
         return friendLink
       }
@@ -64,10 +51,10 @@ export default {
     }
   },
   methods: {
-    getMd5 (str) {
+    getMd5(str) {
       return md5(str)
     },
-    showDetail (e) {
+    showDetail(e) {
       const currentDom = e.target
       const popupWindowWrapper = currentDom.querySelector('.popup-window-wrapper')
       const popupWindow = currentDom.querySelector('.popup-window')
@@ -85,17 +72,18 @@ export default {
         this._adjustPosition(currentDom.querySelector('.popup-window'))
       })
     },
-    hideDetail (e) {
+    hideDetail(e) {
       const currentDom = e.target
       currentDom.querySelector('.popup-window-wrapper').style.display = 'none'
     },
-    getImgUrl (info) {
+    getImgUrl(info) {
       const { logo, email } = info
+      console.log('测试logo:', logo)
       if (logo && /^http/.test(logo)) return logo
       if (logo && !/^http/.test(logo)) return this.$withBase(logo)
       return `//1.gravatar.com/avatar/${this.getMd5(email || '')}?s=50&amp;d=mm&amp;r=x`
     },
-    _adjustPosition (dom) {
+    _adjustPosition(dom) {
       const { offsetWidth } = document.body
       const { x, width } = dom.getBoundingClientRect()
       const distanceToRight = offsetWidth - (x + width)

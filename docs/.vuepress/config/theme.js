@@ -45,7 +45,7 @@ module.exports = {
   friendLink: [
     {
       title: 'KimShift空间',
-      logo: 'https://gitee.com/gzcc_kims/figure/raw/master/tx.jpg',
+      logo: '/img/tx.jpg',
       desc: 'Enjoy when you can, and endure when you must.',
       email: '710429093@qq.com',
       link: 'https://kimshift.github.io',
@@ -53,7 +53,7 @@ module.exports = {
     {
       title: '小助手',
       desc: '日行一万步，吃动两平衡，健康一辈子。',
-      logo: 'https://gitee.com/gzcc_kims/figure/raw/master/sports.png',
+      logo: '/img/sports.png',
       link: 'http://106.52.141.30:8082',
     },
   ],
