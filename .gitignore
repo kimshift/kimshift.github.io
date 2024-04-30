@@ -9,6 +9,7 @@ gb-pages/
 docs/.vuepress/dist/
 .vscode/
 .temp/
+dist
 
 # Runtime data
 pids
