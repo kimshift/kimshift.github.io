@@ -55,4 +55,4 @@ git commit -m 'update docs'
 git push origin master
 
 # echo "推送结束---请前往更新:https://gitee.com/kimshift/kimshift/pages"
-echo "推送结束---请前往更新:https://github.com/kimshift/kimshift.github.io/actions"
+echo "推送结束---请前往查看:https://github.com/kimshift/kimshift.github.io/actions"

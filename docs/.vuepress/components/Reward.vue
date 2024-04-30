@@ -33,9 +33,10 @@
 </template>
 
 <script>
+import rewardImg from '../../../figure/receipt.jpg';
 let rewarder = [
   // ['打赏者','打助金额','支付方式','时间','备注'],
-  ['李慕斯', '18', '微信', '2021-05-20', '慕斯赞赏'],
+  ['李斯斯', '18', '微信', '2021-05-20', '斯斯赞赏'],
   ['陈方木', '21', '微信', '2022-03-12', '方木赞赏'],
   ['刘文新', '12', '支付宝', '2022-08-11', '有赏交流'],
 ];
@@ -44,7 +45,7 @@ export default {
   data() {
     return {
       rewarder,
-      rewardImg: 'https://gitee.com/gzcc_kims/figure/raw/master/receipt.jpg',
+      rewardImg: rewardImg,
     };
   },
 };

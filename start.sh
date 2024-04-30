@@ -18,7 +18,7 @@ if [ -d "figure" ]; then
   git pull
 else
   echo "figure目录不存在,准备拉取最新图库"
-  git clone git@gitee.com:gzcc_kims/figure.git
+  git clone git@gitee.com:kimshift/figure.git
 fi
 
 # 启动服务

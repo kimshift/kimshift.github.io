@@ -10,92 +10,92 @@ sidebar: false
 
 1. 点击创建新的虚拟机
 
-![image-20211127220225015](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127220225015.png)
+![image-20211127220225015](../../../../figure/image-20211127220225015.png)
 
 2. 默认选择典型，下一步
 
-![image-20211127220356214](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127220356214.png)
+![image-20211127220356214](../../../../figure/image-20211127220356214.png)
 
 3. 选择稍后安装，下一步
 
-![image-20211127220429958](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127220429958.png)
+![image-20211127220429958](../../../../figure/image-20211127220429958.png)
 
 4. 选择 Linux 操作系统，版本选择 CentOS 7 64 位
 
-![image-20211127220556101](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127220556101.png)
+![image-20211127220556101](../../../../figure/image-20211127220556101.png)
 
 5. 自定义虚拟机的名称，选择虚拟机存放/安装的位置
 
-![image-20211127220728596](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127220728596.png)
+![image-20211127220728596](../../../../figure/image-20211127220728596.png)
 
 6. 给虚拟机分配磁盘配置，下一步
 
-![image-20211127221124778](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127221124778.png)
+![image-20211127221124778](../../../../figure/image-20211127221124778.png)
 
 7. 点击完成
 
-![image-20211127221530767](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127221530767.png)
+![image-20211127221530767](../../../../figure/image-20211127221530767.png)
 
 8. 编辑虚拟机设置
 
-![image-20211127221850181](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127221850181.png)
+![image-20211127221850181](../../../../figure/image-20211127221850181.png)
 
 9. 配置内存，根据自身电脑配置允许范围内酌情添加（我的电脑是 16G 内存），（保持默认也能运行）
 
-![image-20211127222142131](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127222142131.png)
+![image-20211127222142131](../../../../figure/image-20211127222142131.png)
 
 10. 配置处理器，根据自身电脑配置允许范围内酌情添加（我的电脑处理器是 ADM 5600x:6 核 12 线程），（保持默认也能运行）
 
-![image-20211127222640324](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127222640324.png)
+![image-20211127222640324](../../../../figure/image-20211127222640324.png)
 
 11. 添加光盘，（把下载好的光盘添加进去）
 
-![image-20211127222900765](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127222900765.png)
+![image-20211127222900765](../../../../figure/image-20211127222900765.png)
 
 12. 选择下载好的光盘，
 
-![image-20211127223110397](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127223110397.png)
+![image-20211127223110397](../../../../figure/image-20211127223110397.png)
 
 13. 开启虚拟机
 
-![image-20211128001726671](https://gitee.com/gzcc_kims/figure/raw/master/image-20211128001726671.png)
+![image-20211128001726671](../../../../figure/image-20211128001726671.png)
 
 14. 鼠标点击黑色区域，利用键盘上下键选中第一项然后回车
 
-![image-20211127232239067](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127232239067.png)
+![image-20211127232239067](../../../../figure/image-20211127232239067.png)
 
 15. 选择系统语言
 
-![image-20211127232512923](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127232512923.png)
+![image-20211127232512923](../../../../figure/image-20211127232512923.png)
 
 16. 配置安装程序（有需要可视化界面的才配置，不需要的可以默认）
 
-![image-20211127232920456](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127232920456.png)
+![image-20211127232920456](../../../../figure/image-20211127232920456.png)
 
 17. 选择 GNOME 桌面（上一步选择才会跳转到此，需要可视化界面才选择，否则可以使用默认最小安装）
 
-![image-20211127233354230](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127233354230.png)
+![image-20211127233354230](../../../../figure/image-20211127233354230.png)
 
 18. 打开网络配置
 
-![image-20211127233642044](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127233642044.png)
+![image-20211127233642044](../../../../figure/image-20211127233642044.png)
 
-![image-20211127233719365](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127233719365.png)
+![image-20211127233719365](../../../../figure/image-20211127233719365.png)
 
 19. 点击开始安装，然后等待安装，过程可以配置用户信息
 
-![image-20211127234244954](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127234244954.png)
+![image-20211127234244954](../../../../figure/image-20211127234244954.png)
 
 20. 配置 root 密码和创建用户
 
-    ![image-20211127235130972](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127235130972.png)
+    ![image-20211127235130972](../../../../figure/image-20211127235130972.png)
 
-![image-20211127235256204](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127235256204.png)
+![image-20211127235256204](../../../../figure/image-20211127235256204.png)
 
 21. 配置好后，进度安装完成后可以点击完成配置
 
-![image-20211127235619538](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127235619538.png)
+![image-20211127235619538](../../../../figure/image-20211127235619538.png)
 
 22. 完成配置后点击重启
 
-![image-20211127235807841](https://gitee.com/gzcc_kims/figure/raw/master/image-20211127235807841.png)
+![image-20211127235807841](../../../../figure/image-20211127235807841.png)

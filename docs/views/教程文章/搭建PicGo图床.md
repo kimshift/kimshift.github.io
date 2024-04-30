@@ -18,19 +18,19 @@ tags:
     - 下载并安装一个 Node.js
     - 在 PicGo 里面搜索"Gitee"，下载前面那个即可。
 
-![image-20240328145528581](https://gitee.com/gzcc_kims/figure/raw/master/image-20240328145528581.png)
+![image-20240328145528581](../../../../figure/image-20240328145528581.png)
 
 2. 建立 gitee（码云）图床库
    - 在 Gitee 上新建一个仓库。选择【公开】仓库，勾选【使用 Readme 文件初始化这个仓库】
    - 选择【单分支模型（只创建 master 分支）】，之后点击【创建】
 
-![image-20240328175129136](https://gitee.com/gzcc_kims/figure/raw/master/image-20240328175129136.png)
+![image-20240328175129136](../../../../figure/image-20240328175129136.png)
 
 3. 配置 PicGo
 
 > 注：如何获取 token：【头像】->【设置】->【私人令牌】->【+生成新令牌】->仅勾选【projects】->【提交】->生成 token，一定要在这时将其复制到插件中，因为它仅出现一次，忘记后需要重新生成。
 
-![image-20240329092527104](https://gitee.com/gzcc_kims/figure/raw/master/image-20240329092527104.png)
+![image-20240329092527104](../../../../figure/image-20240329092527104.png)
 
 - owner：所有者，写上你的 Gitee 账号名。如果你不知道你的账号名，进入你刚才的仓库，浏览器 url 里面有。
 - repo：仓库名，比如我自己的仓库【figure】。
@@ -51,8 +51,8 @@ tags:
 - 【上传服务设定】中的【上传服务】选择【PicGo(app)】->【PicGo 路径】PicGo 的安装路径即可->最后点击【验证图片上传选项】
 - 出现下图的【验证成功】即可。
 
-![image-20240329093724051](https://gitee.com/gzcc_kims/figure/raw/master/image-20240329093724051.png)
+![image-20240329093724051](../../../../figure/image-20240329093724051.png)
 
-![image-20240329093931502](https://gitee.com/gzcc_kims/figure/raw/master/image-20240329093931502.png)
+![image-20240329093931502](../../../../figure/image-20240329093931502.png)
 
-![image-20240329094123182](https://gitee.com/gzcc_kims/figure/raw/master/image-20240329094123182.png)
+![image-20240329094123182](../../../../figure/image-20240329094123182.png)

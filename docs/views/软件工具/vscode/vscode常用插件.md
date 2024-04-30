@@ -29,7 +29,7 @@ isShowComments: false
   	3.找到：Editor: Format On Save，将复选框踢 √
   ```
 
-  ![o_2101251410491](https://gitee.com/gzcc_kims/figure/raw/master/o_2101251410491.png)
+  ![o_2101251410491](../../../../figure/o_2101251410491.png)
 
 - Vetur:语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger;vscode 官方钦定 Vue 插件，Vue 开发者必备。
 

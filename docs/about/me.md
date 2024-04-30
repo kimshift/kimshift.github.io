@@ -7,7 +7,7 @@ isShowComments: false
 ---
 
 <p align="center">
-  <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="http://gitee.com/gzcc_kims/figure/raw/master/tx.jpg" alt="kims-head" width=160 />
+  <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="../../figure/tx.jpg" alt="kims-head" width=160 />
 </p>
 <p align="center" style="margin-top: -15px;">
   <a href="https://kimshift.github.io" class="zi zi_textbook" target="_blank" title="博客"></a> 
@@ -60,8 +60,9 @@ isShowComments: false
 
 ## 部落
 
-- <i class="zi zi_tmBlogger"></i> 博客园:[https://www.cnblogs.com/kimshift/](https://www.cnblogs.com/kimshift/)
+- <i class="zi zi_tmBlogger"></i> 博客园:[https://www.cnblogs.com/kimshift](https://www.cnblogs.com/kimshift)
 - <i class="zi zi_tmGitee"></i> Gitee:[https://gitee.com/kimshift](https://gitee.com/kimshift)
+- <i class="zi zi_tmGithub"></i> Github:[https://github.com/kimshift](https://github.com/kimshift)
 - <svg t="1638543955475" class="icon_bilibili" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2175" width="18" height="18"><path d="M306.005333 117.632L444.330667 256h135.296l138.368-138.325333a42.666667 42.666667 0 0 1 60.373333 60.373333L700.330667 256H789.333333A149.333333 149.333333 0 0 1 938.666667 405.333333v341.333334a149.333333 149.333333 0 0 1-149.333334 149.333333h-554.666666A149.333333 149.333333 0 0 1 85.333333 746.666667v-341.333334A149.333333 149.333333 0 0 1 234.666667 256h88.96L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.373334zM789.333333 341.333333h-554.666666a64 64 0 0 0-63.701334 57.856L170.666667 405.333333v341.333334a64 64 0 0 0 57.856 63.701333L234.666667 810.666667h554.666666a64 64 0 0 0 63.701334-57.856L853.333333 746.666667v-341.333334A64 64 0 0 0 789.333333 341.333333zM341.333333 469.333333a42.666667 42.666667 0 0 1 42.666667 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666666-42.666667z m341.333334 0a42.666667 42.666667 0 0 1 42.666666 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666667-42.666667z" p-id="2176"></path></svg> Bilibili:[https://space.bilibili.com/409588368/](https://space.bilibili.com/409588368/)
 
 ## 社区<友情链接入口>
@@ -86,13 +87,13 @@ isShowComments: false
 <p align="center">
 <table style="display: contents;">
     <tr>
-        <td><img :src="$withBase('https://gitee.com/gzcc_kims/figure/raw/master/wechat_l.jpg')" width=160>
+        <td><img src="../../figure/wechat_l.jpg" width=160>
         </td>
-        <td><img :src="$withBase('https://gitee.com/gzcc_kims/figure/raw/master/gzh.jpg')" width=160>
+        <td><img src="../../figure/gzh.jpg" width=160>
         </td>
     </tr>
     <tr>
-    	<td align="center">Wechat</td>
+    	<td align="center">微信</td>
       <td align="center">公众号</td>
     </tr>
 </table>
