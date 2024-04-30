@@ -184,14 +184,8 @@ class Person extends React.Component {
   }
 }
 //渲染组件到页面
-ReactDOM.render(
-  <Person name='jerry' age={19} sex='男' />,
-  document.getElementById('test1')
-)
-ReactDOM.render(
-  <Person name='tom' age={18} sex='女' />,
-  document.getElementById('test2')
-)
+ReactDOM.render(<Person name='jerry' age={19} sex='男' />, document.getElementById('test1'))
+ReactDOM.render(<Person name='tom' age={18} sex='女' />, document.getElementById('test2'))
 const p = { name: '老刘', age: 18, sex: '女' }
 ReactDOM.render(<Person {...p} />, document.getElementById('test3'))
 ```
@@ -258,12 +252,7 @@ class Demo extends React.Component {
         <input ref='input1' type='text' placeholder='点击按钮提示数据' />
         &nbsp;
         <button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
-        <input
-          ref='input2'
-          onBlur={this.showData2}
-          type='text'
-          placeholder='失去焦点提示数据'
-        />
+        <input ref='input2' onBlur={this.showData2} type='text' placeholder='失去焦点提示数据' />
       </div>
     )
   }
@@ -285,7 +274,7 @@ class Demo extends React.Component {
     //更新状态
     this.setState({ isHot: !isHot })
   }
-  saveInput = c => {
+  saveInput = (c) => {
     this.input1 = c
     console.log('@', c)
   }
@@ -359,20 +348,18 @@ b.React 中的事件是通过事件委托方式处理的(委托给组件最外�
 
 ```javascript
 class Login extends React.Component {
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault() //阻止表单提交
     const { username, password } = this
-    alert(
-      `你输入的用户名是：${username.value},你输入的密码是：${password.value}`
-    )
+    alert(`你输入的用户名是：${username.value},你输入的密码是：${password.value}`)
   }
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         用户名：
-        <input ref={c => (this.username = c)} type='text' name='username' />
+        <input ref={(c) => (this.username = c)} type='text' name='username' />
         密码：
-        <input ref={c => (this.password = c)} type='password' name='password' />
+        <input ref={(c) => (this.password = c)} type='password' name='password' />
         <button>登录</button>
       </form>
     )
@@ -391,15 +378,15 @@ class Login extends React.Component {
     password: '', //密码
   }
   //保存用户名到状态中
-  saveUsername = event => {
+  saveUsername = (event) => {
     this.setState({ username: event.target.value })
   }
   //保存密码到状态中
-  savePassword = event => {
+  savePassword = (event) => {
     this.setState({ password: event.target.value })
   }
   //表单提交的回调
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault() //阻止表单提交
     const { username, password } = this.state
     alert(`你输入的用户名是：${username},你输入的密码是：${password}`)
@@ -428,13 +415,13 @@ class Login extends React.Component {
     password: '', //密码
   }
   //保存表单数据到状态中
-  saveFormData = dataType => {
-    return event => {
+  saveFormData = (dataType) => {
+    return (event) => {
       this.setState({ [dataType]: event.target.value })
     }
   }
   //表单提交的回调
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault() //阻止表单提交
     const { username, password } = this.state
     alert(`你输入的用户名是：${username},你输入的密码是：${password}`)
@@ -443,17 +430,9 @@ class Login extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         用户名：
-        <input
-          onChange={this.saveFormData('username')}
-          type='text'
-          name='username'
-        />
+        <input onChange={this.saveFormData('username')} type='text' name='username' />
         密码：
-        <input
-          onChange={this.saveFormData('password')}
-          type='password'
-          name='password'
-        />
+        <input onChange={this.saveFormData('password')} type='password' name='password' />
         <button>登录</button>
       </form>
     )
@@ -484,7 +463,7 @@ class Login extends React.Component {
 
 - 旧版生命周期流程图
 
-![react生命周期(旧)](https://gitee.com/gzcc_kims/figure/raw/master/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F(%E6%97%A7).png)
+![react生命周期(旧)](../../../../../figure/react_lifecycle_old.png)
 
 ```javascript
 //创建组件
@@ -531,9 +510,7 @@ class Count extends React.Component {
         <h2>当前求和为：{count}</h2>
         <button onClick={this.add}>点我+1</button>
         <button onClick={this.death}>卸载组件</button>
-        <button onClick={this.force}>
-          不更改任何状态中的数据，强制更新一下
-        </button>
+        <button onClick={this.force}>不更改任何状态中的数据，强制更新一下</button>
       </div>
     )
   }
@@ -596,7 +573,7 @@ class B extends React.Component {
 ​                      一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
 ```
 
-![react生命周期(新)](https://gitee.com/gzcc_kims/figure/raw/master/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F(%E6%96%B0).png)
+![react生命周期(新)](../../../../../figure/react_lifecycle_new.png)
 
 ## React 路由
 

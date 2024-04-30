@@ -22,7 +22,7 @@ tags:
 
 到你的阿里云服务器里边添加个 dns 解析，如下：
 
-![image-20220110094252025](../../../../figure/image-20220110094252025.png)
+![image-20220110094252025](../../../figure/image-20220110094252025.png)
 
 ### 安装依赖
 
@@ -37,14 +37,14 @@ yum -y install zlib-devel openssl-devel perl hg cpio expat-devel gettext-devel c
 wget https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
 ```
 
-![image-20211227114124187](../../../../figure/image-20211227114124187.png)
+![image-20211227114124187](../../../figure/image-20211227114124187.png)
 
 ```
 #解压文件
 tar -C /usr/local -xzf go1.8.3.linux-amd64.tar.gz
 ```
 
-![image-20211227114439882](../../../../figure/image-20211227114439882.png)
+![image-20211227114439882](../../../figure/image-20211227114439882.png)
 
 ### 配置环境变量
 
@@ -59,7 +59,7 @@ export PATH=$PATH:/usr/local/go/bin
 # 按esc 切换模式 然后输入 :wq 保存退出
 ```
 
-![image-20220110094502888](../../../../figure/image-20220110094502888.png)
+![image-20220110094502888](../../../figure/image-20220110094502888.png)
 
 ```
 #因为刚设置的环境变量，并没有真正生效
@@ -67,14 +67,14 @@ export PATH=$PATH:/usr/local/go/bin
 source /etc/profile
 ```
 
-![image-20211227124230475](../../../../figure/image-20211227124230475.png)
+![image-20211227124230475](../../../figure/image-20211227124230475.png)
 
 ```
 # 查看go版本
 go version
 ```
 
-![image-20211227124341902](../../../../figure/image-20211227124341902.png)
+![image-20211227124341902](../../../figure/image-20211227124341902.png)
 
 ### 下载 ngrok 源码包
 
@@ -95,7 +95,7 @@ mkdir cert
 cd /usr/local/ngrok/cert
 ```
 
-![image-20211227125622516](../../../../figure/image-20211227125622516.png)
+![image-20211227125622516](../../../figure/image-20211227125622516.png)
 
 ```
 # 复制一起执行即可
@@ -106,7 +106,7 @@ openssl req -new -key server.key -subj "/CN=$NGROK_DOMAIN" -out server.csr
 openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000
 ```
 
-![image-20220110112030835](../../../../figure/image-20220110112030835.png)
+![image-20220110112030835](../../../figure/image-20220110112030835.png)
 
 ### 迁移覆盖证书
 
@@ -122,7 +122,7 @@ cp server.key ../assets/server/tls/snakeoil.key
 
 ```
 
-![image-20220110112138946](../../../../figure/image-20220110112138946.png)
+![image-20220110112138946](../../../figure/image-20220110112138946.png)
 
 ### 生成服务端
 
@@ -131,14 +131,14 @@ cp server.key ../assets/server/tls/snakeoil.key
 cd /usr/local/ngrok/
 ```
 
-![image-20211227133926870](../../../../figure/image-20211227133926870.png)
+![image-20211227133926870](../../../figure/image-20211227133926870.png)
 
 ```
 #查看环境
 go env
 ```
 
-![image-20211227134101867](../../../../figure/image-20211227134101867.png)
+![image-20211227134101867](../../../figure/image-20211227134101867.png)
 
 ```
 # 执行生成服务端 其中amd64代表64位的linux系统,因为我用的是centos7，所以用linux.
@@ -157,7 +157,7 @@ GOOS=linux GOARCH=amd64 make release-server
 
 - 下载过程有点久
 
-![image-20211229091459417](../../../../figure/image-20211229091459417.png)
+![image-20211229091459417](../../../figure/image-20211229091459417.png)
 
 ### 生成客户端
 
@@ -166,7 +166,7 @@ GOOS=linux GOARCH=amd64 make release-server
 GOOS=windows GOARCH=amd64 make release-client
 ```
 
-![image-20211229092432964](../../../../figure/image-20211229092432964.png)
+![image-20211229092432964](../../../figure/image-20211229092432964.png)
 
 ### 检查刚才生成的文件
 
@@ -175,7 +175,7 @@ cd /usr/local/ngrok/bin
 ll
 ```
 
-![image-20220121164428691](../../../../figure/image-20220121164428691.png)
+![image-20220121164428691](../../../figure/image-20220121164428691.png)
 
 ### 启动 ngrok 服务器
 
@@ -199,7 +199,7 @@ nohup /usr/local/ngrok/bin/ngrokd -domain="ngrok.kim-shift.cn" -httpAddr=":80" &
 lsof -i:80
 ```
 
-![image-20220121165245435](../../../../figure/image-20220121165245435.png)
+![image-20220121165245435](../../../figure/image-20220121165245435.png)
 
 ```
 # 如果需要停止服务
@@ -211,7 +211,7 @@ kill 27292
 
 - 利用 xftp 将客户端下载下来
 
-![image-20211229102013282](../../../../figure/image-20211229102013282.png)
+![image-20211229102013282](../../../figure/image-20211229102013282.png)
 
 - 在 ngrok.exe 的同级目录下，新建一个 ngrok.cfg 和 start.bat 两个文件
 
@@ -235,14 +235,14 @@ kill 27292
 
 - 双击 start.bat 启动服务
 
-![image-20211229123423089](../../../../figure/image-20211229123423089.png)
+![image-20211229123423089](../../../figure/image-20211229123423089.png)
 
 - 启动成功的示例
 
-![image-20220121165528090](../../../../figure/image-20220121165528090.png)
+![image-20220121165528090](../../../figure/image-20220121165528090.png)
 
 - 访问映射的网站
 
-![image-20220121170227887](../../../../figure/image-20220121170227887.png)
+![image-20220121170227887](../../../figure/image-20220121170227887.png)
 
 ## ======================完结撒花==========================

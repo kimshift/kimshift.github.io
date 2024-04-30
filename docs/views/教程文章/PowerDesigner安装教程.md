@@ -14,39 +14,39 @@ isShowComments: false
 
 2、欢迎来到 PowerDesigner 安装界面，点击 Next
 
-![1-2](../../../../figure/1-2.png)
+![1-2](../../../figure/1-2.png)
 
 3、一定要选择 Trial，再点击 Next，不要选择其它，这一步如果选择错，后面破解是不行的。
 
-![3-3](../../../../figure/3-3.png)
+![3-3](../../../figure/3-3.png)
 
 4、选择 Hong Kong，点击 I AGREE，再点击 Next；
 
-![4-1](../../../../figure/4-1.png)
+![4-1](../../../figure/4-1.png)
 
 5、选择一个安装目录，默认是安装在 C 盘。再点击 Next；
 
-![image-20210402144617193](../../../../figure/image-20210402144617193.png)
+![image-20210402144617193](../../../figure/image-20210402144617193.png)
 
 6、点击 next 下一步
 
-![image-20210402144656502](../../../../figure/image-20210402144656502.png)
+![image-20210402144656502](../../../figure/image-20210402144656502.png)
 
 7、点击 General 和 Notaion，再点击 Next；
 
-![image-20210402144959071](../../../../figure/image-20210402144959071.png)
+![image-20210402144959071](../../../figure/image-20210402144959071.png)
 
 8、点击 next 下一步
 
-![image-20210402145046897](../../../../figure/image-20210402145046897.png)
+![image-20210402145046897](../../../figure/image-20210402145046897.png)
 
 9、直接点击 Next；进入正在安装界面
 
-![image-20210402145111236](../../../../figure/image-20210402145111236.png)
+![image-20210402145111236](../../../figure/image-20210402145111236.png)
 
 10、点击 Finish（安装完成）
 
-![10-1](../../../../figure/10-1.png)
+![10-1](../../../figure/10-1.png)
 
 ## 破解步骤
 
@@ -66,7 +66,7 @@ D:\Program Files\PowerDesigner 16
 
 3、如果点击 PdShell16.exe 不能正常启动，请点击 pdlegacyshell16.exe 启动；
 
-![image-20210402150133974](../../../../figure/image-20210402150133974.png)
+![image-20210402150133974](../../../figure/image-20210402150133974.png)
 
 注意：
 
