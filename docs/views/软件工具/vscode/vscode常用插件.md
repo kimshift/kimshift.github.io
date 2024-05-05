@@ -18,9 +18,53 @@ isShowComments: false
 
 - npm Intellisense:导入模块时，提示已安装模块名称
 
+- Path Intellisense:自动提示文件路径，支持各种快速引入文件
+
 - Code Spell Checker:代码拼写检查器
 
-- **Prettier**:格式化代码-JavaScript / TypeScript / CSS //一般使用这个
+- Vetur:vue2语法高亮，智能提示，emmet，错误提示，格式化，自动补全
+
+- Vue - Official:vue3官方指定插件
+
+- HTML CSS Support:智能提示 CSS 类名以及 id
+
+- IntelliSense for CSS class names in HTML:css只能提示，暂不支持 css module 智能提示
+
+- CSS Module:本插件可以解决 IntelliSense for CSS class names in HTML 不支持 css module 智能提示的功能,可以实现 css 自动补全、转到定义位置
+
+- CSS Peek:CSS 速览
+
+- JavaScript (ES6) code snippets: ES6 代码片段
+
+- open in browser:该插件支持快捷键与鼠标右键快速在浏览器中打开 html 文件
+
+- Live Server:实时服务器
+
+- Material Icon Theme:目录图标主题
+
+- One Dark Pro:vscode 主题
+
+- Auto Rename Tag:自动重命名 HTML 标签
+
+- Element-UI-Snippets-VSCode 插件代码提示快捷键
+
+- Git Blame:显示文件的每一行最后修改的版本和作者
+
+- Git History:查看 git 提交历史
+
+- GitLens: 方便查看 git 日志，git 重度使用者必备
+
+- cssrem:将 px 单位数据转换成 rem 单位
+
+- Easy LESS：只要保存一下 Less 文件，会自动生成 CSS 文件(将 less 文件转化成 css 文件)
+
+- any-rule：正则表达式插件，安装使用快捷键：Ctrl+shift+p,在输入框输入你想要的正则比如：手机，找到后鼠标点击或者回车即可生成
+
+- Error Lens ：错误提醒，诊断更加突出来增强语言诊断功能
+
+- nested comments：代码嵌套注释 ，使用方式：ctrl + alt + /
+
+- **Prettier**:格式化代码-JavaScript / TypeScript / CSS ===>【目前大部分人都使用该插件来统一规范规范格式化】
 
   ```
   ★ 安装 Prettier 后，可在 vscode 设置保存后自动格式化（根据个人喜好，不想保存自动格式化的可以不配置这个）
@@ -29,57 +73,24 @@ isShowComments: false
   	3.找到：Editor: Format On Save，将复选框踢 √
   ```
 
-  ![o_2101251410491](../../../../figure/o_2101251410491.png)
-
-- Vetur:语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger;vscode 官方钦定 Vue 插件，Vue 开发者必备。
-
-- ESLint:js 语法纠错
-
-- HTML CSS Support:智能提示 CSS 类名以及 id
-
-- JavaScript (ES6) code snippets: ES6 代码片段
-
-- open in browser:该插件支持快捷键与鼠标右键快速在浏览器中打开 html 文件
-
-- Live Server:实时服务器
-
-- Path Intellisense:自动提示文件路径，支持各种快速引入文件
-
-- Material Icon Theme:目录图标主题
-
-- One Dark Pro:vscode 主题
-
-- Auto Close Tag:自动闭合 HTML 标签 【已内置】
-
-- Auto Rename Tag:自动重命名 HTML 标签
-
-- Element-UI-Snippets-VSCode 插件代码提示快捷键
-
-- CSS Peek:CSS 速览
-
-- Git Blame:显示文件的每一行最后修改的版本和作者
-
-- Git History:查看 git 提交历史
-
-- GitLens: 方便查看git日志，git重度使用者必备
-
-- cssrem:将 px 单位数据转换成 rem 单位
-
-- Easy LESS：只要保存一下 Less 文件，会自动生成 CSS 文件(将 less 文件转化成 css 文件)
-
-- any-rule：正则表达式插件，安装使用快捷键：Ctrl+shift+p,在输入框输入你想要的正则比如：手机，找到后鼠标点击或者回车即可生成
+  ```
+  <!-- prettier 配置举例 -->
+  "prettier.semi": false, //末尾不加分号
+  "prettier.singleQuote": true, //使用单引号
+  "prettier.printWidth": 100, //每行长度限制
+  "prettier.arrowParens": "avoid", //箭头函数参数括号
+  ```
 
 - background-cover：设置 vscode 背景插件如下图
 
-  ![image-20210914161710541](https://gitee.com/gzcc_kims/figure/raw/master/image-20210914161710541.png)
-
-- JS JSX Snippets：react-jsx 语法快捷插件
+  ![image-20210914161710541](../../../../figure/image-20210914161710541.png)
 
 - koroFileHeader：头部、函数注释插件使用快捷键，头部：Ctrl+Shift+i/函数：Ctrl+Shift+d,自定义配置：点击设置，1.配置头部注释：在搜索框输入 customMade，配置函数注释，搜索：cursorMode，详细配置看链接<br>[配置字段 · OBKoro1/koro1FileHeader Wiki · GitHub](https://github.com/OBKoro1/koro1FileHeader/wiki/配置字段)
 
-```
+```json
+  /* fileheader 插件配置 */
+  //此为头部注释
   "fileheader.customMade": {
-    //此为头部注释
     "Description": "",
     "Version": "1.0",
     "Author": "琴时", //设置后默认设置开发者名字
@@ -88,8 +99,8 @@ isShowComments: false
     "LastEditTime": "Do not edit" // 设置后，保存文件更改默认更新最后编辑时间
     // "FilePath": "Do not edit" // 设置后，默认生成文件相对于项目的路径
   },
+  //此为函数注释
   "fileheader.cursorMode": {
-    //此为函数注释
     "description": "",
     "author": "琴时",
     "param": "",
@@ -98,14 +109,13 @@ isShowComments: false
   // 插件配置项
   "fileheader.configObj": {
     "createFileTime": true,
-    "autoAdd": false, //检测文件没有头部注释，是否自动添加文件头部注释（默认是true）
+    "autoAdd": false, //关闭自动添加文件头部注释
     "autoAddLine": 100, // 文件超过多少行数 不再自动添加头部注释
     "autoAlready": true, //只添加插件支持的语言以及用户通过`language`选项自定义的注释
-    "supportAutoLanguage": [], // 设置之后，在数组内的文件才支持自动添加
-    "prohibitAutoAdd": ["json", "md"], // 禁止.json .md文件，自动添加头部注释
-    "prohibitItemAutoAdd": [
-      "项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加"
-    ],
+    "supportAutoLanguage": [], //在数组内的文件才支持自动添加
+    "prohibitAutoAdd": ["js", "vue", "json", "md"], // 禁止.json .md文件，自动添加头部注释
+    // 项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加
+    "prohibitItemAutoAdd": [], //禁止项目自动添加头部注释
     "folderBlacklist": ["node_modules"], //文件夹禁止自动添加头部注释
     "wideSame": false, // 头部注释等宽设置
     "wideNum": 13, // 头部注释字段长度 默认为13
@@ -194,53 +204,49 @@ isShowComments: false
   },
 ```
 
-- Error Lens ：错误提醒，诊断更加突出来增强语言诊断功能
-- nested comments：代码嵌套注释 ，使用方式：ctrl + alt + /
-
 - Todo Tree：待办事项树插件
 
-```
-//todo-tree settings
+```json
+  /* todo-tree 插件配置 */
   "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS):|^\\s*- \\[ \\])",
   "todo-tree.general.tags": ["TODO", "FIXME", "tag", "done", "bug"],
   "todo-tree.regex.regexCaseSensitive": false,
-  // "todo-tree.tree.showInExplorer": true,
   "todo-tree.highlights.defaultHighlight": {
-    "foreground": "white",
-    "background": "Orange",
+    "foreground": "#FFF",
+    "background": "#FFA500",
     "icon": "checklist",
-    "rulerColour": "Orange",
+    "rulerColour": "#FFA500",
     "type": "tag",
-    "iconColour": "Orange"
+    "iconColour": "#FFA500"
   },
   "todo-tree.highlights.customHighlight": {
     "FIXME": {
-      "background": "red",
+      "background": "#FF0000",
       "icon": "beaker",
-      "rulerColour": "red",
-      "iconColour": "red",
+      "rulerColour": "#FF0000",
+      "iconColour": "#FF0000",
       "opacity": 50
     },
     "tag": {
-      "background": "Magenta",
+      "background": "#FF00FF",
       "icon": "pin",
-      "rulerColour": "Magenta",
-      "iconColour": "Magenta",
+      "rulerColour": "#FF00FF",
+      "iconColour": "#FF00FF",
       "rulerLane": "full",
       "opacity": 50
     },
     "done": {
-      "background": "DarkTurquoise",
+      "background": "#00CED1",
       "icon": "verified",
-      "rulerColour": "DarkTurquoise",
-      "iconColour": "DarkTurquoise",
+      "rulerColour": "#00CED1",
+      "iconColour": "#00CED1",
       "opacity": 50
     },
     "bug": {
-      "background": "green",
+      "background": "#00FF00",
       "icon": "bug",
-      "rulerColour": "green",
-      "iconColour": "green",
+      "rulerColour": "#00FF00",
+      "iconColour": "#00FF00",
       "opacity": 50
     }
   },
