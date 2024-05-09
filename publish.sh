@@ -1,6 +1,5 @@
-# 推送到Gitee---博客
+# 推送到Gitee/Github ---博客
 # 在Bash窗口执行 npm run publish
-
 # 确保脚本抛出遇到的错误
 set -e
 
@@ -49,10 +48,11 @@ git push -u github pages -f
 
 
 cd ../
+# git remote add origin git@gitee.com:kimshift/notebook.git
 git add .
 git commit -m 'update docs'
 # 将源码推送到Gitee
-git push origin master
+git push -u origin master
 
 # echo "推送结束---请前往更新:https://gitee.com/kimshift/kimshift/pages"
 echo "推送结束---请前往查看:https://github.com/kimshift/kimshift.github.io/actions"
