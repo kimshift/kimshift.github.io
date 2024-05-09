@@ -16,11 +16,13 @@ if [ -d "figure" ]; then
   cd figure
   echo "开始拉取最新图库"
   git pull
+  echo "拉取完成"
+  cd ..
 else
-  echo "figure目录不存在,准备拉取最新图库"
+  echo "figure目录不存在,准备克隆最新图库"
   git clone git@gitee.com:kimshift/figure.git
+  echo "克隆完成"
 fi
 
 # 启动服务
-cd ..
 vuepress dev docs
