@@ -74,3 +74,6 @@ tempCodeRunnerFile.sh
 
 # 忽略根目录图床文件夹
 figure
+
+# 忽略临时文件夹
+temp
