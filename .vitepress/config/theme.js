@@ -1,21 +1,12 @@
 // https://vitepress.dev/reference/default-theme-config
 import { getThemeConfig } from '../src/utils/node/config'
-// import workConfig from './works'
+import workConfig from './works'
 export default {
   logo: '/favicon.ico',
   nav: [
     { text: '首页', link: '/' },
     { text: '例子', link: '/docs/markdown-examples' },
   ], //导航栏
-  sidebar: [
-    // {
-    //   text: '例子',
-    //   items: [
-    //     { text: 'Markdown', link: '/docs/markdown-examples' },
-    //     { text: 'Runtime', link: '/docs/api-examples' },
-    //   ],
-    // },
-  ], //侧边栏
   editLink: {
     pattern: 'https://github.com/kimshift/<repo>/tree/master/packages/theme/docs/:path',
     text: '去 GitHub 上编辑内容',
@@ -82,7 +73,7 @@ export const blogTheme = getThemeConfig({
     },
   ],
   // 文章默认作者
-  author: '粥里有勺糖',
+  author: '琴时',
   // 评论
   comment: {
     type: 'giscus',
@@ -100,41 +91,8 @@ export const blogTheme = getThemeConfig({
     content: '<img src="https://img.cdn.sugarat.top/mdImg/MTY0Nzc1NTYyOTE5Mw==647755629193">',
     icon: 'wechatPay',
   },
-  popover: {
-    title: '公告',
-    body: [
-      { type: 'text', content: '👇公众号👇---👇 微信 👇' },
-      {
-        type: 'image',
-        src: 'https://img.cdn.sugarat.top/mdImg/MTYxNTAxODc2NTIxMA==615018765210~fmt.webp',
-      },
-      {
-        type: 'text',
-        content: '欢迎大家加群&私信交流',
-      },
-      {
-        type: 'text',
-        content: '文章首/文尾有群二维码',
-        style: 'padding-top:0',
-      },
-      {
-        type: 'button',
-        content: '作者博客',
-        link: 'https://sugarat.top',
-      },
-      {
-        type: 'button',
-        content: '加群交流',
-        props: {
-          type: 'success',
-        },
-        link: '/group.html',
-      },
-    ],
-    duration: 0,
-  },
-  // works: workConfig,
+  works: workConfig,
   footer: {
-    copyright: 'MIT License | 粥里有勺糖',
+    copyright: 'MIT License | 琴时',
   },
 })

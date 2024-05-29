@@ -56,7 +56,6 @@ export function getArticleMeta(filepath, route, timeZone = defaultTimeZoneOffset
 
   if (!meta.title) {
     meta.title = getDefaultTitle(content)
-    console.log('测试title:', meta.title)
   }
   if (!meta.date) {
     meta.date = formatDate(getFileBirthTime(filepath))

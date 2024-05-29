@@ -24,6 +24,7 @@ export function withConfigProvider(App) {
     setup(_, { slots }) {
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
+      console.log('测试config:', config)
       provide(homeFooter, config.value.blog?.footer)
       provide(configSymbol, config)
       provide(
@@ -95,12 +96,6 @@ export function useConfig() {
 
 export function useBlogConfig() {
   return inject(configSymbol)?.value.blog
-}
-/**
- * 获取 oh-my-live2d的配置选项
- */
-export function useOml2dOptions() {
-  return inject(configSymbol)?.value.blog?.oml2d
 }
 
 export function useDarkTransitionConfig() {

@@ -1,8 +1,7 @@
-<script setup>
+<script setup name="页脚">
 import { computed } from 'vue'
 import { useHomeFooterConfig } from '../config/blog'
-import packageJSON from '../../../package.json'
-import { copyrightSVG, icpSVG, themeSVG } from '../constants/svg'
+import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
 
 const footerData = useHomeFooterConfig()
@@ -12,30 +11,20 @@ const renderData = computed(() => {
     return []
   }
   const flatData = [footerData].flat()
-  return flatData.flat().map((footer, idx) => {
-    const { icpRecord, securityRecord, copyright, version, message, bottomMessage, list } = footer
+  return flatData.flat().map((footer) => {
+    const { icpRecord, securityRecord, copyright, message, bottomMessage, list } = footer
     const data = []
     // message
     const messageData = [message || []].flat()
     const bottomMessageData = [bottomMessage || []].flat()
 
-    // version
-    const isLast = idx === flatData.length - 1
-    if ((version !== false && isLast) || version === true) {
-      data.push({
-        name: `@sugarat/theme@${packageJSON.version}`,
-        link: 'https://theme.sugarat.top/',
-        icon: themeSVG
-      })
-    }
     // copyright
     if (typeof copyright === 'string') {
       data.push({
         name: copyright,
         icon: copyrightSVG
       })
-    }
-    if (copyright instanceof Object) {
+    } else if (copyright instanceof Object) {
       data.push({
         icon: copyrightSVG,
         name: copyright.message,

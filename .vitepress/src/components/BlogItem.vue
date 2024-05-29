@@ -4,7 +4,19 @@ import { computed } from 'vue'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
 import { useCleanUrls, useImageStyle } from '../config/blog'
 
-const props = defineProps()
+const props = defineProps({
+  route: String,
+  title: String,
+  date: String | Date,
+  sticky: Number,
+  description: String,
+  descriptionHTML: String,
+  tag: Array,
+  author: String,
+  cover: String,
+  pin: Number
+})
+
 const showTime = computed(() => {
   return formatShowDate(props.date)
 })
@@ -56,7 +68,7 @@ const resultCover = computed(() => {
     e.preventDefault()
     handleSkipDoc()
   }">
-    <i v-show="!!props.pin" class="pin" />
+    <i v-show="!!pin" class="pin" />
     <!-- 标题 -->
     <p class="title mobile-visible">
       {{ title }}
