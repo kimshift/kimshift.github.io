@@ -15,7 +15,6 @@ import { useColorMode } from '@vueuse/core'
 const configSymbol = Symbol('theme-config')
 const activeTagSymbol = Symbol('active-tag')
 const currentPageNum = Symbol('home-page-num')
-const homeFooter = Symbol('home-footer')
 
 export function withConfigProvider(App) {
   return defineComponent({
@@ -23,7 +22,6 @@ export function withConfigProvider(App) {
     setup(_, { slots }) {
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
-      provide(homeFooter, config.value.blog?.footer)
       provide(configSymbol, config)
 
       const activeTag = ref({
@@ -192,10 +190,6 @@ export function useAutoUpdateAnchor() {
 
   // 返回当前锚点的响应式对象
   return currentAnchor
-}
-
-export function useHomeFooterConfig() {
-  return inject(homeFooter)
 }
 
 export function useBackToTopConfig() {

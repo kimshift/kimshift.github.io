@@ -20,7 +20,7 @@ import 'vitepress-markdown-timeline/dist/theme/index.css'
 import DefaultTheme from 'vitepress/theme'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
-import BlogApp from './components/BlogApp.vue'
+import App from './components/App.vue'
 import { withConfigProvider } from './config/blog'
 
 // page
@@ -30,7 +30,7 @@ import TimelinePage from './components/TimelinePage.vue'
 import './styles/theme/inline-theme.var.css'
 
 const customTheme = {
-  Layout: withConfigProvider(BlogApp),
+  Layout: withConfigProvider(App),
   enhanceApp(ctx) {
     enhanceAppWithTabs(ctx.app)
     DefaultTheme.enhanceApp(ctx)

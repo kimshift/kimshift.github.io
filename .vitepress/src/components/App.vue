@@ -11,7 +11,7 @@ import BlogSidebar from './BlogSidebar.vue'
 import BlogImagePreview from './BlogImagePreview.vue'
 import BlogArticleAnalyze from './BlogArticleAnalyze.vue'
 import BlogAlert from './BlogAlert.vue'
-import BlogFooter from './BlogFooter.vue'
+import Footer from './Footer.vue'
 import BlogHomeHeaderAvatar from './BlogHomeHeaderAvatar.vue'
 import BlogBackToTop from './BlogBackToTop.vue'
 import CommentGiscus from './CommentGiscus.vue'
@@ -88,7 +88,7 @@ const openTransition = useDarkTransitionConfig()
       </ClientOnly>
     </template>
     <template #layout-bottom>
-      <BlogFooter v-if="layout === 'home'" />
+      <Footer v-if="layout === 'home'" />
       <slot name="layout-bottom" />
     </template>
     <!-- 透传默认主题的其它插槽 -->

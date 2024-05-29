@@ -59,6 +59,7 @@ export const blogTheme = getThemeConfig({
     },
   ],
   author: '琴时', // 文章默认作者
+  startYear: '2021', //项目开始时间
   comment: {
     type: 'giscus',
     options: {
@@ -76,7 +77,7 @@ export const blogTheme = getThemeConfig({
     icon: 'wechatPay',
   },
   footer: {
-    copyright: '琴时 2021 - 2024',
+    copyright: 'default',
     icpRecord: {
       name: '粤ICP备2021069222号',
       link: 'https://beian.miit.gov.cn',
