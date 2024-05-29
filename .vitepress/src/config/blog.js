@@ -15,7 +15,6 @@ import { useColorMode } from '@vueuse/core'
 const configSymbol = Symbol('theme-config')
 const activeTagSymbol = Symbol('active-tag')
 const currentPageNum = Symbol('home-page-num')
-const userWorks = Symbol('user-works')
 const homeFooter = Symbol('home-footer')
 
 export function withConfigProvider(App) {
@@ -24,19 +23,8 @@ export function withConfigProvider(App) {
     setup(_, { slots }) {
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
-      console.log('测试config:', config)
       provide(homeFooter, config.value.blog?.footer)
       provide(configSymbol, config)
-      provide(
-        userWorks,
-        ref(
-          config.value.blog?.works || {
-            title: '',
-            description: '',
-            list: [],
-          }
-        )
-      )
 
       const activeTag = ref({
         label: '',
@@ -138,9 +126,6 @@ export function useCurrentArticle() {
   return currentArticle
 }
 
-export function useUserWorks() {
-  return inject(userWorks)
-}
 function resolveConfig(config) {
   return {
     ...config,

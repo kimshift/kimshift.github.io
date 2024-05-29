@@ -1,5 +1,4 @@
 import process from 'node:process'
-console.log('测试NODE_ENV:', process.env.NODE_ENV)
 const headConf = [
   ['link', { rel: 'icon', href: '/sports.png' }],
   [

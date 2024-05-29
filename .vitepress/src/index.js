@@ -25,7 +25,6 @@ import { withConfigProvider } from './config/blog'
 
 // page
 import TimelinePage from './components/TimelinePage.vue'
-import UserWorksPage from './components/UserWorks.vue'
 
 // 内置一些特殊的主题色
 import './styles/theme/inline-theme.var.css'
@@ -36,7 +35,6 @@ const customTheme = {
     enhanceAppWithTabs(ctx.app)
     DefaultTheme.enhanceApp(ctx)
     ctx.app.component('TimelinePage', TimelinePage)
-    ctx.app.component('UserWorksPage', UserWorksPage)
   },
 }
 

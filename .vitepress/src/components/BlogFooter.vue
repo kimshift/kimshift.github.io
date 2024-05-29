@@ -5,7 +5,6 @@ import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
 
 const footerData = useHomeFooterConfig()
-
 const renderData = computed(() => {
   if (!footerData) {
     return []
@@ -148,9 +147,7 @@ footer.blog-footer {
 
   a:hover {
     color: var(--vp-c-brand-1);
-    text-decoration: underline;
-    text-decoration-color: var(--vp-c-brand-1);
-    text-decoration-style: dashed;
+    text-decoration: none;
   }
 }
 </style>

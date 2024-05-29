@@ -1,6 +1,5 @@
 // https://vitepress.dev/reference/default-theme-config
 import { getThemeConfig } from '../src/utils/node/config'
-import workConfig from './works'
 export default {
   logo: '/favicon.ico',
   nav: [
@@ -32,19 +31,6 @@ export const blogTheme = getThemeConfig({
       },
     ],
   },
-  oml2d: {
-    mobileDisplay: true,
-    models: [
-      {
-        path: 'https://sugarat.s3.bitiful.net/npm/oml2d-model/models/Senko_Normals/senko.model3.json',
-      },
-    ],
-    libraryUrls: {
-      complete: 'https://sugarat.s3.bitiful.net/npm/oh-my-live2d/latest/lib/complete.js',
-      cubism2: 'https://sugarat.s3.bitiful.net/npm/oh-my-live2d/latest/lib/cubism2.js',
-      cubism5: 'https://sugarat.s3.bitiful.net/npm/oh-my-live2d/latest/lib/cubism5.js',
-    },
-  },
   authorList: [
     {
       nickname: '粥里有勺糖',
@@ -72,9 +58,7 @@ export const blogTheme = getThemeConfig({
       url: 'https://vitepress.dev/',
     },
   ],
-  // 文章默认作者
-  author: '琴时',
-  // 评论
+  author: '琴时', // 文章默认作者
   comment: {
     type: 'giscus',
     options: {
@@ -84,15 +68,18 @@ export const blogTheme = getThemeConfig({
       categoryId: 'DIC_kwDODmEcc84COVc6',
       inputPosition: 'top',
     },
-  },
+  }, // 评论
   buttonAfterArticle: {
     openTitle: '投"币"支持',
     closeTitle: '下次一定',
     content: '<img src="https://img.cdn.sugarat.top/mdImg/MTY0Nzc1NTYyOTE5Mw==647755629193">',
     icon: 'wechatPay',
   },
-  works: workConfig,
   footer: {
-    copyright: 'MIT License | 琴时',
+    copyright: '琴时 2021 - 2024',
+    icpRecord: {
+      name: '粤ICP备2021069222号',
+      link: 'https://beian.miit.gov.cn',
+    },
   },
 })
