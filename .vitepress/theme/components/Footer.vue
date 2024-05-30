@@ -5,8 +5,7 @@ import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
 const _footer = computed(() => {
   const blogConfig = useBlogConfig()
-  console.log('测试footer---------:', blogConfig)
-  const { author, startYear, footer } = blogConfig
+  const { author, startYear, footer } = blogConfig || {}
 
   if (!footer) return
   const { icpRecord, copyright, message } = footer

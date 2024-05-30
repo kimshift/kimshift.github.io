@@ -1,6 +1,6 @@
 import process from 'node:process'
 const headConf = [
-  ['link', { rel: 'icon', href: '/sports.png' }],
+  ['link', { rel: 'icon', href: '/favicon.ico' }],
   [
     'link',
     {

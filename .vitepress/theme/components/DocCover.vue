@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="文章封面图">
 import { useData } from 'vitepress'
 import { computed } from 'vue'
 import { useBlogConfig, useCurrentArticle } from '../config'

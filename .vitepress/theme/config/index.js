@@ -84,10 +84,6 @@ export function useBlogConfig() {
   return inject(configSymbol)?.value.blog
 }
 
-export function useDarkTransitionConfig() {
-  return inject(configSymbol)?.value.blog?.darkTransition ?? true
-}
-
 export function useBlogThemeMode() {
   return inject(configSymbol)?.value?.blog?.blog ?? true
 }
@@ -107,10 +103,13 @@ export function useCurrentPageNum() {
   return inject(currentPageNum)
 }
 
+/*******
+ * @description: 获取当前文章配置
+ * @author: 琴时
+ */
 export function useCurrentArticle() {
   const blogConfig = useConfig()
   const route = useRoute()
-
   const docs = computed(() => blogConfig.config?.blog?.pagesData)
   const currentArticle = computed(() => {
     const currentPath = route.path.replace(/.html$/, '')
@@ -122,7 +121,6 @@ export function useCurrentArticle() {
     }
     return docs.value?.find(v => okPaths.includes(withBase(v.route)))
   })
-
   return currentArticle
 }
 

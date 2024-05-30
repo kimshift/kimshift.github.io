@@ -14,11 +14,39 @@ export default {
   lastUpdatedText: '上次更新于',
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
+  author: 'kimshift', // 文章默认作者
+  darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
+  article: {
+    readingTimePosition: '', //阅读时间位置
+    readingTime: true, //是否显示阅读时间
+    hiddenCover: false, //文章封面是否隐藏
+  },
 }
 
 // 主题配置参数
 export const blogTheme = getThemeConfig({
+  darkTransition: false, // 黑白模式下切换文章时，是否使用动画效果
+  article: {
+    readingTimePosition: '', //阅读时间位置
+    readingTime: true, //是否显示阅读时间
+    hiddenCover: false, //文章封面是否隐藏
+  },
   authorList: [
+    {
+      nickname: '粥里有勺糖',
+      url: 'https://sugarat.top/aboutme.html',
+      des: '你的指尖,拥有改变世界的力量',
+    },
+    {
+      nickname: '粥里有勺糖',
+      url: 'https://sugarat.top/aboutme.html',
+      des: '你的指尖,拥有改变世界的力量',
+    },
+    {
+      nickname: '粥里有勺糖',
+      url: 'https://sugarat.top/aboutme.html',
+      des: '你的指尖,拥有改变世界的力量',
+    },
     {
       nickname: '粥里有勺糖',
       url: 'https://sugarat.top/aboutme.html',

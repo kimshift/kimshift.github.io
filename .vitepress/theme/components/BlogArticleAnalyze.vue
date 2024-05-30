@@ -13,11 +13,11 @@ import {
 } from '@element-plus/icons-vue'
 import { useBlogConfig, useCurrentArticle, useDocMetaInsertPosition, useDocMetaInsertSelector } from '../config'
 import countWord, { formatShowDate } from '../utils/client'
-import BlogDocCover from './BlogDocCover.vue'
+import DocCover from './DocCover.vue'
 
 const { article, authorList } = useBlogConfig()
 const readingTimePosition = article?.readingTimePosition || 'inline'
-
+console.log('测试readingTimePosition:', article, readingTimePosition)
 const { frontmatter } = useData()
 const tags = computed(() => {
   const { tag, tags, categories } = frontmatter.value
@@ -33,7 +33,7 @@ const tags = computed(() => {
 const showAnalyze = computed(
   () => frontmatter.value?.readingTime ?? article?.readingTime ?? true
 )
-
+console.log('测试showAnalyze:', frontmatter.value, showAnalyze.value)
 const wordCount = ref(0)
 const imageCount = ref(0)
 const wordTime = computed(() => {
@@ -209,7 +209,7 @@ watch(
     </template>
     <!-- 封面展示 -->
     <ClientOnly>
-      <BlogDocCover />
+      <DocCover />
     </ClientOnly>
   </div>
 </template>

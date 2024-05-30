@@ -1,15 +1,13 @@
 import { useData } from 'vitepress'
 import { nextTick, provide } from 'vue'
-import { useDarkTransitionConfig } from '../config'
 
+/*******
+ * @description: 动态切换暗黑模式功能
+ * @author: 琴时
+ */
 export function useDarkTransition() {
-  const { isDark } = useData()
-
-  const isOpenDarkTransition = useDarkTransitionConfig()
-
-  if (!isOpenDarkTransition) {
-    return
-  }
+  const { theme, isDark } = useData()
+  if (theme.value?.darkTransition === false) return
   const enableTransitions = () =>
     'startViewTransition' in document &&
     window.matchMedia('(prefers-reduced-motion: no-preference)').matches

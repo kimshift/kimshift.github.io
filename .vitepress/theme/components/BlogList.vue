@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="文档列表">
 import { computed, watch } from 'vue'
 import { ElPagination } from 'element-plus'
 import { useData, useRoute, useRouter } from 'vitepress'
@@ -11,7 +11,8 @@ import {
 import BlogItem from './BlogItem.vue'
 
 const { theme, frontmatter } = useData()
-const globalAuthor = computed(() => theme.value.blog?.author || '')
+console.log('测试theme.value:', theme.value)
+const globalAuthor = computed(() => theme.value.author || '佚名')
 const docs = useArticles()
 
 const activeTag = useActiveTag()
@@ -42,7 +43,7 @@ const filterData = computed(() => {
 
 const { home } = useBlogConfig()
 const pageSize = computed(
-  () => frontmatter.value.blog?.pageSize || home?.pageSize || 6
+  () => frontmatter.value.blog?.pageSize ?? home?.pageSize ?? 10
 )
 const currentPage = useCurrentPageNum()
 const currentWikiData = computed(() => {
@@ -50,6 +51,8 @@ const currentWikiData = computed(() => {
   const endIdx = startIdx + pageSize.value
   return filterData.value.slice(startIdx, endIdx)
 })
+
+console.log('测试currentWikiData:', currentWikiData)
 
 const router = useRouter()
 const queryPageNumKey = 'pageNum'

@@ -3,14 +3,13 @@ import Theme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import { computed } from 'vue'
 import { useDarkTransition } from '../hooks/useDarkTransition'
-import { useBlogThemeMode, useDarkTransitionConfig } from '../config'
+import { useBlogThemeMode } from '../config'
 import BlogHomeInfo from './BlogHomeInfo.vue'
 import BlogHomeBanner from './BlogHomeBanner.vue'
 import BlogList from './BlogList.vue'
 import BlogSidebar from './BlogSidebar.vue'
 import BlogImagePreview from './BlogImagePreview.vue'
 import BlogArticleAnalyze from './BlogArticleAnalyze.vue'
-import BlogAlert from './BlogAlert.vue'
 import Footer from './Footer.vue'
 import BlogHomeHeaderAvatar from './BlogHomeHeaderAvatar.vue'
 import BlogBackToTop from './BlogBackToTop.vue'
@@ -20,24 +19,21 @@ import CommentArTalk from './CommentArTalk.vue'
 import BlogButtonAfterArticle from './BlogButtonAfterArticle.vue'
 import BlogCommentWrapper from './BlogCommentWrapper.vue'
 
-const { frontmatter } = useData()
+const { theme, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout)
+const openTransition = computed(() => theme.value.darkTransition ?? true)
 const isBlogTheme = useBlogThemeMode()
 const { Layout } = Theme
 
 // 切换深色模式过渡
 // https://vitepress.dev/zh/guide/extending-default-theme#on-appearance-toggle
 useDarkTransition()
-const openTransition = useDarkTransitionConfig()
 </script>
 
 <template>
   <Layout :class="{ 'blog-theme-layout': openTransition }">
     <template #layout-top>
       <slot name="layout-top" />
-      <ClientOnly>
-        <BlogAlert />
-      </ClientOnly>
     </template>
 
     <template #doc-before>
@@ -88,6 +84,7 @@ const openTransition = useDarkTransitionConfig()
       </ClientOnly>
     </template>
     <template #layout-bottom>
+      <!-- 首页底部 -->
       <Footer v-if="layout === 'home'" />
       <slot name="layout-bottom" />
     </template>

@@ -49,7 +49,6 @@ export function patchMermaidPluginCfg(config) {
     ...aliasObjectToArray({
       ...config.vite.resolve.alias,
       'cytoscape/dist/cytoscape.umd.js': 'cytoscape/dist/cytoscape.esm.js',
-      mermaid: 'mermaid/dist/mermaid.esm.mjs',
     }),
     { find: /^dayjs\/(.*).js/, replacement: 'dayjs/esm/$1' },
   ]
@@ -59,7 +58,7 @@ export function patchOptimizeDeps(config) {
   if (!config.vite.optimizeDeps) {
     config.vite.optimizeDeps = {}
   }
-  config.vite.optimizeDeps.exclude = ['vitepress-plugin-tabs', '@sugarat/theme']
+  config.vite.optimizeDeps.exclude = ['vitepress-plugin-tabs']
   config.vite.optimizeDeps.include = ['element-plus']
 }
 
