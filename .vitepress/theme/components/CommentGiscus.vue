@@ -2,7 +2,7 @@
 import { useData, useRoute } from 'vitepress'
 import { computed, nextTick, ref, watch } from 'vue'
 import Giscus from '@giscus/vue'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 
 // 读取配制
 const { comment } = useBlogConfig()

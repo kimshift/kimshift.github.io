@@ -1,7 +1,7 @@
 <script setup>
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import { useBlogConfig, useCurrentArticle } from '../config/blog'
+import { useBlogConfig, useCurrentArticle } from '../config'
 
 const { frontmatter } = useData()
 const cover = computed(() => frontmatter.value.cover)

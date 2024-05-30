@@ -94,7 +94,9 @@ export function useBlogThemeMode() {
 
 export function useArticles() {
   const blogConfig = useConfig()
+  // console.log('测试blogConfig:', blogConfig)
   const articles = computed(() => blogConfig.config?.blog?.pagesData || [])
+  // console.log('测试articles:', articles)
   return articles
 }
 
@@ -199,8 +201,4 @@ export function useBackToTopConfig() {
 export function useCleanUrls() {
   const { site } = useData()
   return !!site.value.cleanUrls
-}
-
-export function useImageStyle() {
-  return inject(configSymbol)?.value?.blog?.imageStyle || {}
 }

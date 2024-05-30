@@ -11,7 +11,7 @@ import {
   EditPen,
   UserFilled
 } from '@element-plus/icons-vue'
-import { useBlogConfig, useCurrentArticle, useDocMetaInsertPosition, useDocMetaInsertSelector } from '../config/blog'
+import { useBlogConfig, useCurrentArticle, useDocMetaInsertPosition, useDocMetaInsertSelector } from '../config'
 import countWord, { formatShowDate } from '../utils/client'
 import BlogDocCover from './BlogDocCover.vue'
 

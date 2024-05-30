@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 
 const { isDark, page } = useData()
 const el = ref()

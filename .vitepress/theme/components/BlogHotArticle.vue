@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { ElButton } from 'element-plus'
 import { useRouter, withBase } from 'vitepress'
-import { useArticles, useBlogConfig, useCleanUrls } from '../config/blog'
+import { useArticles, useBlogConfig, useCleanUrls } from '../config'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
 import { fireSVG } from '../constants/svg'
 

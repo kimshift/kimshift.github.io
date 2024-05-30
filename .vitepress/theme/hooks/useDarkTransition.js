@@ -1,6 +1,6 @@
 import { useData } from 'vitepress'
 import { nextTick, provide } from 'vue'
-import { useDarkTransitionConfig } from '../config/blog'
+import { useDarkTransitionConfig } from '../config'
 
 export function useDarkTransition() {
   const { isDark } = useData()

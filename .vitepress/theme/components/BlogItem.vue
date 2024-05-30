@@ -1,8 +1,8 @@
-<script setup>
+<script setup name="文档组件">
 import { useRouter, withBase } from 'vitepress'
 import { computed } from 'vue'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { useCleanUrls, useImageStyle } from '../config/blog'
+import { useCleanUrls } from '../config'
 
 const props = defineProps({
   route: String,
@@ -22,43 +22,16 @@ const showTime = computed(() => {
 })
 const cleanUrls = useCleanUrls()
 const link = computed(() => withBase(wrapperCleanUrls(!!cleanUrls, props.route)))
-
 const router = useRouter()
 function handleSkipDoc() {
   router.go(link.value)
 }
-
-const { coverPreview } = useImageStyle()
 
 const resultCover = computed(() => {
   if (!props.cover) {
     return ''
   }
   const baseCover = withBase(props.cover)
-  const coverRule = [coverPreview]
-    .flat()
-    .filter(v => !!v)
-    .find((coverRule) => {
-      if (!coverRule) {
-        return false
-      }
-      return coverRule.rule instanceof RegExp ? coverRule.rule.test(baseCover) : baseCover.includes(coverRule.rule)
-    })
-
-  if (!coverRule) {
-    return baseCover
-  }
-  const { suffix, replace, rule } = coverRule
-  if (!replace && suffix) {
-    return `${baseCover}${suffix}`
-  }
-  if (typeof replace === 'function') {
-    return replace(baseCover)
-  }
-  if (typeof replace === 'string') {
-    return baseCover.replace(rule, replace)
-  }
-
   return baseCover
 })
 </script>
@@ -91,7 +64,7 @@ const resultCover = computed(() => {
         <div class="badge-list pc-visible">
           <span v-show="author" class="split">{{ author }}</span>
           <span class="split">{{ showTime }}</span>
-          <span v-show="tag?.length" class="split">{{ tag?.join(' · ') }}</span>
+          <span v-if="tag?.length > 0" class="split">{{ tag?.join(' · ') }}</span>
         </div>
       </div>
       <!-- 右侧封面图 -->
@@ -101,7 +74,7 @@ const resultCover = computed(() => {
     <div class="badge-list mobile-visible">
       <span v-show="author" class="split">{{ author }}</span>
       <span class="split">{{ showTime }}</span>
-      <span v-show="tag?.length" class="split">{{ tag?.join(' · ') }}</span>
+      <span v-if="tag?.length > 0" class="split">{{ tag?.join(' · ') }}</span>
     </div>
   </a>
 </template>

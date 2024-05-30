@@ -3,7 +3,7 @@ import { useElementSize, useScroll } from '@vueuse/core'
 import { ElIcon } from 'element-plus'
 import { computed, ref } from 'vue'
 import { vOuterHtml } from '../directives'
-import { useBackToTopConfig } from '../config/blog'
+import { useBackToTopConfig } from '../config'
 
 function handleBackRoTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' })

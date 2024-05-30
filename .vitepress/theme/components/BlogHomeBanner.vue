@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useData } from 'vitepress'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 
 const { site, frontmatter } = useData()
 const { home } = useBlogConfig()

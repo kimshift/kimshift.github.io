@@ -2,7 +2,7 @@
 import { ElButton } from 'element-plus'
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 import { aliPaySVG, weChatPaySVG } from '../constants/svg'
 
 const { buttonAfterArticle: _buttonAfterArticle } = useBlogConfig()

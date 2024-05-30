@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 import BlogRecommendArticle from './BlogRecommendArticle.vue'
 
 const { recommend: _recommend } = useBlogConfig()

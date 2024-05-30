@@ -3,7 +3,7 @@ import { ElAvatar } from 'element-plus'
 import { useDark, useIntervalFn } from '@vueuse/core'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import Swiper from 'swiper'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 import { getImageUrl, shuffleArray } from '../utils/client'
 
 const isDark = useDark({

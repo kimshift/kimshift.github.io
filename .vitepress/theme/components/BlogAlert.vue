@@ -1,7 +1,7 @@
 <script setup>
 import { ElAlert } from 'element-plus'
 import { onMounted, ref } from 'vue'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 
 const { alert: alertProps } = useBlogConfig()
 const show = ref(false)

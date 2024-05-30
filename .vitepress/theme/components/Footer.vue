@@ -1,17 +1,19 @@
 <script setup name="页脚">
 import { computed } from 'vue'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
 const _footer = computed(() => {
   const blogConfig = useBlogConfig()
+  console.log('测试footer---------:', blogConfig)
   const { author, startYear, footer } = blogConfig
+
   if (!footer) return
   const { icpRecord, copyright, message } = footer
   const list = []
   // copyright
   if (copyright === 'default') {
-    const year = new Date().getFullYear() + new Date().getTime()
+    const year = new Date().getFullYear()
     list.push({
       name: `${author || '佚名'} ${startYear || year} - ${year}`,
       icon: copyrightSVG
@@ -42,7 +44,6 @@ const _footer = computed(() => {
     message,
   }
 })
-console.log('测试_footer:', _footer.value)
 </script>
 
 <template>

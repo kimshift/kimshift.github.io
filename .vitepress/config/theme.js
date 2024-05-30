@@ -1,5 +1,5 @@
 // https://vitepress.dev/reference/default-theme-config
-import { getThemeConfig } from '../src/utils/node/config'
+import { getThemeConfig } from '../theme/utils/node/config'
 export default {
   logo: '/favicon.ico',
   nav: [
@@ -16,21 +16,8 @@ export default {
   sidebarMenuLabel: '相关推荐',
 }
 
+// 主题配置参数
 export const blogTheme = getThemeConfig({
-  imageStyle: {
-    coverPreview: [
-      // 七牛云
-      {
-        rule: '//img.cdn.sugarat.top',
-        suffix: '~cover.webp',
-      },
-      // 又拍云CDN
-      {
-        rule: '//cdn.upyun.sugarat.top',
-        suffix: '-cover',
-      },
-    ],
-  },
   authorList: [
     {
       nickname: '粥里有勺糖',
@@ -45,12 +32,6 @@ export const blogTheme = getThemeConfig({
     },
   },
   friend: [
-    {
-      nickname: '粥里有勺糖',
-      des: '你的指尖,拥有改变世界的力量',
-      avatar: 'https://img.cdn.sugarat.top/mdImg/MTY3NDk5NTE2NzAzMA==674995167030',
-      url: 'https://sugarat.top',
-    },
     {
       nickname: 'Vitepress',
       des: 'Vite & Vue Powered Static Site Generator',

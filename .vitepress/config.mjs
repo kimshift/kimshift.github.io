@@ -9,5 +9,5 @@ export default defineConfig({
   themeConfig: themeConf,
   head: headConf,
   lastUpdated: true,
-  cleanUrls: false,
+  cleanUrls: true, //去除.html后缀
 })

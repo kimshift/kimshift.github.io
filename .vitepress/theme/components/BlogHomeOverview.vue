@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { isCurrentWeek } from '../utils/client'
-import { useArticles, useBlogConfig } from '../config/blog'
+import { useArticles, useBlogConfig } from '../config'
 import BlogAuthor from './BlogAuthor.vue'
 
 const { home } = useBlogConfig()

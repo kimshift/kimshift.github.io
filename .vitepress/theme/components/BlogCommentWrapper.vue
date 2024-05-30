@@ -4,7 +4,7 @@ import { useData } from 'vitepress'
 import { computed, h, ref } from 'vue'
 import { ElIcon } from 'element-plus'
 import { Comment } from '@element-plus/icons-vue'
-import { useBlogConfig } from '../config/blog'
+import { useBlogConfig } from '../config'
 
 const { frontmatter } = useData()
 const commentEl = ref(null)

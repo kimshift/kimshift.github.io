@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter, withBase } from 'vitepress'
 import { ElButton } from 'element-plus'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { useArticles, useBlogConfig, useCleanUrls } from '../config/blog'
+import { useArticles, useBlogConfig, useCleanUrls } from '../config'
 import { recommendSVG } from '../constants/svg'
 const { recommend: _recommend } = useBlogConfig()
 

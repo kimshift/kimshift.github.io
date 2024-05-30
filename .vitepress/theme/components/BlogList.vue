@@ -7,7 +7,7 @@ import {
   useArticles,
   useBlogConfig,
   useCurrentPageNum
-} from '../config/blog'
+} from '../config'
 import BlogItem from './BlogItem.vue'
 
 const { theme, frontmatter } = useData()

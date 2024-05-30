@@ -8,7 +8,7 @@ import {
   useArticles,
   useConfig,
   useCurrentPageNum,
-} from '../config/blog'
+} from '../config'
 
 const route = useRoute()
 const docs = useArticles()
