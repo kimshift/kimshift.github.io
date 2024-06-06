@@ -1,4 +1,10 @@
-### 介绍
+---
+sidebar: false
+top: 1
+sticky: 1
+---
+
+### 项目介绍
 
 - 使用 vitepress 搭建的个人博客网站
 
@@ -100,14 +106,15 @@ Dev
 ```yaml
 ---
 title: 文章标题
-date: 2020-02-02
+date: 时间
 tags:
  - 标签
 categories:
  - 分类
 keys:
  - '123456'
-sticky: 1
+sticky: 1  #
+cover: 封面图地址
 sidebar: false
 isShowComments: false
 publish: true

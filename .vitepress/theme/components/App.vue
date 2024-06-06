@@ -1,7 +1,7 @@
 <script setup name="入口文件">
 import Theme from 'vitepress/theme'
 import { useData } from 'vitepress'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useDarkTransition } from '../hooks/useDarkTransition'
 import { useBlogThemeMode } from '../config'
 import BlogHomeInfo from './BlogHomeInfo.vue'
@@ -27,7 +27,10 @@ const { Layout } = Theme
 
 // 切换深色模式过渡
 // https://vitepress.dev/zh/guide/extending-default-theme#on-appearance-toggle
-useDarkTransition()
+onMounted(() => {
+  useDarkTransition()
+})
+
 </script>
 
 <template>

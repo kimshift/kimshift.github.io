@@ -25,12 +25,7 @@ export default {
 
 // 主题配置参数
 export const blogTheme = getThemeConfig({
-  darkTransition: false, // 黑白模式下切换文章时，是否使用动画效果
-  article: {
-    readingTimePosition: '', //阅读时间位置
-    readingTime: true, //是否显示阅读时间
-    hiddenCover: false, //文章封面是否隐藏
-  },
+  blog: false,
   authorList: [
     {
       nickname: '粥里有勺糖',
