@@ -1,21 +1,18 @@
-<script setup>
+<script setup name="移动端-首页-头像">
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
-import { useBlogConfig } from '../config'
 
-const { home } = useBlogConfig()
-const { frontmatter, site } = useData()
+const { frontmatter, site, theme } = useData()
 const logo = computed(() =>
-  frontmatter.value.logo
-  ?? frontmatter.value?.blog?.logo
-  ?? home?.logo
+  theme.value.home?.avatar
   ?? site.value.themeConfig.logo
 )
-const alwaysHide = computed(() => frontmatter.value.blog?.minScreenAvatar === false)
+const alwaysShow = computed(() => frontmatter.value.blog?.minScreenAvatar ?? false)
+
 </script>
 
 <template>
-  <div v-show="!alwaysHide" class="blog-home-header-avatar">
+  <div v-show="!alwaysShow" class="blog-home-header-avatar">
     <img :src="withBase(logo)" alt="avatar">
   </div>
 </template>

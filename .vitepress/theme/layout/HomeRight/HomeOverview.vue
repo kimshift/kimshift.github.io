@@ -5,9 +5,10 @@ import { isCurrentWeek } from '../../utils/client'
 import { useArticles } from '../../config'
 import Author from './Author.vue'
 
-const { frontmatter, theme } = useData()
-const avatarMode = computed(() => frontmatter.value.blog?.avatarMode || theme.value.avatarMode || 'card')
+const { theme } = useData()
+const { home } = theme.value
 
+const avatarMode = computed(() => home.avatarMode ?? 'card')
 const showCardAvatar = computed(() => avatarMode.value === 'card')
 
 const docs = useArticles()

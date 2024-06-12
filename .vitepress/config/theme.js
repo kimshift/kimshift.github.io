@@ -14,13 +14,10 @@ export default {
   lastUpdatedText: '上次更新于',
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
-  avatar: '/img/avatar.png', //首页头像
-  avatarMode: 'card',
   author: 'kimshift', // 文章默认作者
   startYear: '2021', //项目开始时间
   custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
-  homeTags: true, // 是否开启首页标签
   comment: {
     type: 'giscus',
     options: {
@@ -91,6 +88,21 @@ export default {
       name: '粤ICP备2021069222号',
       link: 'https://beian.miit.gov.cn',
     },
+  },
+  home: {
+    title: '记事录',
+    homeTags: true, // 是否开启首页标签
+    avatar: '/img/avatar.png', //首页头像
+    avatarMode: 'card',
+    minScreenAvatar: false, // 移动端是否显示头像
+    pageSize: 6, //首页文章展示数量
+    inspiringTimeout: 3000, // 轮播文字切换时间
+    inspiring: [
+      '千万不要因为走得太久，而忘记了我们为什么出发',
+      '人生就像一场修行，你不可能一开始就修成正果',
+      '无论多么沉重的负担，也不要忘记微笑；无论多么漫长的路程，也不要忘记坚持',
+      '生活的真谛不在繁华，而在于淡泊',
+    ],
   },
 }
 

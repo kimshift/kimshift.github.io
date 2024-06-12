@@ -1,30 +1,23 @@
-<script setup>
+<script setup name="首页横幅组件">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useData } from 'vitepress'
-import { useBlogConfig } from '../config'
 
-const { site, frontmatter } = useData()
-const { home } = useBlogConfig()
+const { site, theme } = useData()
+const { home } = theme.value
 
-const name = computed(
-  () => (frontmatter.value.blog?.name ?? site.value.title) || home?.name || ''
-)
-const motto = computed(() => frontmatter.value.blog?.motto || home?.motto || '')
+const title = computed(() => home?.title ?? site.value.title ?? '')
+const motto = computed(() => home?.motto ?? site.value.description ?? '')
 
 const inspiring = ref('')
 const inspiringList = computed(() => {
   return [
     ...new Set(
-      [frontmatter.value.blog?.inspiring, home?.inspiring]
-        .flat()
-        .filter(v => !!v)
+      [home?.inspiring].flat().filter(v => !!v)
     )
   ]
 })
 const inspiringIndex = ref(-1)
-const inspiringTimeout = computed(
-  () => frontmatter.value.blog?.inspiringTimeout || home?.inspiringTimeout || 0
-)
+const inspiringTimeout = computed(() => home?.inspiringTimeout || 0)
 
 watch(inspiringTimeout, () => {
   startTimer()
@@ -73,7 +66,7 @@ async function changeSlogan() {
 <template>
   <div>
     <h1>
-      <span class="name">{{ name }}</span>
+      <span class="name">{{ title }}</span>
       <span v-show="motto" class="motto">{{ motto }}</span>
     </h1>
     <div class="inspiring-wrapper">

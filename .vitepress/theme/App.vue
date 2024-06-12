@@ -7,13 +7,13 @@ import { useDarkTransition } from './hooks/useDarkTransition'
 import Footer from './layout/Footer.vue'
 import HomeRight from './layout/HomeRight/index.vue'
 
-import BlogHomeBanner from './components/BlogHomeBanner.vue'
+import HomeBanner from './components/HomeBanner.vue'
 import BlogList from './components/BlogList.vue'
 import BlogSidebar from './components/BlogSidebar.vue'
 import BlogImagePreview from './components/BlogImagePreview.vue'
 import BlogArticleAnalyze from './components/BlogArticleAnalyze.vue'
 
-import BlogHomeHeaderAvatar from './components/BlogHomeHeaderAvatar.vue'
+import HomeHeaderAvatar from './components/HomeHeaderAvatar.vue'
 import BlogBackToTop from './components/BlogBackToTop.vue'
 import CommentGiscus from './components/CommentGiscus.vue'
 
@@ -54,9 +54,9 @@ useDarkTransition()
     <template v-if="isBlogTheme" #home-hero-before>
       <slot name="home-hero-before" />
       <div class="home">
-        <BlogHomeHeaderAvatar />
+        <HomeHeaderAvatar />
         <div class="header-banner">
-          <BlogHomeBanner />
+          <HomeBanner />
         </div>
         <div class="content-wrapper">
           <div class="blog-list-wrapper">

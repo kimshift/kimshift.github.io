@@ -5,7 +5,7 @@ import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
 const _footer = computed(() => {
   const { theme } = useData()
-  const { author, startYear, footer } = theme.value || {}
+  const { author, startYear, footer } = theme.value
 
   if (!footer) return
   const { icpRecord, copyright, message } = footer

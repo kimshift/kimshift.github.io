@@ -5,14 +5,12 @@ import { computed } from 'vue'
 const { frontmatter, site, theme } = useData()
 const author = computed(() =>
   frontmatter.value.author
-  ?? frontmatter.value.blog?.author
   ?? theme.value.author
   ?? site.value.themeConfig?.blog?.author
 )
 const logo = computed(() =>
   frontmatter.value.logo
-  ?? frontmatter.value.blog?.logo
-  ?? theme.value.avatar
+  ?? theme.value.home?.avatar
   ?? site.value.themeConfig.logo
 )
 const show = computed(() => author.value || logo.value)

@@ -5,13 +5,11 @@ import { useData, useRoute, useRouter } from 'vitepress'
 import {
   useActiveTag,
   useArticles,
-  useBlogConfig,
   useCurrentPageNum
 } from '../config'
 import BlogItem from './BlogItem.vue'
 
-const { theme, frontmatter } = useData()
-console.log('测试theme.value:', theme.value)
+const { theme } = useData()
 const globalAuthor = computed(() => theme.value.author || '佚名')
 const docs = useArticles()
 
@@ -41,9 +39,8 @@ const filterData = computed(() => {
   )
 })
 
-const { home } = useBlogConfig()
 const pageSize = computed(
-  () => frontmatter.value.blog?.pageSize ?? home?.pageSize ?? 10
+  () => theme.value.home?.pageSize ?? home?.pageSize ?? 10
 )
 const currentPage = useCurrentPageNum()
 const currentWikiData = computed(() => {
@@ -51,8 +48,6 @@ const currentWikiData = computed(() => {
   const endIdx = startIdx + pageSize.value
   return filterData.value.slice(startIdx, endIdx)
 })
-
-console.log('测试currentWikiData:', currentWikiData)
 
 const router = useRouter()
 const queryPageNumKey = 'pageNum'
