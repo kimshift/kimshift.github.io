@@ -2,10 +2,6 @@
 layout: home
 # 首页部分元素定制
 blog:
-  author: 琴时
-  logo: /img/avatar.png
-  # avatarMode: split
-  # minScreenAvatar: false
   name: 记事录
   motto: 记得要奔走在自己的热爱里🌹
   inspiring:

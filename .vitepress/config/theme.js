@@ -14,6 +14,8 @@ export default {
   lastUpdatedText: '上次更新于',
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
+  avatar: '/img/avatar.png', //首页头像
+  avatarMode: 'card',
   author: 'kimshift', // 文章默认作者
   startYear: '2021', //项目开始时间
   custom: true, // 自定义主题配置

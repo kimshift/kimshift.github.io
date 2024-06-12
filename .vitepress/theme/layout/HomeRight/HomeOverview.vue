@@ -1,16 +1,14 @@
-<script setup>
+<script setup name="统计数据">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { isCurrentWeek } from '../../utils/client'
-import { useArticles, useBlogConfig } from '../../config'
+import { useArticles } from '../../config'
 import Author from './Author.vue'
 
-const { home } = useBlogConfig()
-const { frontmatter } = useData()
-const avatarMode = computed(() => frontmatter.value?.blog?.avatarMode || home?.avatarMode || 'card')
+const { frontmatter, theme } = useData()
+const avatarMode = computed(() => frontmatter.value.blog?.avatarMode || theme.value.avatarMode || 'card')
 
 const showCardAvatar = computed(() => avatarMode.value === 'card')
-const showSplitCard = computed(() => avatarMode.value === 'split')
 
 const docs = useArticles()
 const notHiddenArticles = computed(() => {
@@ -35,7 +33,7 @@ const currentWeek = computed(() => {
 
 <template>
   <!-- 头像信息 -->
-  <Author v-if="showSplitCard" />
+  <Author v-if="!showCardAvatar" />
   <div class="card">
     <Author v-if="showCardAvatar" />
     <div class="overview-data">

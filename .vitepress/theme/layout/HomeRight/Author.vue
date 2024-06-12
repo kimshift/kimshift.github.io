@@ -1,20 +1,18 @@
-<script setup>
+<script setup name="作者信息">
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
-import { useBlogConfig } from '../../config'
 
-const { home } = useBlogConfig()
-const { frontmatter, site } = useData()
+const { frontmatter, site, theme } = useData()
 const author = computed(() =>
   frontmatter.value.author
-  ?? frontmatter.value?.blog?.author
-  ?? home?.author
+  ?? frontmatter.value.blog?.author
+  ?? theme.value.author
   ?? site.value.themeConfig?.blog?.author
 )
 const logo = computed(() =>
   frontmatter.value.logo
-  ?? frontmatter.value?.blog?.logo
-  ?? home?.logo
+  ?? frontmatter.value.blog?.logo
+  ?? theme.value.avatar
   ?? site.value.themeConfig.logo
 )
 const show = computed(() => author.value || logo.value)
