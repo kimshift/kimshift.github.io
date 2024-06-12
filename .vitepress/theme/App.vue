@@ -14,7 +14,7 @@ import BlogImagePreview from './components/BlogImagePreview.vue'
 import BlogArticleAnalyze from './components/BlogArticleAnalyze.vue'
 
 import HomeHeaderAvatar from './components/HomeHeaderAvatar.vue'
-import BlogBackToTop from './components/BlogBackToTop.vue'
+import BackToTop from './components/BackToTop.vue'
 import CommentGiscus from './components/CommentGiscus.vue'
 
 import CommentArTalk from './components/CommentArTalk.vue'
@@ -77,7 +77,7 @@ useDarkTransition()
       <!-- 评论 -->
       <ClientOnly>
         <BlogButtonAfterArticle />
-        <BlogBackToTop />
+        <BackToTop />
         <BlogCommentWrapper>
           <CommentArTalk />
           <CommentGiscus />

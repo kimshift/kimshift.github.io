@@ -1,12 +1,14 @@
-<script setup>
+<script setup name="返回顶部组件">
 import { useElementSize, useScroll } from '@vueuse/core'
 import { ElIcon } from 'element-plus'
 import { computed, ref } from 'vue'
+import { useData } from 'vitepress';
 import { vOuterHtml } from '../directives'
-import { useBackToTopConfig } from '../config'
 
+const { theme } = useData()
+const { backToTopConfig } = theme.value
 function handleBackRoTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: backToTopConfig.behavior ?? 'smooth' })
 }
 
 const $vpDoc = document.querySelector('.vp-doc')
@@ -14,15 +16,13 @@ const el = ref($vpDoc)
 const { width } = useElementSize(el)
 const docWidth = computed(() => `${width.value}px`)
 
-const backToTopConfig = useBackToTopConfig()
 const open = computed(() => !!(backToTopConfig ?? true))
 
 const { y } = useScroll(window)
 const defaultTriggerHeight = 450
-const triggerTop = computed(() => (typeof backToTopConfig === 'boolean' ? undefined : backToTopConfig?.top) ?? defaultTriggerHeight)
+const triggerTop = computed(() => backToTopConfig?.top ?? defaultTriggerHeight)
 
 const show = computed(() => width && y.value > triggerTop.value)
-
 const iconSVGStr = computed(() => typeof backToTopConfig === 'boolean' ? '' : backToTopConfig?.icon)
 </script>
 

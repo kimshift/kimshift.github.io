@@ -104,6 +104,10 @@ export default {
       '生活的真谛不在繁华，而在于淡泊',
     ],
   },
+  backToTopConfig: {
+    behavior: 'smooth', //'smooth'平滑滚动，'auto'瞬间滚动
+    top: 300, //距离顶部多少距离时显示
+  },
 }
 
 // 主题配置参数
