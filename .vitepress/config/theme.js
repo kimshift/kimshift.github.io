@@ -15,6 +15,7 @@ export default {
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
   author: 'kimshift', // 文章默认作者
+  custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
   article: {
     readingTimePosition: '', //阅读时间位置
@@ -25,7 +26,7 @@ export default {
 
 // 主题配置参数
 export const blogTheme = getThemeConfig({
-  blog: false,
+  blog: true,
   authorList: [
     {
       nickname: '粥里有勺糖',

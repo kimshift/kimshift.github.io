@@ -6,7 +6,6 @@ import { nextTick, provide } from 'vue'
  * @author: 琴时
  */
 export function useDarkTransition() {
-  console.log('测试useDarkTransition:')
   const { theme, isDark } = useData()
   if (theme.value?.darkTransition === false) return
   const enableTransitions = () =>

@@ -84,10 +84,6 @@ export function useBlogConfig() {
   return inject(configSymbol)?.value.blog
 }
 
-export function useBlogThemeMode() {
-  return inject(configSymbol)?.value?.blog?.blog ?? true
-}
-
 export function useArticles() {
   const blogConfig = useConfig()
   // console.log('测试blogConfig:', blogConfig)

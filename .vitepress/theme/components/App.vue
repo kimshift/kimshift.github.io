@@ -3,7 +3,6 @@ import Theme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import { computed, onMounted } from 'vue'
 import { useDarkTransition } from '../hooks/useDarkTransition'
-import { useBlogThemeMode } from '../config'
 import BlogHomeInfo from './BlogHomeInfo.vue'
 import BlogHomeBanner from './BlogHomeBanner.vue'
 import BlogList from './BlogList.vue'
@@ -22,9 +21,8 @@ import BlogCommentWrapper from './BlogCommentWrapper.vue'
 const { theme, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout)
 const openTransition = computed(() => theme.value.darkTransition ?? true)
-const isBlogTheme = useBlogThemeMode()
+const isBlogTheme = computed(() => theme.value.custom ?? true)
 const { Layout } = Theme
-
 // 切换深色模式过渡
 // https://vitepress.dev/zh/guide/extending-default-theme#on-appearance-toggle
 onMounted(() => {
