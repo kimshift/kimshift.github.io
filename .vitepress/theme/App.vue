@@ -1,22 +1,25 @@
 <script setup name="入口文件">
 import Theme from 'vitepress/theme'
 import { useData } from 'vitepress'
-import { computed, onMounted } from 'vue'
-import { useDarkTransition } from '../hooks/useDarkTransition'
-import RightHomeInfo from './RightHomeInfo.vue'
-import BlogHomeBanner from './BlogHomeBanner.vue'
-import BlogList from './BlogList.vue'
-import BlogSidebar from './BlogSidebar.vue'
-import BlogImagePreview from './BlogImagePreview.vue'
-import BlogArticleAnalyze from './BlogArticleAnalyze.vue'
-import Footer from './Footer.vue'
-import BlogHomeHeaderAvatar from './BlogHomeHeaderAvatar.vue'
-import BlogBackToTop from './BlogBackToTop.vue'
-import CommentGiscus from './CommentGiscus.vue'
+import { computed } from 'vue'
+import { useDarkTransition } from './hooks/useDarkTransition'
 
-import CommentArTalk from './CommentArTalk.vue'
-import BlogButtonAfterArticle from './BlogButtonAfterArticle.vue'
-import BlogCommentWrapper from './BlogCommentWrapper.vue'
+import Footer from './layout/Footer.vue'
+import HomeRight from './layout/HomeRight/index.vue'
+
+import BlogHomeBanner from './components/BlogHomeBanner.vue'
+import BlogList from './components/BlogList.vue'
+import BlogSidebar from './components/BlogSidebar.vue'
+import BlogImagePreview from './components/BlogImagePreview.vue'
+import BlogArticleAnalyze from './components/BlogArticleAnalyze.vue'
+
+import BlogHomeHeaderAvatar from './components/BlogHomeHeaderAvatar.vue'
+import BlogBackToTop from './components/BlogBackToTop.vue'
+import CommentGiscus from './components/CommentGiscus.vue'
+
+import CommentArTalk from './components/CommentArTalk.vue'
+import BlogButtonAfterArticle from './components/BlogButtonAfterArticle.vue'
+import BlogCommentWrapper from './components/BlogCommentWrapper.vue'
 
 const { theme, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout)
@@ -25,10 +28,7 @@ const isBlogTheme = computed(() => theme.value.custom ?? true)
 const { Layout } = Theme
 // 切换深色模式过渡
 // https://vitepress.dev/zh/guide/extending-default-theme#on-appearance-toggle
-onMounted(() => {
-  useDarkTransition()
-})
-
+useDarkTransition()
 </script>
 
 <template>
@@ -63,7 +63,7 @@ onMounted(() => {
             <BlogList />
           </div>
           <div class="blog-info-wrapper">
-            <RightHomeInfo />
+            <HomeRight />
           </div>
         </div>
       </div>
@@ -226,5 +226,5 @@ onMounted(() => {
 </style>
 
 <style>
-@import url(./../styles/dark-transition.css);
+@import url(./styles/dark-transition.css);
 </style>

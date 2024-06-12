@@ -2,9 +2,9 @@
 import { computed, onMounted, ref } from 'vue'
 import { ElButton } from 'element-plus'
 import { useData, useRouter, withBase } from 'vitepress'
-import { useArticles, useCleanUrls } from '../config'
-import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { fireSVG } from '../constants/svg'
+import { useArticles, useCleanUrls } from '../../config'
+import { formatShowDate, wrapperCleanUrls } from '../../utils/client'
+import { fireSVG } from '../../constants/svg'
 const { theme } = useData()
 
 const title = ref('')

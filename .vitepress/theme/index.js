@@ -1,7 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import DefaultTheme from 'vitepress/theme'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
-import App from './components/App.vue'
+import App from './App.vue'
 import { withConfigProvider } from './config'
 // 时间线组件
 import TimelinePage from './components/TimelinePage.vue'

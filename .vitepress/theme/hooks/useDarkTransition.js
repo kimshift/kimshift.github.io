@@ -7,7 +7,7 @@ import { nextTick, provide } from 'vue'
  */
 export function useDarkTransition() {
   const { theme, isDark } = useData()
-  if (theme.value?.darkTransition === false) return
+  if (theme.value.darkTransition === false) return
   const enableTransitions = () =>
     'startViewTransition' in document &&
     window.matchMedia('(prefers-reduced-motion: no-preference)').matches

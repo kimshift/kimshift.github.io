@@ -15,8 +15,10 @@ export default {
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
   author: 'kimshift', // 文章默认作者
+  startYear: '2021', //项目开始时间
   custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
+  homeTags: true, // 是否开启首页标签
   article: {
     readingTimePosition: '', //阅读时间位置
     readingTime: true, //是否显示阅读时间
@@ -71,6 +73,13 @@ export default {
     random: false, // 是否随机展示
     scrollSpeed: 2000, // 滚动速度
   },
+  footer: {
+    copyright: 'default',
+    icpRecord: {
+      name: '粤ICP备2021069222号',
+      link: 'https://beian.miit.gov.cn',
+    },
+  },
 }
 
 // 主题配置参数
@@ -104,7 +113,6 @@ export const blogTheme = getThemeConfig({
     },
   },
   author: '琴时', // 文章默认作者
-  startYear: '2021', //项目开始时间
   comment: {
     type: 'giscus',
     options: {
@@ -120,12 +128,5 @@ export const blogTheme = getThemeConfig({
     closeTitle: '下次一定',
     content: '<img src="https://img.cdn.sugarat.top/mdImg/MTY0Nzc1NTYyOTE5Mw==647755629193">',
     icon: 'wechatPay',
-  },
-  footer: {
-    copyright: 'default',
-    icpRecord: {
-      name: '粤ICP备2021069222号',
-      link: 'https://beian.miit.gov.cn',
-    },
   },
 })

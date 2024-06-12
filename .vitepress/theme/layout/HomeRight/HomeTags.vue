@@ -2,17 +2,19 @@
 import { computed, watch } from 'vue'
 import { ElTag } from 'element-plus'
 import { useBrowserLocation, useDark, useUrlSearchParams } from '@vueuse/core'
-import { useRoute, useRouter } from 'vitepress'
+import { useData, useRoute, useRouter } from 'vitepress'
 import {
   useActiveTag,
   useArticles,
-  useConfig,
   useCurrentPageNum,
-} from '../config'
+} from '../../config'
 
 const route = useRoute()
 const docs = useArticles()
-const showTags = useConfig()?.config?.blog?.homeTags ?? true
+const { theme } = useData()
+const showTags = computed(() => {
+  return theme.value.homeTags ?? true
+})
 const tags = computed(() => {
   return [...new Set(docs.value.map(v => v.meta.tag || []).flat(3))]
 })

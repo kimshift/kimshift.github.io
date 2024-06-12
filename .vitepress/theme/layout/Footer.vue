@@ -1,14 +1,19 @@
 <script setup name="页脚">
 import { computed } from 'vue'
+import { useData } from 'vitepress'
 import { useBlogConfig } from '../config'
 import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
 const _footer = computed(() => {
   const blogConfig = useBlogConfig()
-  const { author, startYear, footer } = blogConfig || {}
+  const { theme } = useData()
+  console.log('测试theme:', theme.value)
+  console.log('测试:', blogConfig)
+  const { author, startYear, footer } = theme.value || {}
 
   if (!footer) return
   const { icpRecord, copyright, message } = footer
+  console.log('测试copyright:', copyright)
   const list = []
   // copyright
   if (copyright === 'default') {
@@ -43,6 +48,7 @@ const _footer = computed(() => {
     message,
   }
 })
+console.log('测试_footer:', _footer)
 </script>
 
 <template>

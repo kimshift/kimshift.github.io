@@ -1,14 +1,14 @@
 <script setup name="右侧栏目">
-import BlogHomeOverview from './BlogHomeOverview.vue'
+import HomeOverview from './HomeOverview.vue'
 import HotArticle from './HotArticle.vue'
-import BlogHomeTags from './BlogHomeTags.vue'
+import HomeTags from './HomeTags.vue'
 import FriendLink from './FriendLink.vue'
 </script>
 
 <template>
   <div class="blog-info" data-pagefind-ignore="all">
     <!-- 统计数据 -->
-    <BlogHomeOverview />
+    <HomeOverview />
 
     <!-- 精选文章 -->
     <HotArticle />
@@ -19,7 +19,7 @@ import FriendLink from './FriendLink.vue'
     </ClientOnly>
 
     <!-- 标签 -->
-    <BlogHomeTags />
+    <HomeTags />
   </div>
 </template>
 

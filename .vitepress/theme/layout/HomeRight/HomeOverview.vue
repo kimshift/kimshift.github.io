@@ -1,9 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
-import { isCurrentWeek } from '../utils/client'
-import { useArticles, useBlogConfig } from '../config'
-import BlogAuthor from './BlogAuthor.vue'
+import { isCurrentWeek } from '../../utils/client'
+import { useArticles, useBlogConfig } from '../../config'
+import Author from './Author.vue'
 
 const { home } = useBlogConfig()
 const { frontmatter } = useData()
@@ -35,9 +35,9 @@ const currentWeek = computed(() => {
 
 <template>
   <!-- 头像信息 -->
-  <BlogAuthor v-if="showSplitCard" />
+  <Author v-if="showSplitCard" />
   <div class="card">
-    <BlogAuthor v-if="showCardAvatar" />
+    <Author v-if="showCardAvatar" />
     <div class="overview-data">
       <div class="overview-item">
         <span class="count">{{ notHiddenArticles.length }}</span>

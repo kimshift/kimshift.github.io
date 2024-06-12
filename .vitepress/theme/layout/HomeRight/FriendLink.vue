@@ -4,7 +4,7 @@ import { useDark, useIntervalFn } from '@vueuse/core'
 import { useData } from 'vitepress'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import Swiper from 'swiper'
-import { getImageUrl, shuffleArray } from '../utils/client'
+import { getImageUrl, shuffleArray } from '../../utils/client'
 
 const isDark = useDark({
   storageKey: 'vitepress-theme-appearance'
