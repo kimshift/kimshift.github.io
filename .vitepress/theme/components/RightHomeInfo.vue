@@ -2,7 +2,7 @@
 import BlogHomeOverview from './BlogHomeOverview.vue'
 import HotArticle from './HotArticle.vue'
 import BlogHomeTags from './BlogHomeTags.vue'
-import BlogFriendLink from './BlogFriendLink.vue'
+import FriendLink from './FriendLink.vue'
 </script>
 
 <template>
@@ -10,12 +10,12 @@ import BlogFriendLink from './BlogFriendLink.vue'
     <!-- 统计数据 -->
     <BlogHomeOverview />
 
-    <!-- 精选(置顶)文章 -->
+    <!-- 精选文章 -->
     <HotArticle />
 
     <!-- 友链 -->
     <ClientOnly>
-      <BlogFriendLink />
+      <FriendLink />
     </ClientOnly>
 
     <!-- 标签 -->

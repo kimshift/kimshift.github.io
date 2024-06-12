@@ -28,11 +28,53 @@ export default {
     pageSize: 5,
     empty: '暂无精选内容',
   },
+  friend: {
+    list: [
+      {
+        nickname: 'Vitepress',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        url: 'https://vitepress.dev/',
+      },
+      {
+        nickname: 'Vitepress2',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        url: 'https://vitepress.dev/',
+      },
+      {
+        nickname: 'Vitepress3',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        url: 'https://vitepress.dev/',
+      },
+      {
+        nickname: 'Vitepress4',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        url: 'https://vitepress.dev/',
+      },
+      {
+        nickname: 'Vitepress5',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        url: 'https://vitepress.dev/',
+      },
+      {
+        nickname: 'Vitepress6',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        url: 'https://vitepress.dev/',
+      },
+    ],
+    limit: 3, // 展示数量
+    random: false, // 是否随机展示
+    scrollSpeed: 2000, // 滚动速度
+  },
 }
 
 // 主题配置参数
 export const blogTheme = getThemeConfig({
-  blog: true,
   authorList: [
     {
       nickname: '粥里有勺糖',
@@ -61,14 +103,6 @@ export const blogTheme = getThemeConfig({
       return +new Date(b.meta.date) - +new Date(a.meta.date)
     },
   },
-  friend: [
-    {
-      nickname: 'Vitepress',
-      des: 'Vite & Vue Powered Static Site Generator',
-      avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-      url: 'https://vitepress.dev/',
-    },
-  ],
   author: '琴时', // 文章默认作者
   startYear: '2021', //项目开始时间
   comment: {

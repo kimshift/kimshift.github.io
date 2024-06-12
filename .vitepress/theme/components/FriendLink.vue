@@ -1,16 +1,16 @@
-<script setup>
+<script setup name="友情链接">
 import { ElAvatar } from 'element-plus'
 import { useDark, useIntervalFn } from '@vueuse/core'
+import { useData } from 'vitepress'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import Swiper from 'swiper'
-import { useBlogConfig } from '../config'
 import { getImageUrl, shuffleArray } from '../utils/client'
 
 const isDark = useDark({
   storageKey: 'vitepress-theme-appearance'
 })
-
-const { friend } = useBlogConfig()
+const { theme } = useData()
+const { friend } = theme.value
 const friendConfig = computed(() => ({
   list: [],
   random: false,
