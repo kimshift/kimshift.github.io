@@ -3,7 +3,7 @@ import Theme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import { computed, onMounted } from 'vue'
 import { useDarkTransition } from '../hooks/useDarkTransition'
-import BlogHomeInfo from './BlogHomeInfo.vue'
+import RightHomeInfo from './RightHomeInfo.vue'
 import BlogHomeBanner from './BlogHomeBanner.vue'
 import BlogList from './BlogList.vue'
 import BlogSidebar from './BlogSidebar.vue'
@@ -63,7 +63,7 @@ onMounted(() => {
             <BlogList />
           </div>
           <div class="blog-info-wrapper">
-            <BlogHomeInfo />
+            <RightHomeInfo />
           </div>
         </div>
       </div>

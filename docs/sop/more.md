@@ -1,6 +1,5 @@
 ---
 title: 更多能力
-top: 3
 cover: https://img.cdn.sugarat.top/mdImg/MTY4OTQyMDE1NTcxMA==689420155710
 tags:
   - 主题

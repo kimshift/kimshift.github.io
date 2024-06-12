@@ -1,27 +1,36 @@
-<script setup>
-import { computed, ref } from 'vue'
+<script setup name="精选文章">
+import { computed, onMounted, ref } from 'vue'
 import { ElButton } from 'element-plus'
-import { useRouter, withBase } from 'vitepress'
-import { useArticles, useBlogConfig, useCleanUrls } from '../config'
+import { useData, useRouter, withBase } from 'vitepress'
+import { useArticles, useCleanUrls } from '../config'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
 import { fireSVG } from '../constants/svg'
+const { theme } = useData()
 
-const { hotArticle: _hotArticle } = useBlogConfig()
+const title = ref('')
+const nextText = ref('')
+const pageSize = ref(0)
+const empty = ref('')
 
-const hotArticle = computed(() =>
-  _hotArticle === false ? undefined : _hotArticle
-)
+onMounted(() => {
+  const { hotArticle = {} } = theme.value
+  title.value = hotArticle.title || '精选文章'
+  nextText.value = hotArticle.nextText || '换一组'
+  pageSize.value = hotArticle.pageSize || 10
+  empty.value = hotArticle.empty || '暂无精选内容'
+})
 
-const title = computed(() => hotArticle.value?.title || (`<span class="svg-icon">${fireSVG}</span>` + ' 精选文章'))
-const nextText = computed(() => hotArticle.value?.nextText || '换一组')
-const pageSize = computed(() => hotArticle.value?.pageSize || 9)
-const empty = computed(() => hotArticle.value?.empty ?? '暂无精选内容')
 
 const docs = useArticles()
-
+// 获取精选文章-排序
 const recommendList = computed(() => {
-  const data = docs.value.filter(v => v.meta.sticky)
-  data.sort((a, b) => b.meta.sticky - a.meta.sticky)
+  const data = docs.value.filter(v => v.meta.hot)
+  data.sort((a, b) => {
+    if (a.meta.hot === b.meta.hot) {
+      return new Date(b.meta.date) - new Date(a.meta.date);
+    }
+    return a.meta.hot - b.meta.hot
+  })
   return [...data]
 })
 
@@ -57,7 +66,10 @@ const showChangeBtn = computed(() => {
     data-pagefind-ignore="all">
     <!-- 头部 -->
     <div class="card-header">
-      <span class="title" v-html="title" />
+      <div class="title">
+        <span class="svg-icon" v-html="fireSVG"></span>
+        {{ title }}
+      </div>
       <ElButton v-if="showChangeBtn" size="small" type="primary" text @click="changePage">
         {{ nextText }}
       </ElButton>

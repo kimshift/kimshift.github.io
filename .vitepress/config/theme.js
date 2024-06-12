@@ -22,6 +22,12 @@ export default {
     readingTime: true, //是否显示阅读时间
     hiddenCover: false, //文章封面是否隐藏
   },
+  hotArticle: {
+    title: '精选文章',
+    nextText: '换一组',
+    pageSize: 5,
+    empty: '暂无精选内容',
+  },
 }
 
 // 主题配置参数

@@ -1,7 +1,5 @@
 ---
 sidebar: false
-top: 1
-sticky: 1
 ---
 
 ### 项目介绍

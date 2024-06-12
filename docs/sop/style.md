@@ -6,6 +6,7 @@ tag:
   - 配置
   - 样式
 recommend: 3
+hot: 1
 ---
 
 # 样式配置

@@ -1,4 +1,5 @@
 ---
+hot: 1
 outline: deep
 ---
 

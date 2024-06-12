@@ -1,3 +1,4 @@
+// 火苗
 export const fireSVG = `
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
 <radialGradient id="notoFire0" cx="68.884" cy="124.296" r="70.587" gradientTransform="matrix(-1 -.00434 -.00713 1.6408 131.986 -79.345)" gradientUnits="userSpaceOnUse">
