@@ -21,6 +21,16 @@ export default {
   custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
   homeTags: true, // 是否开启首页标签
+  comment: {
+    type: 'giscus',
+    options: {
+      repo: 'ATQQ/sugar-blog',
+      repoId: 'MDEwOlJlcG9zaXRvcnkyNDEyNDUyOTk',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDODmEcc84COVc6',
+      inputPosition: 'top',
+    },
+  },
   article: {
     readingTimePosition: '', //阅读时间位置
     readingTime: true, //是否显示阅读时间
@@ -114,17 +124,6 @@ export const blogTheme = getThemeConfig({
       return +new Date(b.meta.date) - +new Date(a.meta.date)
     },
   },
-  author: '琴时', // 文章默认作者
-  comment: {
-    type: 'giscus',
-    options: {
-      repo: 'ATQQ/sugar-blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkyNDEyNDUyOTk',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDODmEcc84COVc6',
-      inputPosition: 'top',
-    },
-  }, // 评论
   buttonAfterArticle: {
     openTitle: '投"币"支持',
     closeTitle: '下次一定',

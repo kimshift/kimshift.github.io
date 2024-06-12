@@ -1,26 +1,22 @@
-<script setup>
+<script setup name="评论组件">
 import { useData, useRoute } from 'vitepress'
 import { computed, nextTick, ref, watch } from 'vue'
 import Giscus from '@giscus/vue'
-import { useBlogConfig } from '../config'
-
+const { isDark, theme } = useData()
 // 读取配制
-const { comment } = useBlogConfig()
+
 const commentConfig = computed(() => {
+  const { comment } = theme.value
   if (!comment) {
     return false
   }
-  if ('type' in comment && comment.type === 'giscus') {
+  if (!('type' in comment)) {
+    return comment
+  } else if (comment.type === 'giscus') {
     return comment.options
   }
-  else if (!('type' in comment)) {
-    return comment
-  }
-
   return false
 })
-
-const { isDark } = useData()
 
 const route = useRoute()
 const showComment = ref(false)

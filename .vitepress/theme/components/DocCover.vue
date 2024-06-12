@@ -1,17 +1,16 @@
 <script setup name="文章封面图">
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import { useBlogConfig, useCurrentArticle } from '../config'
+import { useCurrentArticle } from '../config'
 
-const { frontmatter } = useData()
+const { frontmatter, theme } = useData()
 const cover = computed(() => frontmatter.value.cover)
 
 const currentArticle = useCurrentArticle()
 const realCover = computed(() => import.meta.env.DEV ? cover.value : currentArticle.value?.meta?.cover)
 
-const { article } = useBlogConfig()
 const hiddenCover = computed(
-  () => frontmatter.value?.hiddenCover ?? article?.hiddenCover ?? false
+  () => frontmatter.value?.hiddenCover ?? theme.value.article?.hiddenCover ?? false
 )
 </script>
 

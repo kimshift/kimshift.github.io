@@ -1,14 +1,13 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
-import { useBlogConfig } from '../config'
 
-const { isDark, page } = useData()
+const { isDark, page, theme } = useData()
 const el = ref()
 const route = useRoute()
 const artalk = ref()
 
-const { comment } = useBlogConfig()
+const { comment } = theme.value
 const commentConfig = computed(() => {
   if (comment && 'type' in comment && comment.type === 'artalk') {
     return comment.options

@@ -11,13 +11,14 @@ const title = ref('')
 const nextText = ref('')
 const pageSize = ref(0)
 const empty = ref('')
-
+const showHot = ref(true)
 onMounted(() => {
   const { hotArticle = {} } = theme.value
   title.value = hotArticle.title || '精选文章'
   nextText.value = hotArticle.nextText || '换一组'
   pageSize.value = hotArticle.pageSize || 10
   empty.value = hotArticle.empty || '暂无精选内容'
+  showHot.value = theme.value.hotArticle ?? true
 })
 
 
@@ -62,8 +63,7 @@ const showChangeBtn = computed(() => {
 </script>
 
 <template>
-  <div v-if="_hotArticle !== false && (recommendList.length || empty)" class="card recommend"
-    data-pagefind-ignore="all">
+  <div v-if="showHot" class="card recommend" data-pagefind-ignore="all">
     <!-- 头部 -->
     <div class="card-header">
       <div class="title">
