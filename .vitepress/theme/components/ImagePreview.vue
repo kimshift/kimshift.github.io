@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="图片预览组件">
 import { ElImageViewer } from 'element-plus'
 import { onMounted, onUnmounted, reactive, ref } from 'vue'
 

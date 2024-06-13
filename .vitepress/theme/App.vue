@@ -10,7 +10,7 @@ import HomeRight from './layout/HomeRight/index.vue'
 import HomeBanner from './components/HomeBanner.vue'
 import BlogList from './components/BlogList.vue'
 import BlogSidebar from './components/BlogSidebar.vue'
-import BlogImagePreview from './components/BlogImagePreview.vue'
+import ImagePreview from './components/ImagePreview.vue'
 import ArticleAnalyze from './components/ArticleAnalyze.vue'
 
 import HomeHeaderAvatar from './components/HomeHeaderAvatar.vue'
@@ -43,7 +43,7 @@ useDarkTransition()
       <ClientOnly>
         <ArticleAnalyze />
         <!-- 图片预览 -->
-        <BlogImagePreview />
+        <ImagePreview />
       </ClientOnly>
     </template>
 
