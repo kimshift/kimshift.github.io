@@ -6,7 +6,7 @@ const { isDark, theme } = useData()
 // 读取配制
 
 const commentConfig = computed(() => {
-  const { comment } = theme.value
+  const { comment } = theme.value.blog
   if (!comment) {
     return false
   }

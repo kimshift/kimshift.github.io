@@ -1,6 +1,8 @@
 ---
 title: 更多能力
 cover: https://img.cdn.sugarat.top/mdImg/MTY4OTQyMDE1NTcxMA==689420155710
+categories:
+  - 其他
 tags:
   - 主题
   - 配置

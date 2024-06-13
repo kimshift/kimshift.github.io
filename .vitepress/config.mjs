@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 import headConf from './config/head'
 import themeConf, { blogTheme } from './config/theme'
 export default defineConfig({
+  base: '/',
+  srcDir: 'docs',
   extends: blogTheme,
   lang: 'zh-CN',
   title: 'KimShift 空间',

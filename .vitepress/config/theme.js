@@ -18,20 +18,12 @@ export default {
   startYear: '2021', //项目开始时间
   custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
-  comment: {
-    type: 'giscus',
-    options: {
-      repo: 'ATQQ/sugar-blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkyNDEyNDUyOTk',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDODmEcc84COVc6',
-      inputPosition: 'top',
-    },
-  },
   article: {
-    readingTimePosition: '', //阅读时间位置
+    readingTimePosition: 'inline', //阅读时间位置
     readingTime: true, //是否显示阅读时间
     hiddenCover: false, //文章封面是否隐藏
+    docMetaInsertSelector: 'h1', //文章标题标签
+    docMetaInsertPosition: 'after', //文章标题插入位置
   },
   hotArticle: {
     title: '精选文章',
@@ -108,10 +100,6 @@ export default {
     behavior: 'smooth', //'smooth'平滑滚动，'auto'瞬间滚动
     top: 300, //距离顶部多少距离时显示
   },
-}
-
-// 主题配置参数
-export const blogTheme = getThemeConfig({
   authorList: [
     {
       nickname: '粥里有勺糖',
@@ -124,16 +112,21 @@ export const blogTheme = getThemeConfig({
       des: '你的指尖,拥有改变世界的力量',
     },
     {
-      nickname: '粥里有勺糖',
+      nickname: 'kimshift',
       url: 'https://sugarat.top/aboutme.html',
       des: '你的指尖,拥有改变世界的力量',
     },
     {
-      nickname: '粥里有勺糖',
+      nickname: '琴时',
       url: 'https://sugarat.top/aboutme.html',
       des: '你的指尖,拥有改变世界的力量',
     },
-  ],
+  ], //转载作者列表
+}
+
+// 自定义主题配置参数
+export const blogTheme = getThemeConfig({
+  srcDir: './docs', //检索docs目录下的文档
   recommend: {
     nextText: '下一页',
     sort(a, b) {
@@ -145,5 +138,15 @@ export const blogTheme = getThemeConfig({
     closeTitle: '下次一定',
     content: '<img src="https://img.cdn.sugarat.top/mdImg/MTY0Nzc1NTYyOTE5Mw==647755629193">',
     icon: 'wechatPay',
+  },
+  comment: {
+    type: 'giscus',
+    options: {
+      repo: 'ATQQ/sugar-blog',
+      repoId: 'MDEwOlJlcG9zaXRvcnkyNDEyNDUyOTk',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDODmEcc84COVc6',
+      inputPosition: 'top',
+    },
   },
 })

@@ -7,8 +7,8 @@ const el = ref()
 const route = useRoute()
 const artalk = ref()
 
-const { comment } = theme.value
 const commentConfig = computed(() => {
+  const { comment } = theme.value.blog
   if (comment && 'type' in comment && comment.type === 'artalk') {
     return comment.options
   }

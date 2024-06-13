@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="文章分析组件">
 // 阅读时间计算方式参考
 // https://zhuanlan.zhihu.com/p/36375802
 import { useData, useRoute } from 'vitepress'
@@ -11,29 +11,13 @@ import {
   EditPen,
   UserFilled
 } from '@element-plus/icons-vue'
-import { useBlogConfig, useCurrentArticle, useDocMetaInsertPosition, useDocMetaInsertSelector } from '../config'
+import { useCurrentArticle } from '../config'
 import countWord, { formatShowDate } from '../utils/client'
 import DocCover from './DocCover.vue'
+const { frontmatter, theme } = useData()
+const { article, authorList } = theme.value
 
-const { article, authorList } = useBlogConfig()
-const readingTimePosition = article?.readingTimePosition || 'inline'
-console.log('测试readingTimePosition:', article, readingTimePosition)
-const { frontmatter } = useData()
-const tags = computed(() => {
-  const { tag, tags, categories } = frontmatter.value
-  return [
-    ...new Set(
-      []
-        .concat(tag, tags, categories)
-        .flat()
-        .filter(v => !!v)
-    )
-  ]
-})
-const showAnalyze = computed(
-  () => frontmatter.value?.readingTime ?? article?.readingTime ?? true
-)
-console.log('测试showAnalyze:', frontmatter.value, showAnalyze.value)
+const $des = ref()
 const wordCount = ref(0)
 const imageCount = ref(0)
 const wordTime = computed(() => {
@@ -49,15 +33,44 @@ const imageTime = computed(() => {
   return 175 + (n - 10) * 3
 })
 
+// 计算阅读时间
 const readTime = computed(() => {
   return Math.ceil((wordTime.value + imageTime.value) / 60)
 })
 
-const docMetaInsertSelector = useDocMetaInsertSelector()
-const docMetaInsertPosition = useDocMetaInsertPosition()
+// 获取标签
+const tags = computed(() => {
+  const { tag, tags, categories } = frontmatter.value
+  return [
+    ...new Set(
+      []
+        .concat(tag, tags, categories)
+        .flat()
+        .filter(v => !!v)
+    )
+  ]
+})
+
+const readingTimePosition = computed(() => article?.readingTimePosition ?? 'inline')
+
+const showAnalyze = computed(
+  () => frontmatter.value?.readingTime ?? article?.readingTime ?? true
+)
+
+const docMetaInsertSelector = computed(
+  () =>
+    frontmatter.value?.docMetaInsertSelector ||
+    article?.docMetaInsertSelector ||
+    'h1'
+)
+const docMetaInsertPosition = computed(
+  () =>
+    frontmatter.value?.docMetaInsertPosition ||
+    article?.docMetaInsertPosition ||
+    'after'
+)
 
 const route = useRoute()
-const $des = ref()
 
 function analyze() {
   if (!$des.value) {
@@ -111,13 +124,10 @@ const timeTitle = computed(() =>
   frontmatter.value.date ? '发布时间' : '最近修改时间'
 )
 const hiddenTime = computed(() => frontmatter.value.date === false)
-
-const { theme } = useData()
-const globalAuthor = computed(() => theme.value.blog?.author || '')
 const author = computed(
   () =>
     (frontmatter.value.author || currentArticle.value?.meta.author)
-    ?? globalAuthor.value
+    ?? theme.value.author ?? ''
 )
 const currentAuthorInfo = computed(() =>
   authorList?.find(v => author.value === v.nickname)

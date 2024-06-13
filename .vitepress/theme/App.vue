@@ -11,7 +11,7 @@ import HomeBanner from './components/HomeBanner.vue'
 import BlogList from './components/BlogList.vue'
 import BlogSidebar from './components/BlogSidebar.vue'
 import BlogImagePreview from './components/BlogImagePreview.vue'
-import BlogArticleAnalyze from './components/BlogArticleAnalyze.vue'
+import ArticleAnalyze from './components/ArticleAnalyze.vue'
 
 import HomeHeaderAvatar from './components/HomeHeaderAvatar.vue'
 import BackToTop from './components/BackToTop.vue'
@@ -41,7 +41,7 @@ useDarkTransition()
       <slot name="doc-before" />
       <!-- 阅读时间分析 -->
       <ClientOnly>
-        <BlogArticleAnalyze />
+        <ArticleAnalyze />
         <!-- 图片预览 -->
         <BlogImagePreview />
       </ClientOnly>

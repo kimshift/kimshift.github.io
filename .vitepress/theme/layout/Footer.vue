@@ -43,7 +43,6 @@ const _footer = computed(() => {
     message,
   }
 })
-console.log('测试_footer:', _footer)
 </script>
 
 <template>

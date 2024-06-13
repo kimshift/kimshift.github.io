@@ -22,6 +22,7 @@ export function withConfigProvider(App) {
     setup(_, { slots }) {
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
+      console.log('测试config:', config)
       provide(configSymbol, config)
 
       const activeTag = ref({
@@ -51,27 +52,6 @@ export function withConfigProvider(App) {
       return () => h(App, null, slots)
     },
   })
-}
-export function useDocMetaInsertSelector() {
-  const blogConfig = useConfig()
-  const { frontmatter } = useData()
-  return computed(
-    () =>
-      frontmatter.value?.docMetaInsertSelector ||
-      blogConfig.config?.blog?.docMetaInsertSelector ||
-      'h1'
-  )
-}
-
-export function useDocMetaInsertPosition() {
-  const blogConfig = useConfig()
-  const { frontmatter } = useData()
-  return computed(
-    () =>
-      frontmatter.value?.docMetaInsertPosition ||
-      blogConfig.config?.blog?.docMetaInsertPosition ||
-      'after'
-  )
 }
 
 export function useConfig() {
@@ -105,6 +85,9 @@ export function useCurrentPageNum() {
  */
 export function useCurrentArticle() {
   const blogConfig = useConfig()
+  console.log('测试blogConfig:', blogConfig)
+  const { theme } = useData()
+  console.log('测theme试:', theme)
   const route = useRoute()
   const docs = computed(() => blogConfig.config?.blog?.pagesData)
   const currentArticle = computed(() => {
@@ -186,10 +169,6 @@ export function useAutoUpdateAnchor() {
 
   // 返回当前锚点的响应式对象
   return currentAnchor
-}
-
-export function useBackToTopConfig() {
-  return useBlogConfig().backToTop
 }
 
 export function useCleanUrls() {
