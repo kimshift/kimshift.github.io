@@ -217,20 +217,27 @@ span.svg-icon {
   }
 }
 
-// .VPNavScreenAppearance.appearance {
-//   .text {
-//     opacity: 0;
-//     &::before {
-//       content: '主题';
-//     }
-//   }
-// }
+.VPNavScreenAppearance.appearance {
+  .text {
+    color: #f6f6f7;
+    &::before {
+      color: var(--vp-c-text-2);
+      content: '主题';
+    }
+  }
+}
 
 .vp-doc {
   .copy.copied {
     &::before {
       content: '复制成功' !important;
     }
+  }
+}
+
+.VPDocFooter {
+  .edit-info {
+    justify-content: flex-end;
   }
 }
 

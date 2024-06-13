@@ -6,10 +6,10 @@ export default {
     { text: '首页', link: '/' },
     { text: '例子', link: '/markdown-examples' },
   ], //导航栏
-  editLink: {
-    pattern: 'https://github.com/kimshift/<repo>/tree/master/packages/theme/docs/:path',
-    text: '去 GitHub 上编辑内容',
-  },
+  // editLink: {
+  //   pattern: 'https://github.com/kimshift/<repo>/tree/master/packages/theme/docs/:path',
+  //   text: '去 GitHub 上编辑内容',
+  // },
   socialLinks: [{ icon: 'github', link: 'https://github.com/kimshift' }],
   outline: [2, 3], //自动生成大纲
   lastUpdatedText: '上次更新于',
@@ -25,13 +25,13 @@ export default {
     hiddenCover: false, //文章封面是否隐藏
     docMetaInsertSelector: 'h1', //文章标题标签
     docMetaInsertPosition: 'after', //文章标题插入位置
-  },
+  }, // 文章详情配置
   hotArticle: {
     title: '精选文章',
     nextText: '换一组',
     pageSize: 5,
     empty: '暂无精选内容',
-  },
+  }, //精选文章配置
   friend: {
     list: [
       {
@@ -74,14 +74,14 @@ export default {
     limit: 3, // 展示数量
     random: false, // 是否随机展示
     scrollSpeed: 2000, // 滚动速度
-  },
+  }, //友情链接配置
   footer: {
     copyright: 'default',
     icpRecord: {
       name: '粤ICP备2021069222号',
       link: 'https://beian.miit.gov.cn',
     },
-  },
+  }, // 底部配置
   home: {
     title: '记事录',
     homeTags: true, // 是否开启首页标签
@@ -96,11 +96,11 @@ export default {
       '无论多么沉重的负担，也不要忘记微笑；无论多么漫长的路程，也不要忘记坚持',
       '生活的真谛不在繁华，而在于淡泊',
     ],
-  },
+  }, // 首页配置
   backToTopConfig: {
     behavior: 'smooth', //'smooth'平滑滚动，'auto'瞬间滚动
     top: 300, //距离顶部多少距离时显示
-  },
+  }, // 返回顶部配置
   authorList: [
     {
       nickname: '粥里有勺糖',
