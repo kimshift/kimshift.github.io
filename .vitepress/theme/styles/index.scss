@@ -102,9 +102,33 @@ html.dark {
 
 // sidebar
 @media (min-width: 1440px) {
-  aside.VPSidebar {
-    padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 16px)) / 2)) !important;
-    padding-right: 10px !important;
+  // aside.VPSidebar {
+  //   padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 16px)) / 2)) !important;
+  //   padding-right: 10px !important;
+  // }
+}
+
+@media (min-width: 1500px) {
+  :root {
+    --vp-layout-max-width: 1500px;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --vp-layout-max-width: 1600px;
+  }
+}
+
+@media (min-width: 1700px) {
+  :root {
+    --vp-layout-max-width: 1700px;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --vp-layout-max-width: 1800px;
   }
 }
 
