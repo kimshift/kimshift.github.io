@@ -4,7 +4,7 @@ export default {
   logo: '/favicon.ico',
   nav: [
     { text: '首页', link: '/' },
-    { text: '例子', link: '/docs/markdown-examples' },
+    { text: '例子', link: '/markdown-examples' },
   ], //导航栏
   editLink: {
     pattern: 'https://github.com/kimshift/<repo>/tree/master/packages/theme/docs/:path',
@@ -122,6 +122,12 @@ export default {
       des: '你的指尖,拥有改变世界的力量',
     },
   ], //转载作者列表
+  buttonAfterArticle: {
+    openTitle: '投"币"支持',
+    closeTitle: '下次一定',
+    content: '<img src="/img/wechat_pay.jpg">',
+    icon: 'wechat',
+  }, // 文章底部按钮
 }
 
 // 自定义主题配置参数
@@ -132,12 +138,6 @@ export const blogTheme = getThemeConfig({
     sort(a, b) {
       return +new Date(b.meta.date) - +new Date(a.meta.date)
     },
-  },
-  buttonAfterArticle: {
-    openTitle: '投"币"支持',
-    closeTitle: '下次一定',
-    content: '<img src="https://img.cdn.sugarat.top/mdImg/MTY0Nzc1NTYyOTE5Mw==647755629193">',
-    icon: 'wechatPay',
   },
   comment: {
     type: 'giscus',

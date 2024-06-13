@@ -1,46 +1,43 @@
-<script setup>
+<script setup name="文档底部按钮">
 import { ElButton } from 'element-plus'
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
-import { useBlogConfig } from '../config'
 import { aliPaySVG, weChatPaySVG } from '../constants/svg'
 
-const { buttonAfterArticle: _buttonAfterArticle } = useBlogConfig()
-const { frontmatter } = useData()
-const frontmatterConfig = computed(() => frontmatter.value.buttonAfterArticle)
+const { frontmatter, theme } = useData()
 
+const frontmatterConfig = computed(() => frontmatter.value.buttonAfterArticle)
+const buttonAfterArticle = computed(() => theme.value.buttonAfterArticle)
 const buttonAfterArticleConfig = computed(() => {
-  if (frontmatterConfig.value === false || (!frontmatterConfig.value && !_buttonAfterArticle)) {
+  if (frontmatterConfig.value === false || !buttonAfterArticle.value) {
     return false
   }
+  return { ...buttonAfterArticle.value }
+})
 
-  return { ..._buttonAfterArticle, ...frontmatterConfig.value }
+const svg = computed(() => {
+  if (!buttonAfterArticleConfig.value) {
+    return ''
+  }
+  let icon = buttonAfterArticleConfig.value?.icon
+  const iconMap = {
+    aliPay: aliPaySVG,
+    wechat: weChatPaySVG
+  }
+  return iconMap[icon] || icon
 })
 
 const showContent = ref(false)
-
 watch(buttonAfterArticleConfig, () => {
   showContent.value = !!buttonAfterArticleConfig.value?.expand
 }, {
   immediate: true
 })
 
-const svg = computed(() => {
-  const icon = buttonAfterArticleConfig.value?.icon
-  if (icon === 'aliPay') {
-    return aliPaySVG
-  }
-  else if (icon === 'wechatPay') {
-    return weChatPaySVG
-  }
-  else {
-    return icon
-  }
-})
-
-function toggleContent() {
+const toggleContent = () => {
   showContent.value = !showContent.value
 }
+
 </script>
 
 <template>
@@ -78,6 +75,7 @@ function toggleContent() {
 
   :deep(img) {
     height: 260px;
+    cursor: pointer;
   }
 }
 

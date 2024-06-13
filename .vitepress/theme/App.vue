@@ -18,7 +18,7 @@ import BackToTop from './components/BackToTop.vue'
 import CommentGiscus from './components/CommentGiscus.vue'
 
 import CommentArTalk from './components/CommentArTalk.vue'
-import BlogButtonAfterArticle from './components/BlogButtonAfterArticle.vue'
+import ButtonAfterArticle from './components/ButtonAfterArticle.vue'
 import BlogCommentWrapper from './components/BlogCommentWrapper.vue'
 
 const { theme, frontmatter } = useData()
@@ -76,7 +76,7 @@ useDarkTransition()
       <slot name="doc-after" />
       <!-- 评论 -->
       <ClientOnly>
-        <BlogButtonAfterArticle />
+        <ButtonAfterArticle />
         <BackToTop />
         <BlogCommentWrapper>
           <CommentArTalk />
