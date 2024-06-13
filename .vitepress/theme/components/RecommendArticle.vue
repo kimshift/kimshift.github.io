@@ -1,25 +1,19 @@
-<script setup>
+<script setup name="相关文章组件">
 import { computed, onMounted, ref } from 'vue'
-import { useRoute, useRouter, withBase } from 'vitepress'
+import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { ElButton } from 'element-plus'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { useArticles, useBlogConfig, useCleanUrls } from '../config'
+import { useArticles, useCleanUrls } from '../config'
 import { recommendSVG } from '../constants/svg'
-const { recommend: _recommend } = useBlogConfig()
+const { theme } = useData()
 
-const sidebarStyle = computed(() =>
-  _recommend && _recommend?.style ? _recommend.style : 'sidebar'
-)
+const recommend = computed(() => theme.value.recommend)
+const sidebarStyle = computed(() => recommend.value?.style ?? 'sidebar')
+const recommendPadding = computed(() => sidebarStyle.value === 'card' ? '10px' : '0px')
 
-const recommendPadding = computed(() =>
-  sidebarStyle.value === 'card' ? '10px' : '0px'
-)
-const recommend = computed(() =>
-  _recommend === false ? undefined : _recommend
-)
 const title = computed(() => recommend.value?.title ?? (`<span class="svg-icon">${recommendSVG}</span>` + '相关文章'))
 const pageSize = computed(() => recommend.value?.pageSize || 9)
-const nextText = computed(() => recommend.value?.nextText || '换一组')
+const nextText = computed(() => recommend.value?.nextText ?? '换一组')
 const emptyText = computed(() => recommend.value?.empty ?? '暂无相关文章')
 
 const docs = useArticles()
@@ -153,7 +147,7 @@ function handleLinkClick(link) {
 </script>
 
 <template>
-  <div v-if="_recommend !== false && (recommendList.length || emptyText)" class="recommend"
+  <div v-if="recommend !== false && (recommendList.length || emptyText)" class="recommend"
     :class="{ card: sidebarStyle === 'card' }" data-pagefind-ignore="all">
     <!-- 头部 -->
     <div class="card-header">

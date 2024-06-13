@@ -88,7 +88,6 @@ export function getArticleMeta(filepath, route, timeZone = defaultTimeZoneOffset
 // 获取文章列表
 export function getArticles(cfg) {
   const srcDir = cfg?.srcDir || process.argv.slice(2)?.[1] || '.'
-  console.log('测试srcDir:', srcDir)
   const files = glob.sync(`${srcDir}/**/*.md`, { ignore: ['node_modules'] })
   // 文章数据
   const pageData = files

@@ -11,6 +11,7 @@ export default {
     text: '去 GitHub 上编辑内容',
   },
   socialLinks: [{ icon: 'github', link: 'https://github.com/kimshift' }],
+  outline: [2, 3], //自动生成大纲
   lastUpdatedText: '上次更新于',
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
@@ -128,17 +129,20 @@ export default {
     content: '<img src="/img/wechat_pay.jpg">',
     icon: 'wechat',
   }, // 文章底部按钮
+  recommend: {
+    pageSize: 3, // 推荐文章展示数量
+    nextText: '下一页',
+    style: 'sidebar', // 推荐文章样式，可选值：'sidebar'|'card'
+    sort(a, b) {
+      return +new Date(b.meta.date) - +new Date(a.meta.date)
+    },
+  }, // 推荐文章样式
 }
 
 // 自定义主题配置参数
 export const blogTheme = getThemeConfig({
   srcDir: './docs', //检索docs目录下的文档
-  recommend: {
-    nextText: '下一页',
-    sort(a, b) {
-      return +new Date(b.meta.date) - +new Date(a.meta.date)
-    },
-  },
+
   comment: {
     type: 'giscus',
     options: {

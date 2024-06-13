@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useBlogConfig } from '../config'
-import BlogRecommendArticle from './BlogRecommendArticle.vue'
+import RecommendArticle from './RecommendArticle.vue'
 
 const { recommend: _recommend } = useBlogConfig()
 
@@ -18,7 +18,7 @@ const marginTopMini = computed(() =>
 
 <template>
   <div v-if="_recommend !== false" class="sidebar" data-pagefind-ignore="all">
-    <BlogRecommendArticle />
+    <RecommendArticle />
   </div>
 </template>
 

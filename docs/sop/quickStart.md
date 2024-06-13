@@ -12,7 +12,7 @@ descriptionHTML: '
 </pre>'
 tags:
  - SOP
-sidebar: false
+# sidebar: false
 ---
 
 # 快速上手
