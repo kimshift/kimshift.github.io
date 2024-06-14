@@ -15,11 +15,10 @@ import ArticleAnalyze from './components/ArticleAnalyze.vue'
 
 import HomeHeaderAvatar from './components/HomeHeaderAvatar.vue'
 import BackToTop from './components/BackToTop.vue'
-import CommentGiscus from './components/CommentGiscus.vue'
-
-import CommentArTalk from './components/CommentArTalk.vue'
 import ButtonAfterArticle from './components/ButtonAfterArticle.vue'
-import BlogCommentWrapper from './components/BlogCommentWrapper.vue'
+
+import CommentWrapper from './components/CommentWrapper.vue'
+import CommentGiscus from './components/CommentGiscus.vue'
 
 const { theme, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout)
@@ -78,10 +77,10 @@ useDarkTransition()
       <ClientOnly>
         <ButtonAfterArticle />
         <BackToTop />
-        <BlogCommentWrapper>
+        <CommentWrapper>
           <CommentArTalk />
           <CommentGiscus />
-        </BlogCommentWrapper>
+        </CommentWrapper>
       </ClientOnly>
     </template>
     <template #layout-bottom>

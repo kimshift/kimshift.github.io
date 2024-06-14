@@ -103,18 +103,6 @@ export function getArticles(cfg) {
   return pageData
 }
 
-export function patchVPConfig(vpConfig, cfg) {
-  vpConfig.head = vpConfig.head || []
-  // Artalk 资源地址
-  if (cfg?.comment && 'type' in cfg.comment && cfg?.comment?.type === 'artalk') {
-    const server = cfg.comment?.options?.server
-    if (server) {
-      vpConfig.head.push(['link', { href: `${server}/dist/Artalk.css`, rel: 'stylesheet' }])
-      vpConfig.head.push(['script', { src: `${server}/dist/Artalk.js`, id: 'artalk-script' }])
-    }
-  }
-}
-
 export function patchVPThemeConfig(cfg, vpThemeConfig = {}) {
   // 用于自定义sidebar卡片slot
   vpThemeConfig.sidebar = patchDefaultThemeSideBar(cfg)?.sidebar

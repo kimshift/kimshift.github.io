@@ -1,9 +1,8 @@
 ---
+title: 例子首页666
 hot: 1
-# outline: deep
+outline: deep
 ---
-
-# 运行 API - test
 
 This page demonstrates usage of some of the runtime APIs provided by VitePress.
 

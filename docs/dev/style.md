@@ -2,9 +2,10 @@
 description: 介绍一下自定义主题的部分样式
 title: 🔧 主题样式定制
 readingTime: false
-tag:
+tags:
   - 配置
   - 样式
+  - dev
 recommend: 3
 hot: 1
 ---

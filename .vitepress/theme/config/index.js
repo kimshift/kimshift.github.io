@@ -66,9 +66,7 @@ export function useBlogConfig() {
 
 export function useArticles() {
   const blogConfig = useConfig()
-  // console.log('测试blogConfig:', blogConfig)
   const articles = computed(() => blogConfig.config?.blog?.pagesData || [])
-  // console.log('测试articles:', articles)
   return articles
 }
 

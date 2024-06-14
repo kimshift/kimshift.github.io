@@ -1,11 +1,10 @@
 // https://vitepress.dev/reference/default-theme-config
 import { getThemeConfig } from '../theme/utils/node/config'
+import nav from './nav'
+import giscus from './giscus'
 export default {
   logo: '/favicon.ico',
-  nav: [
-    { text: '首页', link: '/' },
-    { text: '例子', link: '/markdown-examples' },
-  ], //导航栏
+  nav: nav,
   // editLink: {
   //   pattern: 'https://github.com/kimshift/<repo>/tree/master/packages/theme/docs/:path',
   //   text: '去 GitHub 上编辑内容',
@@ -130,7 +129,7 @@ export default {
     icon: 'wechat',
   }, // 文章底部按钮
   recommend: {
-    pageSize: 3, // 推荐文章展示数量
+    pageSize: 9, // 推荐文章展示数量
     nextText: '下一页',
     style: 'sidebar', // 推荐文章样式，可选值：'sidebar'|'card'
     sort(a, b) {
@@ -142,15 +141,8 @@ export default {
 // 自定义主题配置参数
 export const blogTheme = getThemeConfig({
   srcDir: './docs', //检索docs目录下的文档
-
   comment: {
     type: 'giscus',
-    options: {
-      repo: 'ATQQ/sugar-blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkyNDEyNDUyOTk',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDODmEcc84COVc6',
-      inputPosition: 'top',
-    },
-  },
+    options: giscus,
+  }, // 文章评论配置
 })

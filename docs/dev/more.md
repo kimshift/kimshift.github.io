@@ -6,7 +6,7 @@ categories:
 tags:
   - 主题
   - 配置
-  - more
+  - dev
 ---
 
 # 更多能力

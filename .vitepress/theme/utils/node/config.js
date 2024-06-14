@@ -4,7 +4,7 @@ import {
   patchOptimizeDeps,
   registerMdPlugins,
 } from './mdPlugins'
-import { getArticles, patchVPConfig, patchVPThemeConfig } from './theme'
+import { getArticles, patchVPThemeConfig } from './theme'
 import { getVitePlugins, registerVitePlugins } from './vitePlugins'
 
 /**
@@ -30,7 +30,6 @@ export function getThemeConfig(cfg) {
   patchMermaidPluginCfg(extraVPConfig)
   patchOptimizeDeps(extraVPConfig)
 
-  patchVPConfig(extraVPConfig, cfg)
   return {
     themeConfig: {
       blog: {
@@ -43,6 +42,3 @@ export function getThemeConfig(cfg) {
     ...extraVPConfig,
   }
 }
-
-// 重新导包 tabsMarkdownPlugin 导出CJS格式支持
-export { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'

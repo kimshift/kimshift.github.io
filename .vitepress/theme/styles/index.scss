@@ -230,7 +230,7 @@ span.svg-icon {
 .vp-doc {
   .copy.copied {
     &::before {
-      content: '复制成功' !important;
+      content: '已复制' !important;
     }
   }
 }

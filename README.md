@@ -1,7 +1,3 @@
----
-sidebar: false
----
-
 ### 项目介绍
 
 - 使用 vitepress 搭建的个人博客网站
@@ -25,59 +21,64 @@ sidebar: false
 
 ### 项目运行
 
+- node 环境：`v20.12.2`
 - 在项目文件夹下执行命令，安装依赖：`pnpm i`
 - 在项目文件夹下执行命令，运行项目：`pnpm start`
 - 编译完成访问：`http://localhost:5173`
 
 ### 项目架构
 
-- 采用 vuepress 和主题 reco 二次构建
-
 ```lua
 ##需要自己写主题样式的话，在.vuepress/ 下新建theme文件夹并按如下目录布局
-Dev
-├─── docs
-│   └── .vuepress   // 配置目录
-│   │    ├── components // vue组件
-│   │    ├── config     // 配置文件
-│   │    │   ├── head.js    //网站头部配置
-│   │    │   ├── nav.js     //导航栏配置
-│   │    │   ├── plugins.js //插件配置
-│   │    │   ├── theme.js   //主题配置
-│   │    │   ├── valine.js  //评论配置
-│   │    ├── plugins    // 自定义插件
-│   │    ├── public     // 静态资源
-│   │    ├── styles     // 主题样式修改
-│   │    ├── theme      // 主题
-│   │    │   ├── components // 组件
-│   │    │   ├── global-components // 全局组件
-│   │    │   ├── layouts // 布局(包括首页在内)
-│   │    │   ├── styles  // 样式
-│   │    │   ├── index.js // 入口配置
-│   │    │   ├── noopModule.js // 依赖注入
-│   │    │   ├── package.json  // 主题依赖
-│   │    │   ├── README.md     // 主题说明
-│   │    ├── config.js      // 配置文件入口
-│   │    └── enhanceApp.js  // 百度统计注入
-│   ├── about       // 关于博主
-│   ├── order       // 友链模块
-│   ├── views       // 内容模块
-│   └── README.md   // 首页
-├───deploy.sh    // 部署文件脚本
-└── package.json // 项目依赖
+
+notebook
+├─── .vitepress    配置目录
+│      ├── cache       开发运行时缓存文件
+│      ├── dist        打包后的静态资源
+│      └── config      配置文件目录
+│      │    ├── giscus     giscus评论配置
+│      │    ├── head       网站头部配置
+│      │    ├── nav        导航栏配置
+│      │    └── theme      主题配置
+│      ├── theme       自定义主题目录
+│      │    ├── components 组件
+│      │    ├── constants  常量
+│      │    ├── directives 指令
+│      │    ├── hooks      钩子
+│      │    ├── layout     布局
+│      │    ├── stores     pinia状态管理
+│      │    ├── styles     样式
+│      │    ├── utils      工具类
+│      │    ├── App        入口界面
+│      │    ├── index      入口配置
+│      │    └── style      主题样式修改
+│      └── config.mjs      站点配置文件
+├─── docs       内容模块
+│    ├── about      关于博客文档
+│    ├── new file   需要新增博客->在docs目录下新增.md文件即可
+│    ├── new cate   相关推荐文档会跟当前文档目录关联
+│    ├── public     静态资源目录
+│    │   ├── img            图片资源
+│    │   ├── js             js资源
+│    │   └── favicon.ico    网站图标
+│    └── index.md   首页
+├─── .gitignore     git忽略配置
+├─── package.json   项目依赖包
+├─── pnpm-lock.sh   pnpm 依赖包锁定文件
+└──  README.md      项目说明
 ```
 
 ### 约定路由模式
 
-| 文件的相对路径     | 页面路由地址   |
-| ------------------ | -------------- |
-| `/README.md`       | `/`            |
-| `/about/README.md` | `/about/`      |
-| `/config.md`       | `/config.html` |
+| 文件的相对路径    | 页面路由地址 |
+| ----------------- | ------------ |
+| `/index.md`       | `/`          |
+| `/config.md`      | `/config`    |
+| `/about/index.md` | `/about/`    |
 
 ### 如何使用
 
-对准备发布的文章（Markdown 格式），放置在项目`docs/views/`目录下，并在 Markdown 文件头部添加以下元素，项目发布后会自动识别文章标题、标签、分类、是否开启评论、是否加密、是否置顶、是否发布等一系列状态。
+对准备发布的文章（Markdown 格式），放置在项目`docs/`目录下，并在 Markdown 文件头部添加以下元素，项目发布后会自动识别文章标题、标签、分类、是否开启评论、是否加密、是否置顶、是否发布等一系列状态。
 
 下面是关键字说明及参考示例：
 

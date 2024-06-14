@@ -1,12 +1,11 @@
-<script setup>
+<script setup name="评论集成组件">
 import { useElementSize, useElementVisibility, useWindowSize } from '@vueuse/core'
 import { useData } from 'vitepress'
 import { computed, h, ref } from 'vue'
 import { ElIcon } from 'element-plus'
 import { Comment } from '@element-plus/icons-vue'
-import { useBlogConfig } from '../config'
 
-const { frontmatter } = useData()
+const { frontmatter, theme } = useData()
 const commentEl = ref(null)
 const commentIsVisible = useElementVisibility(commentEl)
 
@@ -16,15 +15,8 @@ function handleScrollToComment() {
     block: 'start'
   })
 }
-
-const { comment: _comment } = useBlogConfig()
-const commentConfig = computed(() =>
-  _comment === false ? undefined : _comment
-)
-
-const show = computed(() => {
-  return _comment && frontmatter.value.comment !== false
-})
+const commentConfig = computed(() => theme.value.blog?.comment)
+const show = computed(() => commentConfig.value && frontmatter.value.comment !== false)
 
 const { width } = useWindowSize()
 const mobileMinify = computed(() => width.value < 768 && (commentConfig.value?.mobileMinify ?? true))
