@@ -9,7 +9,7 @@ import HomeRight from './layout/HomeRight/index.vue'
 
 import HomeBanner from './components/HomeBanner.vue'
 import BlogList from './components/BlogList.vue'
-import BlogSidebar from './components/BlogSidebar.vue'
+import Sidebar from './components/Sidebar.vue'
 import ImagePreview from './components/ImagePreview.vue'
 import ArticleAnalyze from './components/ArticleAnalyze.vue'
 
@@ -70,7 +70,7 @@ useDarkTransition()
     </template>
     <template v-if="isBlogTheme" #sidebar-nav-after>
       <slot name="sidebar-nav-after" />
-      <BlogSidebar />
+      <Sidebar />
     </template>
     <template #doc-after>
       <slot name="doc-after" />
