@@ -71,10 +71,9 @@ const recommendList = computed(() => {
         || v.route !== decodeURIComponent(route.path).replace(/.html$/, '')
     )
     // 过滤掉不需要展示的
-    .filter(v => v.meta.recommend !== false)
+    .filter(v => v.meta.sidebar !== false)
     // 自定义过滤
     .filter(v => recommend.value?.filter?.(v) ?? true)
-
   const topList = origin.filter((v) => {
     const value = getRecommendValue(v)
     return typeof value === 'number'

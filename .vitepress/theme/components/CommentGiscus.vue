@@ -2,7 +2,7 @@
 import { useData, useRoute } from 'vitepress'
 import { computed, nextTick, ref, watch } from 'vue'
 import Giscus from '@giscus/vue'
-const { isDark, theme } = useData()
+const { isDark, theme, frontmatter } = useData()
 // 读取配制
 
 const commentConfig = computed(() => {
@@ -20,12 +20,14 @@ const commentConfig = computed(() => {
 
 const route = useRoute()
 const showComment = ref(false)
+// 切换文章重置评论插件
+// 因为评论插件的初始化是异步的，所以需要使用nextTick来确保组件已经渲染完成
 watch(
   route,
   () => {
     showComment.value = false
     nextTick(() => {
-      showComment.value = true
+      showComment.value = frontmatter.value.showComment ?? true
     })
   },
   {

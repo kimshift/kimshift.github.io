@@ -1,4 +1,4 @@
-<script setup name="文档组件">
+<script setup name="首页文档组件">
 import { useRouter, withBase } from 'vitepress'
 import { computed } from 'vue'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'

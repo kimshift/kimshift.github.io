@@ -22,7 +22,6 @@ export function withConfigProvider(App) {
     setup(_, { slots }) {
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
-      console.log('测试config:', config)
       provide(configSymbol, config)
 
       const activeTag = ref({
@@ -83,9 +82,7 @@ export function useCurrentPageNum() {
  */
 export function useCurrentArticle() {
   const blogConfig = useConfig()
-  console.log('测试blogConfig:', blogConfig)
-  const { theme } = useData()
-  console.log('测theme试:', theme)
+  // const { theme } = useData()
   const route = useRoute()
   const docs = computed(() => blogConfig.config?.blog?.pagesData)
   const currentArticle = computed(() => {

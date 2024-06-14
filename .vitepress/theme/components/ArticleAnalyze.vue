@@ -1,4 +1,4 @@
-<script setup name="文章分析组件">
+<script setup name="文章要素组件">
 // 阅读时间计算方式参考
 // https://zhuanlan.zhihu.com/p/36375802
 import { useData, useRoute } from 'vitepress'
@@ -70,7 +70,7 @@ const docMetaInsertPosition = computed(
     'after'
 )
 
-const route = useRoute()
+
 
 function analyze() {
   if (!$des.value) {
@@ -113,7 +113,8 @@ onMounted(() => {
 })
 
 // 阅读量
-const pv = ref(6666)
+// const pv = ref(6666)
+// const route = useRoute()
 
 const currentArticle = useCurrentArticle()
 const publishDate = computed(() => {
@@ -134,16 +135,16 @@ const currentAuthorInfo = computed(() =>
 )
 const hiddenAuthor = computed(() => frontmatter.value.author === false)
 
-watch(
-  () => route.path,
-  () => {
-    // TODO: 调用接口取数据
-    pv.value = 123
-  },
-  {
-    immediate: true
-  }
-)
+// watch(
+//   () => route.path,
+//   () => {
+//     // TODO: 调用接口取数据
+//     pv.value = 123
+//   },
+//   {
+//     immediate: true
+//   }
+// )
 </script>
 
 <template>

@@ -217,16 +217,6 @@ span.svg-icon {
   }
 }
 
-.VPNavScreenAppearance.appearance {
-  .text {
-    color: #f6f6f7;
-    &::before {
-      color: var(--vp-c-text-2);
-      content: '主题';
-    }
-  }
-}
-
 .vp-doc {
   .copy.copied {
     &::before {

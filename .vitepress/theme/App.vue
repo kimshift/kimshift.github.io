@@ -73,10 +73,12 @@ useDarkTransition()
     </template>
     <template #doc-after>
       <slot name="doc-after" />
-      <!-- 评论 -->
       <ClientOnly>
+        <!-- 赞赏 -->
         <ButtonAfterArticle />
+        <!-- 返回顶部 -->
         <BackToTop />
+        <!-- 评论 -->
         <CommentWrapper>
           <CommentArTalk />
           <CommentGiscus />
