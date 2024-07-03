@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "vitepress dev",
+    "start": "sh start.sh",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },

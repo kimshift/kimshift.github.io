@@ -80,7 +80,6 @@ useDarkTransition()
         <BackToTop />
         <!-- 评论 -->
         <CommentWrapper>
-          <CommentArTalk />
           <CommentGiscus />
         </CommentWrapper>
       </ClientOnly>

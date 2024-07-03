@@ -27,7 +27,8 @@ watch(
   () => {
     showComment.value = false
     nextTick(() => {
-      showComment.value = frontmatter.value.showComment ?? true
+      const { comment } = theme.value.blog
+      showComment.value = frontmatter.value.showComment ?? comment.showComment ?? false
     })
   },
   {

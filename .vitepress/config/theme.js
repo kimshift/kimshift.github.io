@@ -145,6 +145,7 @@ export const blogTheme = getThemeConfig({
   srcDir: './docs', //检索docs目录下的文档
   comment: {
     type: 'giscus',
+    showComment: false, // 文章默认关闭评论
     options: giscus,
   }, // 文章评论配置
 })
