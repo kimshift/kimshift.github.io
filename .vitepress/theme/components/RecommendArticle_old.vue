@@ -10,6 +10,7 @@ const { theme } = useData()
 const recommend = computed(() => theme.value.recommend)
 const sidebarStyle = computed(() => recommend.value?.style ?? 'sidebar')
 const recommendPadding = computed(() => sidebarStyle.value === 'card' ? '10px' : '0px')
+
 const title = computed(() => recommend.value?.title ?? (`<span class="svg-icon">${recommendSVG}</span>` + '相关文章'))
 const pageSize = computed(() => recommend.value?.pageSize || 9)
 const nextText = computed(() => recommend.value?.nextText ?? '换一组')
@@ -19,54 +20,71 @@ const docs = useArticles()
 
 const route = useRoute()
 
-// 获取当前文章的分类
 function getRecommendCategory(page) {
-  if (!page) return []
+  if (!page)
+    return []
   const { meta } = page
-  if (Array.isArray(meta.categories)) {
-    return meta.categories.filter(v => typeof v === 'string')
+  if (Array.isArray(meta.recommend)) {
+    return meta.recommend.filter(v => typeof v === 'string')
   }
-  if (typeof meta.categories === 'string') {
-    return [meta.categories]
+  if (typeof meta.recommend === 'string') {
+    return [meta.recommend]
   }
   return []
 }
 
-// 判断是否当前文章
-function isCurrentDoc(value) {
-  const path = decodeURIComponent(route.path).replace(/.html$/, '')
-  return [value, value.replace(/index$/, '')].includes(path)
+function getRecommendValue(page) {
+  return Array.isArray(page?.meta?.recommend) ? page.meta.recommend[page.meta.recommend.length - 1] : page?.meta.recommend
 }
 
-// 判断分类是否有交集
 function hasIntersection(arr1, arr2) {
   return arr1.some(item => arr2.includes(item))
 }
 
-// 获取相关分类文章
 const recommendList = computed(() => {
   // 中文支持
   const paths = decodeURIComponent(route.path).split('/')
-  const currentPage = docs.value.find(v => isCurrentDoc(v.route))//当前文章
-  const currentCategory = getRecommendCategory(currentPage)//所属分类
+  const currentPage = docs.value.find(v => isCurrentDoc(v.route))
+  const currentRecommendCategory = getRecommendCategory(currentPage)
   const origin = docs.value
     .map(v => ({ ...v, route: withBase(v.route) }))
-    .filter(v => {
-      if (!v.meta.title) return false // 过滤出带标题的
-      if (v.meta.sidebar === false) return false // 过滤不要侧边栏的文章
-      if (!(recommend.value?.showSelf ?? true) && isCurrentDoc(v.route)) return false // 是否过滤掉自己
-      // 筛选出类别有交集的
-      if (currentCategory.length > 0) {
-        return hasIntersection(currentCategory, getRecommendCategory(v))
+    .filter(
+      (v) => {
+        // 筛选出类别有交集的
+        if (currentRecommendCategory.length) {
+          return hasIntersection(currentRecommendCategory, getRecommendCategory(v))
+        }
+        // 如果没有自定义归类则保持原逻辑
+        // 过滤出公共路由前缀
+        // 限制为同路由前缀
+        return v.route.split('/').length === paths.length
+          && v.route.startsWith(paths.slice(0, paths.length - 1).join('/'))
       }
-      // 如果没有自定义归类则保持原逻辑==>筛选出同目录
-      return v.route.split('/').length === paths.length
-        && v.route.startsWith(paths.slice(0, paths.length - 1).join('/'))
-    })
 
-  // 排序方式
+    )
+    // 过滤出带标题的
+    .filter(v => !!v.meta.title)
+    // 过滤掉自己
+    .filter(
+      v =>
+        (recommend.value?.showSelf ?? true)
+        || v.route !== decodeURIComponent(route.path).replace(/.html$/, '')
+    )
+    // 过滤掉不需要展示的
+    .filter(v => v.meta.sidebar !== false)
+    // 自定义过滤
+    .filter(v => recommend.value?.filter?.(v) ?? true)
+  const topList = origin.filter((v) => {
+    const value = getRecommendValue(v)
+    return typeof value === 'number'
+  })
+  topList.sort((a, b) => Number(getRecommendValue(a)) - Number(getRecommendValue(b)))
+
+  const normalList = origin.filter(v => typeof getRecommendValue(v) !== 'number')
+
+  // 排序
   const sortMode = recommend.value?.sort ?? 'date'
-  // 默认时间排序: 最新文章在前
+  // 默认时间排序
   let compareFn = (a, b) => +new Date(b.meta.date) - +new Date(a.meta.date)
   // 文件名排序
   if (sortMode === 'filename') {
@@ -80,8 +98,15 @@ const recommendList = computed(() => {
   if (typeof sortMode === 'function') {
     compareFn = sortMode
   }
-  return origin.sort(compareFn)
+  normalList.sort(compareFn)
+
+  return topList.concat(normalList)
 })
+
+function isCurrentDoc(value) {
+  const path = decodeURIComponent(route.path).replace(/.html$/, '')
+  return [value, value.replace(/index$/, '')].includes(path)
+}
 
 const currentPage = ref(1)
 function changePage() {
@@ -93,7 +118,6 @@ function changePage() {
 // 当前页开始的序号
 const startIdx = computed(() => (currentPage.value - 1) * pageSize.value)
 
-// 当前页文章
 const currentWikiData = computed(() => {
   const startIdx = (currentPage.value - 1) * pageSize.value
   const endIdx = startIdx + pageSize.value
