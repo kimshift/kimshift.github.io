@@ -138,14 +138,14 @@ export default {
       return +new Date(b.meta.date) - +new Date(a.meta.date)
     },
   }, // 推荐文章样式
+  comment: {
+    type: 'giscus',
+    showComment: true, // 文章默认开启评论
+    options: giscus,
+  }, // 文章评论配置
 }
 
 // 自定义主题配置参数
 export const blogTheme = getThemeConfig({
   srcDir: './docs', //检索docs目录下的文档
-  comment: {
-    type: 'giscus',
-    showComment: false, // 文章默认关闭评论
-    options: giscus,
-  }, // 文章评论配置
 })

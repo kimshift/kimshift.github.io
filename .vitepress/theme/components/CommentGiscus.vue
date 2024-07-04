@@ -6,7 +6,7 @@ const { isDark, theme, frontmatter } = useData()
 // 读取配制
 
 const commentConfig = computed(() => {
-  const { comment } = theme.value.blog
+  const { comment } = theme.value
   if (!comment) {
     return false
   }
@@ -27,7 +27,7 @@ watch(
   () => {
     showComment.value = false
     nextTick(() => {
-      const { comment } = theme.value.blog
+      const { comment } = theme.value
       showComment.value = frontmatter.value.showComment ?? comment.showComment ?? false
     })
   },

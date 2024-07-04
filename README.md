@@ -96,6 +96,7 @@ notebook
 | publish         | 文章是否发布                                |
 | sidebar         | 是否开启侧边栏-相关推荐                     |
 | outline         | 生成目录大纲                                |
+| description     | 文章描述                                    |
 | `[[toc]]`       | 生成目录及链接                              |
 | `<!-- more -->` | 在`<!-- more -->`之前的内容会展示为文章摘要 |
 

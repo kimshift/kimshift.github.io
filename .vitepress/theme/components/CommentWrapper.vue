@@ -15,7 +15,7 @@ function handleScrollToComment() {
     block: 'start'
   })
 }
-const commentConfig = computed(() => theme.value.blog?.comment)
+const commentConfig = computed(() => theme.value.comment)
 const show = computed(() => commentConfig.value && frontmatter.value.comment !== false)
 
 const { width } = useWindowSize()
