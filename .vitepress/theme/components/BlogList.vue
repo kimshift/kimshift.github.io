@@ -1,90 +1,38 @@
 <script setup name="文档列表">
-import { computed, watch } from 'vue'
+import { computed, watch, onMounted } from 'vue'
 import { ElPagination } from 'element-plus'
-import { useData, useRoute, useRouter } from 'vitepress'
-import {
-  useActiveTag,
-  useArticles,
-  useCurrentPageNum
-} from '../config'
+import { storeToRefs } from 'pinia'
+import { useData, useRoute } from 'vitepress'
+import { useArticleStore } from '../stores/article'
 import BlogItem from './BlogItem.vue'
 
+const articleStore = useArticleStore()
+const { articleParams, articles } = storeToRefs(articleStore)
+
 const { theme } = useData()
+
+onMounted(() => {
+  articleStore.getArticles()
+})
+
 const globalAuthor = computed(() => theme.value.author || '佚名')
-const docs = useArticles()
-
-const activeTag = useActiveTag()
-
-const activeTagLabel = computed(() => activeTag.value.label)
-
-const wikiList = computed(() => {
-  const topList = docs.value.filter(v => !v.meta.hidden && !!v.meta.top)
-  topList.sort((a, b) => {
-    const aTop = a?.meta?.top
-    const bTop = b?.meta.top
-    return Number(aTop) - Number(bTop)
-  })
-  const data = docs.value.filter(
-    v => v.meta.date && v.meta.title && !v.meta.top && !v.meta.hidden
-  )
-  data.sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
-  return topList.concat(data)
-})
-
-const filterData = computed(() => {
-  if (!activeTagLabel.value)
-    return wikiList.value
-  return wikiList.value.filter(v =>
-    v.meta?.tag?.includes(activeTagLabel.value)
-  )
-})
-
-const pageSize = computed(
-  () => theme.value.home?.pageSize ?? home?.pageSize ?? 10
-)
-const currentPage = useCurrentPageNum()
-const currentWikiData = computed(() => {
-  const startIdx = (currentPage.value - 1) * pageSize.value
-  const endIdx = startIdx + pageSize.value
-  return filterData.value.slice(startIdx, endIdx)
-})
-
-const router = useRouter()
-const queryPageNumKey = 'pageNum'
-function handleUpdatePageNum(current) {
-  if (currentPage.value === current) {
-    return
-  }
-  currentPage.value = current
-  const { searchParams } = new URL(window.location.href)
-  searchParams.delete(queryPageNumKey)
-  searchParams.append(queryPageNumKey, String(current))
-  window.scrollTo({ top: 0, behavior: 'auto' })
-  router.go(
-    `${router.route.path}?${searchParams.toString()}`
-  )
-}
 
 const route = useRoute()
-
-function refreshCurrentPage() {
-  if (typeof window === 'undefined')
-    return
-  const search = window.location.search.slice(1)
-  const searchParams = new URLSearchParams(search)
-  const pageNum = Number(searchParams.get(queryPageNumKey)) || 1
-  if (pageNum !== currentPage.value) {
-    currentPage.value = pageNum
-  }
-}
 watch(route, () => {
-  refreshCurrentPage()
-}, { immediate: true })
+  articleStore.getArticles()
+})
+
+const handleCurrentChange = (page) => {
+  articleParams.value.page = page
+  articleStore.getArticles()
+  window.scrollTo(0, 0)// 界面置顶
+}
+
 </script>
 
 <template>
   <ul data-pagefind-ignore="all">
-    <li v-for="v in currentWikiData" :key="v.route">
+    <li v-for="v in articles" :key="v.route">
       <BlogItem :route="v.route" :title="v.meta.title" :description="v.meta.description"
         :description-h-t-m-l="v.meta.descriptionHTML" :date="v.meta.date" :tag="v.meta.tag" :cover="v.meta.cover"
         :author="v.meta.author || globalAuthor" :pin="v.meta.top" />
@@ -93,9 +41,10 @@ watch(route, () => {
   <!-- 解决element-ui bug -->
   <ClientOnly>
     <div class="el-pagination-wrapper">
-      <ElPagination v-if="wikiList.length >= pageSize" small background :default-current-page="1"
-        :current-page="currentPage" :page-size="pageSize" :total="filterData.length" layout="prev, pager, next, jumper"
-        @update:current-page="handleUpdatePageNum" />
+      <ElPagination size="small" background :default-current-page="1" :current-page="articleParams.page"
+        :page-size="articleParams.pageSize" :total="articleParams.total" layout="prev, pager, next, jumper"
+        @current-change="handleCurrentChange">
+      </ElPagination>
     </div>
   </ClientOnly>
 </template>

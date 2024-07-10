@@ -13,7 +13,7 @@ import { getVitePlugins, registerVitePlugins } from './vitePlugins'
  */
 export function getThemeConfig(cfg) {
   // 文章数据
-  const pagesData = getArticles(cfg)
+  const articles = getArticles(cfg)
   const extraVPConfig = {}
 
   // 获取要加载的vite插件
@@ -33,9 +33,10 @@ export function getThemeConfig(cfg) {
   return {
     themeConfig: {
       blog: {
-        pagesData,
-        ...cfg,
+        pagesData: articles,
       },
+      blogs: [...articles],
+      ...cfg,
       // 补充一些额外的配置用于继承
       ...patchVPThemeConfig(cfg),
     },

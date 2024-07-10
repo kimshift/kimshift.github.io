@@ -15,23 +15,19 @@ import { useColorMode } from '@vueuse/core'
 const configSymbol = Symbol('theme-config')
 const activeTagSymbol = Symbol('active-tag')
 const currentPageNum = Symbol('home-page-num')
-
+// import { useArticleStore } from '../stores/article'
+// import { useThemeStore } from '../stores/theme'
 export function withConfigProvider(App) {
   return defineComponent({
     name: 'ConfigProvider',
     setup(_, { slots }) {
       const { theme } = useData()
+      // const articleStore = useArticleStore()
+      // const t = useThemeStore()
+      // console.log('测试t:', t)
+      // console.log('测试articleStore-currentList:', articleStore.articleParams)
       const config = computed(() => resolveConfig(theme.value))
       provide(configSymbol, config)
-
-      const activeTag = ref({
-        label: '',
-        type: '',
-      })
-      provide(activeTagSymbol, activeTag)
-
-      const pageNum = ref(1)
-      provide(currentPageNum, pageNum)
 
       const mode = useColorMode({
         attribute: 'theme',
@@ -59,21 +55,10 @@ export function useConfig() {
   }
 }
 
-export function useBlogConfig() {
-  return inject(configSymbol)?.value.blog
-}
-
 export function useArticles() {
   const blogConfig = useConfig()
   const articles = computed(() => blogConfig.config?.blog?.pagesData || [])
   return articles
-}
-
-export function useActiveTag() {
-  return inject(activeTagSymbol)
-}
-export function useCurrentPageNum() {
-  return inject(currentPageNum)
 }
 
 /*******
@@ -109,7 +94,7 @@ function resolveConfig(config) {
 }
 
 /**
- * 页面加载的时候定位到锚点内容
+ * 页面加载的时候定位到锚点内容【未使用】
  */
 export function useActiveAnchor() {
   const el = ref(null)
@@ -123,7 +108,7 @@ export function useActiveAnchor() {
 }
 
 /**
- * 页面滚动的时候自动更新锚点
+ * 页面滚动的时候自动更新锚点【未使用】
  */
 export function useAutoUpdateAnchor() {
   // 初始化当前锚点

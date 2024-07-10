@@ -38,8 +38,8 @@ export function getPageRoute(filepath, srcDir) {
   return `/${route}`
 }
 
-const defaultTimeZoneOffset = new Date().getTimezoneOffset() / -60
-export function getArticleMeta(filepath, route, timeZone = defaultTimeZoneOffset) {
+// 获取文章元信息
+export function getArticleMeta(filepath, route, timeZone = new Date().getTimezoneOffset() / -60) {
   const fileContent = fs.readFileSync(filepath, 'utf-8')
 
   const {
@@ -90,7 +90,7 @@ export function getArticles(cfg) {
   const srcDir = cfg?.srcDir || process.argv.slice(2)?.[1] || '.'
   const files = glob.sync(`${srcDir}/**/*.md`, { ignore: ['node_modules'] })
   // 文章数据
-  const pageData = files
+  return files
     .map(filepath => {
       const route = getPageRoute(filepath, srcDir)
       const meta = getArticleMeta(filepath, route, cfg?.timeZone)
@@ -100,12 +100,10 @@ export function getArticles(cfg) {
       }
     })
     .filter(v => v.meta.layout !== 'home')
-  return pageData
 }
 
 export function patchVPThemeConfig(cfg, vpThemeConfig = {}) {
   // 用于自定义sidebar卡片slot
   vpThemeConfig.sidebar = patchDefaultThemeSideBar(cfg)?.sidebar
-
   return vpThemeConfig
 }

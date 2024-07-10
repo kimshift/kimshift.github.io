@@ -1,82 +1,63 @@
 <script setup>
-import { computed, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { ElTag } from 'element-plus'
-import { useBrowserLocation, useDark, useUrlSearchParams } from '@vueuse/core'
-import { useData, useRoute, useRouter } from 'vitepress'
-import {
-  useActiveTag,
-  useArticles,
-  useCurrentPageNum,
-} from '../../config'
-
-const route = useRoute()
-const docs = useArticles()
+import { storeToRefs } from 'pinia'
+import { useDark } from '@vueuse/core'
+import { useData, useRouter } from 'vitepress'
+import { useArticleStore } from '../../stores/article'
+import { getQueryParams } from '../../utils/client'
+const router = useRouter()
 const { theme } = useData()
+
+const articleStore = useArticleStore()
+const { articleParams, tags } = storeToRefs(articleStore)
+
+const tagType = ['', 'info', 'success', 'warning', 'danger']
+const activeTag = ref({
+  label: '',
+  type: '',
+})
+
+onMounted(() => {
+  const { tag, type } = getQueryParams() || {}
+  if (tag || type) {
+    activeTag.value.label = tag
+    activeTag.value.type = tagType[type] || ''
+  }
+})
+
 const showTags = computed(() => {
   return theme.value.homeTags ?? true
 })
-const tags = computed(() => {
-  return [...new Set(docs.value.map(v => v.meta.tag || []).flat(3))]
-})
 
-const activeTag = useActiveTag()
 
 const isDark = useDark({
   storageKey: 'vitepress-theme-appearance'
 })
-
 const colorMode = computed(() => (isDark.value ? 'light' : 'dark'))
 
-const tagType = ['', 'info', 'success', 'warning', 'danger']
-const currentPage = useCurrentPageNum()
-const router = useRouter()
-
+// 关闭标签
 function handleCloseTag() {
   activeTag.value.label = ''
   activeTag.value.type = ''
-  currentPage.value = 1
-  router.go(`${window.location.origin}${router.route.path}`)
+  articleParams.value.page = 1
+  router.go(`/`)
 }
 
-const location = useBrowserLocation()
-
+// 点击标签
 function handleTagClick(tag, type) {
   if (tag === activeTag.value.label) {
     handleCloseTag()
     return
   }
-  activeTag.value.type = type
-  activeTag.value.label = tag
-  currentPage.value = 1
-  router.go(
-    `${location.value.origin}${router.route.path}?tag=${tag}&type=${type}`
-  )
+  activeTag.value = {
+    label: tag,
+    type: type
+  }
+  articleParams.value.page = 1
+  router.go(`/?tag=${tag}&type=${type}`)
 }
 
-watch(
-  location,
-  () => {
-    if (location.value.href) {
-      const url = new URL(location.value.href)
-      activeTag.value.type = url.searchParams.get('type') || ''
-      activeTag.value.label = url.searchParams.get('tag') || ''
-    }
-  },
-  {
-    immediate: true
-  }
-)
-
-watch(
-  route,
-  () => {
-    const params = useUrlSearchParams()
-    if (!params.tag) {
-      activeTag.value.type = ''
-      activeTag.value.label = ''
-    }
-  }
-)
 </script>
 
 <template>
@@ -157,7 +138,7 @@ watch(
   margin-top: 10px;
 
   li {
-    margin-right: 10px;
+    margin-right: 8px;
     margin-bottom: 10px;
     cursor: pointer;
   }

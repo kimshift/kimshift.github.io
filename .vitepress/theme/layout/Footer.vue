@@ -1,13 +1,22 @@
 <script setup name="页脚">
-import { computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { copyrightSVG, icpSVG } from '../constants/svg'
 import { vOuterHtml } from '../directives'
-const _footer = computed(() => {
-  const { theme } = useData()
-  const { author, startYear, footer } = theme.value
 
+const showFooter = ref(false)
+const _message = ref('')
+const _footer = ref([])
+
+onMounted(() => {
+  getFooter()
+})
+
+const getFooter = () => {
+  const { theme } = useData()
+  const { author, startYear, footer } = theme.value || {}
   if (!footer) return
+  showFooter.value = true
   const { icpRecord, copyright, message } = footer
   const list = []
   // copyright
@@ -38,20 +47,19 @@ const _footer = computed(() => {
     })
   }
 
-  return {
-    list,
-    message,
-  }
-})
+  _message.value = message
+  _footer.value = list
+}
+
 </script>
 
 <template>
-  <footer v-if="_footer" class="blog-footer">
+  <footer v-if="showFooter" class="blog-footer">
     <!-- 在内置footer上方渲染 -->
-    <p v-if="_footer.message" v-html="_footer.message" />
+    <p v-if="_message" v-html="_message" />
     <!-- 内置的列表 -->
     <p class="footer-item-list">
-      <template v-for="item in _footer.list">
+      <template v-for="item in _footer">
         <span v-if="typeof item !== 'string'" class="footer-item">
           <i v-if="item.icon" v-html="item.icon" />
           <a v-if="item.link" :href="item.link" target="_blank" rel="noopener noreferrer">
