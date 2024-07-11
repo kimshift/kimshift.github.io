@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import { ref, computed, onMounted } from 'vue'
-import { useData } from 'vitepress'
+import { ref, computed } from 'vue'
+import { useData, withBase } from 'vitepress'
 import dayjs from 'dayjs'
 import { deepCopy, getPagination, sortByKeyAndTime } from 'tools-for-js'
-import { getQueryParams } from '../utils/client'
+import { getQueryParams, getPath } from '../utils/client'
 export const useArticleStore = defineStore(
   'article',
   () => {
@@ -15,26 +15,33 @@ export const useArticleStore = defineStore(
       pageSize: theme.value.home?.pageSize ?? 10,
       total: 0,
     })
+    const docs = ref([])
     const articles = ref([])
-    const tags = ref([])
-    const categories = ref([])
+    const tags = ref([]) //所有标签
+    const categories = ref([]) //所有分类
     const count = ref(0) //文章数量
     const monthCount = ref(0) //本月更新
     const weekCount = ref(0) //本周更新
 
-    const docs = computed(() => {
+    const initDocs = () => {
       let blogs = theme.value.blogs || []
       blogs = blogs.filter(v => v.meta?.publish !== false)
       tags.value = [...new Set(blogs.map(v => v.meta.tags || []).flat(3))]
       categories.value = [...new Set(blogs.map(v => v.meta.categories || []).flat(3))]
-      return blogs
+      docs.value = blogs
+    }
+
+    // 当前文章
+    const currentArticle = computed(() => {
+      const okPaths = getPath()
+      let current = docs.value?.find(v => okPaths.includes(withBase(v.route)))
+      return current
     })
 
     // 获取新增日志
     const getCountLogs = () => {
       let mCount = 0
       let wCount = 0
-      count.value = docs.value.length
       docs.value.forEach(v => {
         const pubDate = dayjs(v.meta?.date)
         let isMonth = pubDate.isSame(dayjs(), 'month') //本月
@@ -44,6 +51,7 @@ export const useArticleStore = defineStore(
           if (isWeek) wCount++
         }
       })
+      count.value = docs.value.length
       weekCount.value = wCount
       monthCount.value = mCount
     }
@@ -76,19 +84,22 @@ export const useArticleStore = defineStore(
       return rows
     }
 
+    // 文章分页
     const getArticles = () => {
       const rows = getArticleList() // 总数据
       articles.value = getPagination(rows, articleParams.value) // 当前页
     }
     return {
+      docs,
+      articles,
       articleParams,
       count,
       monthCount,
       weekCount,
       tags,
       categories,
-      docs,
-      articles,
+      currentArticle,
+      initDocs,
       getCountLogs,
       getArticles,
     }

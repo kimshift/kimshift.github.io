@@ -4,10 +4,9 @@ import { ElButton } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { useData, useRouter, withBase } from 'vitepress'
 import { useArticleStore } from '../../stores/article'
-import { useCleanUrls } from '../../config'
 import { formatShowDate, wrapperCleanUrls } from '../../utils/client'
 import { fireSVG } from '../../constants/svg'
-const { theme } = useData()
+const { theme, site } = useData()
 
 const title = ref('')
 const nextText = ref('')
@@ -49,7 +48,7 @@ function changePage() {
   currentPage.value = newIdx + 1
 }
 
-const cleanUrls = useCleanUrls()
+const cleanUrls = !!site.value.cleanUrls
 const currentWikiData = computed(() => {
   const startIdx = (currentPage.value - 1) * pageSize.value
   const endIdx = startIdx + pageSize.value

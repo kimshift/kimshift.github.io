@@ -4,11 +4,10 @@ import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { ElButton } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { useCleanUrls } from '../config'
 import { recommendSVG } from '../constants/svg'
 import { useArticleStore } from '../stores/article'
 
-const { theme } = useData()
+const { theme, site } = useData()
 const { docs } = storeToRefs(useArticleStore())
 
 const recommend = computed(() => theme.value.recommend)
@@ -116,7 +115,7 @@ onMounted(() => {
   currentPage.value = currentPageNum
 })
 
-const cleanUrls = useCleanUrls()
+const cleanUrls = !!site.value.cleanUrls
 
 const router = useRouter()
 function handleLinkClick(link) {

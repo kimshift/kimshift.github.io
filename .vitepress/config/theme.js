@@ -23,7 +23,7 @@ export default {
   article: {
     readingTimePosition: 'inline', //阅读时间位置
     readingTime: true, //是否显示阅读时间
-    hiddenCover: false, //文章封面是否隐藏
+    autoCover: true, //是否自动获取文章封面
     docMetaInsertSelector: 'h1', //文章标题标签
     docMetaInsertPosition: 'after', //文章标题插入位置
   }, // 文章详情配置
@@ -38,37 +38,7 @@ export default {
       {
         nickname: 'Vitepress',
         des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-        url: 'https://vitepress.dev/',
-      },
-      {
-        nickname: 'Vitepress2',
-        des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-        url: 'https://vitepress.dev/',
-      },
-      {
-        nickname: 'Vitepress3',
-        des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-        url: 'https://vitepress.dev/',
-      },
-      {
-        nickname: 'Vitepress4',
-        des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-        url: 'https://vitepress.dev/',
-      },
-      {
-        nickname: 'Vitepress5',
-        des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-        url: 'https://vitepress.dev/',
-      },
-      {
-        nickname: 'Vitepress6',
-        des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+        avatar: '/favicon.ico',
         url: 'https://vitepress.dev/',
       },
     ],

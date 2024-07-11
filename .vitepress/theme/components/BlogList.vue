@@ -12,7 +12,9 @@ const { articleParams, articles } = storeToRefs(articleStore)
 const { theme } = useData()
 
 onMounted(() => {
+  articleParams.value.page = 1
   articleStore.getArticles()
+  console.log('测试onMounted-666:',)
 })
 
 const globalAuthor = computed(() => theme.value.author || '佚名')

@@ -1,21 +1,20 @@
 <script setup name="文章封面图">
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import { useCurrentArticle } from '../config'
+import { storeToRefs } from 'pinia'
+import { useArticleStore } from '../stores/article';
 
 const { frontmatter, theme } = useData()
+const { currentArticle } = storeToRefs(useArticleStore())
 const cover = computed(() => frontmatter.value.cover)
-
-const currentArticle = useCurrentArticle()
-const realCover = computed(() => import.meta.env.DEV ? cover.value : currentArticle.value?.meta?.cover)
-
-const hiddenCover = computed(
-  () => frontmatter.value?.hiddenCover ?? theme.value.article?.hiddenCover ?? false
+const realCover = computed(() => cover.value ?? currentArticle.value.meta?.cover)
+const showCover = computed(
+  () => theme.value.article?.autoCover ?? cover.value ?? true
 )
 </script>
 
 <template>
-  <img v-if="cover && !hiddenCover" class="blog-doc-cover" :src="realCover">
+  <img v-if="showCover && realCover" class="blog-doc-cover" :src="realCover">
 </template>
 
 <style lang="scss" scoped>

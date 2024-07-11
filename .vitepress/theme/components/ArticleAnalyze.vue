@@ -1,9 +1,10 @@
 <script setup name="文章要素组件">
 // 阅读时间计算方式参考
 // https://zhuanlan.zhihu.com/p/36375802
-import { useData, useRoute } from 'vitepress'
-import { computed, onMounted, ref, watch } from 'vue'
+import { useData } from 'vitepress'
+import { computed, onMounted, ref } from 'vue'
 import { ElIcon } from 'element-plus'
+import { storeToRefs } from 'pinia'
 import {
   AlarmClock,
   Clock,
@@ -11,19 +12,18 @@ import {
   EditPen,
   UserFilled
 } from '@element-plus/icons-vue'
-import { useCurrentArticle } from '../config'
+import { useArticleStore } from '../stores/article';
 import countWord, { formatShowDate } from '../utils/client'
 import DocCover from './DocCover.vue'
+
+const { currentArticle } = storeToRefs(useArticleStore())
 const { frontmatter, theme } = useData()
 const { article, authorList } = theme.value
 
 const $des = ref()
 const wordCount = ref(0)
 const imageCount = ref(0)
-const wordTime = computed(() => {
-  return ~~((wordCount.value / 275) * 60)
-})
-
+const wordTime = computed(() => ~~((wordCount.value / 275) * 60))
 const imageTime = computed(() => {
   const n = imageCount.value
   if (imageCount.value <= 10) {
@@ -32,25 +32,8 @@ const imageTime = computed(() => {
   }
   return 175 + (n - 10) * 3
 })
-
 // 计算阅读时间
-const readTime = computed(() => {
-  return Math.ceil((wordTime.value + imageTime.value) / 60)
-})
-
-// 获取标签
-const tags = computed(() => {
-  const { tag, tags } = frontmatter.value
-  return [
-    ...new Set(
-      []
-        .concat(tag, tags)
-        .flat()
-        .filter(v => !!v)
-    )
-  ]
-})
-
+const readTime = computed(() => Math.ceil((wordTime.value + imageTime.value) / 60))
 const readingTimePosition = computed(() => article?.readingTimePosition ?? 'inline')
 
 const showAnalyze = computed(
@@ -69,8 +52,6 @@ const docMetaInsertPosition = computed(
     article?.docMetaInsertPosition ||
     'after'
 )
-
-
 
 function analyze() {
   if (!$des.value) {
@@ -116,9 +97,8 @@ onMounted(() => {
 // const pv = ref(6666)
 // const route = useRoute()
 
-const currentArticle = useCurrentArticle()
 const publishDate = computed(() => {
-  return formatShowDate(currentArticle.value?.meta?.date || '')
+  return formatShowDate(currentArticle.value.meta?.date || '')
 })
 
 const timeTitle = computed(() =>
@@ -134,6 +114,8 @@ const currentAuthorInfo = computed(() =>
   authorList?.find(v => author.value === v.nickname)
 )
 const hiddenAuthor = computed(() => frontmatter.value.author === false)
+
+const tags = computed(() => currentArticle.value?.meta.tags || [])
 
 // watch(
 //   () => route.path,
@@ -181,7 +163,7 @@ const hiddenAuthor = computed(() => frontmatter.value.author === false)
       </ElIcon>
       {{ publishDate }}
     </span>
-    <span v-if="tags.length" class="tags" title="标签">
+    <span v-if="tags.length > 0" class="tags" title="标签">
       <ElIcon>
         <CollectionTag />
       </ElIcon>

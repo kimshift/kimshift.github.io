@@ -170,3 +170,16 @@ export const getQueryParams = () => {
   })
   return params
 }
+
+// 获取当前路径
+export function getPath() {
+  const { pathname } = window.location
+  const currentPath = pathname.replace(/.html$/, '')
+  // 兼容中文路径
+  const okPaths = [currentPath, decodeURIComponent(currentPath)]
+  // 兼容 /(index.md)
+  if (currentPath.endsWith('/')) {
+    okPaths.push(...[`${currentPath}index`, `${decodeURIComponent(currentPath)}index`])
+  }
+  return [...new Set(okPaths)]
+}

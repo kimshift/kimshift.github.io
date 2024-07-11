@@ -1,9 +1,10 @@
+import { defineComponent, h } from 'vue'
 // https://vitepress.dev/guide/custom-theme
 import DefaultTheme from 'vitepress/theme'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import pinia from './stores'
+import { useArticleStore } from './stores/article'
 import App from './App.vue'
-import { withConfigProvider } from './config'
 // 时间线组件
 import TimelinePage from './components/TimelinePage.vue'
 
@@ -32,6 +33,18 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 
 // custom theme
 import './style.css'
+
+function withConfigProvider(App) {
+  return defineComponent({
+    name: 'ConfigProvider',
+    setup(_, { slots }) {
+      // console.log('测试ConfigProvidera:', app)
+      const { initDocs } = useArticleStore()
+      initDocs() //初始化缓存文章
+      return () => h(App, null, slots)
+    },
+  })
+}
 
 // 配置自定义主题
 const customTheme = {

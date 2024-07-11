@@ -1,85 +1,4 @@
-import { useData, useRoute, withBase } from 'vitepress'
-import {
-  computed,
-  defineComponent,
-  h,
-  inject,
-  onMounted,
-  onUnmounted,
-  provide,
-  reactive,
-  ref,
-} from 'vue'
-import { useColorMode } from '@vueuse/core'
-
-const configSymbol = Symbol('theme-config')
-// import { useArticleStore } from '../stores/article'
-// import { useThemeStore } from '../stores/theme'
-export function withConfigProvider(App) {
-  return defineComponent({
-    name: 'ConfigProvider',
-    setup(_, { slots }) {
-      const { theme } = useData()
-      const config = computed(() => resolveConfig(theme.value))
-      provide(configSymbol, config)
-
-      const mode = useColorMode({
-        attribute: 'theme',
-        modes: {
-          // 内置的颜色主题
-          'vp-default': 'vp-default',
-          'vp-green': 'vp-green',
-          'vp-yellow': 'vp-yellow',
-          'vp-red': 'vp-red',
-          'el-blue': 'el-blue',
-          'el-yellow': 'el-yellow',
-          'el-green': 'el-green',
-          'el-red': 'el-red',
-        },
-      })
-      mode.value = config.value.blog?.themeColor ?? 'vp-default'
-      return () => h(App, null, slots)
-    },
-  })
-}
-
-export function useConfig() {
-  return {
-    config: inject(configSymbol)?.value,
-  }
-}
-
-/*******
- * @description: 获取当前文章配置
- * @author: 琴时
- */
-export function useCurrentArticle() {
-  const blogConfig = useConfig()
-  // const { theme } = useData()
-  const route = useRoute()
-  const docs = computed(() => blogConfig.config?.blog?.pagesData)
-  const currentArticle = computed(() => {
-    const currentPath = route.path.replace(/.html$/, '')
-    // 兼容中文路径
-    const okPaths = [currentPath, decodeURIComponent(currentPath)]
-    // 兼容 /(index.md)
-    if (currentPath.endsWith('/')) {
-      okPaths.push(...[`${currentPath}index`, `${decodeURIComponent(currentPath)}index`])
-    }
-    return docs.value?.find(v => okPaths.includes(withBase(v.route)))
-  })
-  return currentArticle
-}
-
-function resolveConfig(config) {
-  return {
-    ...config,
-    blog: {
-      ...config?.blog,
-      pagesData: config?.blog?.pagesData || [],
-    },
-  }
-}
+import { onMounted, onUnmounted, reactive, ref } from 'vue'
 
 /**
  * 页面加载的时候定位到锚点内容【未使用】
@@ -137,9 +56,4 @@ export function useAutoUpdateAnchor() {
 
   // 返回当前锚点的响应式对象
   return currentAnchor
-}
-
-export function useCleanUrls() {
-  const { site } = useData()
-  return !!site.value.cleanUrls
 }

@@ -66,9 +66,9 @@ export function getArticleMeta(filepath, route, timeZone = new Date().getTimezon
   // 处理tags和categories,兼容历史文章
   meta.categories = typeof meta.categories === 'string' ? [meta.categories] : meta.categories
   meta.tags = typeof meta.tags === 'string' ? [meta.tags] : meta.tags
-  meta.tag = [meta.tag || []]
-    .flat()
-    .concat([...new Set([...(meta.categories || []), ...(meta.tags || [])])])
+  // 去重
+  meta.categories = [...new Set(meta.categories)]
+  meta.tags = [...new Set(meta.tags)]
 
   // 获取摘要信息
   // TODO：摘要生成优化

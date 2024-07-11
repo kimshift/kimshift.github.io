@@ -1,8 +1,7 @@
 <script setup name="首页文档组件">
-import { useRouter, withBase } from 'vitepress'
+import { useData, useRouter, withBase } from 'vitepress'
 import { computed } from 'vue'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { useCleanUrls } from '../config'
 
 const props = defineProps({
   route: String,
@@ -17,10 +16,12 @@ const props = defineProps({
   pin: Number
 })
 
+const { site } = useData()
+
 const showTime = computed(() => {
   return formatShowDate(props.date)
 })
-const cleanUrls = useCleanUrls()
+const cleanUrls = !!site.value.cleanUrls
 const link = computed(() => withBase(wrapperCleanUrls(!!cleanUrls, props.route)))
 const router = useRouter()
 function handleSkipDoc() {
