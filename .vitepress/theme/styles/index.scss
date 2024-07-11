@@ -1,9 +1,11 @@
 html {
   --bg-gradient: 255, 255, 255, 0.1;
   --bg-gradient-home: 255, 255, 255;
-  --box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  // --box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
 
   // blog-item
+  // --box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
   --box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
   --nav-bgc: rgba(255, 255, 255, 0.9);
   --badge-font-color: #4e5969;

@@ -28,15 +28,15 @@ const handleCurrentChange = (page) => {
   articleStore.getArticles()
   window.scrollTo(0, 0)// 界面置顶
 }
-
+console.log('测试:', articles.value)
 </script>
 
 <template>
   <ul data-pagefind-ignore="all">
     <li v-for="v in articles" :key="v.route">
       <BlogItem :route="v.route" :title="v.meta.title" :description="v.meta.description"
-        :description-h-t-m-l="v.meta.descriptionHTML" :date="v.meta.date" :tag="v.meta.tag" :cover="v.meta.cover"
-        :author="v.meta.author || globalAuthor" :pin="v.meta.top" />
+        :description-h-t-m-l="v.meta.descriptionHTML" :date="v.meta.date" :tags="v.meta.tags" :cover="v.meta.cover"
+        :author="v.meta.author || globalAuthor" :sticky="v.meta.sticky" />
     </li>
   </ul>
 

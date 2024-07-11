@@ -10,10 +10,9 @@ const props = defineProps({
   sticky: Number,
   description: String,
   descriptionHTML: String,
-  tag: Array,
+  tags: Array,
   author: String,
   cover: String,
-  pin: Number
 })
 
 const { site } = useData()
@@ -42,7 +41,7 @@ const resultCover = computed(() => {
     e.preventDefault()
     handleSkipDoc()
   }">
-    <i v-show="!!pin" class="pin" />
+    <i v-if="!!sticky" class="sticky" />
     <!-- 标题 -->
     <p class="title mobile-visible">
       {{ title }}
@@ -65,7 +64,7 @@ const resultCover = computed(() => {
         <div class="badge-list pc-visible">
           <span v-show="author" class="split">{{ author }}</span>
           <span class="split">{{ showTime }}</span>
-          <span v-if="tag?.length > 0" class="split">{{ tag?.join(' · ') }}</span>
+          <span v-if="tags?.length > 0" class="split">{{ tags?.join(' · ') }}</span>
         </div>
       </div>
       <!-- 右侧封面图 -->
@@ -75,15 +74,14 @@ const resultCover = computed(() => {
     <div class="badge-list mobile-visible">
       <span v-show="author" class="split">{{ author }}</span>
       <span class="split">{{ showTime }}</span>
-      <span v-if="tag?.length > 0" class="split">{{ tag?.join(' · ') }}</span>
+      <span v-if="tags?.length > 0" class="split">{{ tags?.join(' · ') }}</span>
     </div>
   </a>
 </template>
 
 <style lang="scss" scoped>
-.blog-item .pin {
+.blog-item .sticky {
   position: absolute;
-  overflow: hidden;
   width: 30px;
   height: 30px;
   top: -4px;
@@ -91,11 +89,11 @@ const resultCover = computed(() => {
   opacity: 0.5;
 }
 
-.blog-item:hover .pin {
+.blog-item:hover .sticky {
   opacity: 1;
 }
 
-.blog-item .pin::before {
+.blog-item .sticky::before {
   content: '';
   position: absolute;
   width: 120%;
@@ -127,6 +125,7 @@ const resultCover = computed(() => {
 
   &:hover {
     box-shadow: var(--box-shadow-hover);
+    transform: scale(1.02);
   }
 }
 
