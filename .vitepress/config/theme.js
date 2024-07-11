@@ -11,7 +11,7 @@ export default {
   // },
   socialLinks: [{ icon: 'github', link: 'https://github.com/kimshift' }],
   outline: [2, 3], //自动生成大纲
-  outlineTitle: '目录',
+  outlineTitle: '大纲',
   darkModeSwitchLabel: '切换模式',
   lastUpdatedText: '上次更新于',
   returnToTopLabel: '回到顶部',

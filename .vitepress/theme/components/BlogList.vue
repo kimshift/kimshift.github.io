@@ -14,7 +14,6 @@ const { theme } = useData()
 onMounted(() => {
   articleParams.value.page = 1
   articleStore.getArticles()
-  console.log('测试onMounted-666:',)
 })
 
 const globalAuthor = computed(() => theme.value.author || '佚名')
@@ -40,7 +39,7 @@ const handleCurrentChange = (page) => {
         :author="v.meta.author || globalAuthor" :pin="v.meta.top" />
     </li>
   </ul>
-  <!-- 解决element-ui bug -->
+
   <ClientOnly>
     <div class="el-pagination-wrapper">
       <ElPagination size="small" background :default-current-page="1" :current-page="articleParams.page"

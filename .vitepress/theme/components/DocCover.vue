@@ -1,13 +1,14 @@
 <script setup name="文章封面图">
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useArticleStore } from '../stores/article';
 
+const props = defineProps({
+  currentArticle: Object
+})
 const { frontmatter, theme } = useData()
-const { currentArticle } = storeToRefs(useArticleStore())
+
 const cover = computed(() => frontmatter.value.cover)
-const realCover = computed(() => cover.value ?? currentArticle.value.meta?.cover)
+const realCover = computed(() => cover.value ?? props.currentArticle.meta?.cover)
 const showCover = computed(
   () => theme.value.article?.autoCover ?? cover.value ?? true
 )

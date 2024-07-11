@@ -15,14 +15,15 @@ export const useArticleStore = defineStore(
       pageSize: theme.value.home?.pageSize ?? 10,
       total: 0,
     })
-    const docs = ref([])
-    const articles = ref([])
-    const tags = ref([]) //所有标签
-    const categories = ref([]) //所有分类
+    const docs = ref([]) //文章缓存数据
     const count = ref(0) //文章数量
     const monthCount = ref(0) //本月更新
     const weekCount = ref(0) //本周更新
+    const articles = ref([]) //符合条件的文章
+    const tags = ref([]) //所有标签
+    const categories = ref([]) //所有分类
 
+    // 初始化
     const initDocs = () => {
       let blogs = theme.value.blogs || []
       blogs = blogs.filter(v => v.meta?.publish !== false)
@@ -32,11 +33,11 @@ export const useArticleStore = defineStore(
     }
 
     // 当前文章
-    const currentArticle = computed(() => {
+    const getCurrentArticle = () => {
       const okPaths = getPath()
       let current = docs.value?.find(v => okPaths.includes(withBase(v.route)))
       return current
-    })
+    }
 
     // 获取新增日志
     const getCountLogs = () => {
@@ -89,6 +90,7 @@ export const useArticleStore = defineStore(
       const rows = getArticleList() // 总数据
       articles.value = getPagination(rows, articleParams.value) // 当前页
     }
+
     return {
       docs,
       articles,
@@ -98,10 +100,10 @@ export const useArticleStore = defineStore(
       weekCount,
       tags,
       categories,
-      currentArticle,
       initDocs,
       getCountLogs,
       getArticles,
+      getCurrentArticle,
     }
   },
   {

@@ -1,10 +1,9 @@
 <script setup name="文章要素组件">
 // 阅读时间计算方式参考
 // https://zhuanlan.zhihu.com/p/36375802
-import { useData } from 'vitepress'
-import { computed, onMounted, ref } from 'vue'
+import { useData, useRoute } from 'vitepress'
+import { computed, onMounted, ref, watch } from 'vue'
 import { ElIcon } from 'element-plus'
-import { storeToRefs } from 'pinia'
 import {
   AlarmClock,
   Clock,
@@ -16,7 +15,9 @@ import { useArticleStore } from '../stores/article';
 import countWord, { formatShowDate } from '../utils/client'
 import DocCover from './DocCover.vue'
 
-const { currentArticle } = storeToRefs(useArticleStore())
+const { getCurrentArticle } = useArticleStore()
+const currentArticle = ref(getCurrentArticle())
+
 const { frontmatter, theme } = useData()
 const { article, authorList } = theme.value
 
@@ -95,7 +96,7 @@ onMounted(() => {
 
 // 阅读量
 // const pv = ref(6666)
-// const route = useRoute()
+const route = useRoute()
 
 const publishDate = computed(() => {
   return formatShowDate(currentArticle.value.meta?.date || '')
@@ -117,16 +118,10 @@ const hiddenAuthor = computed(() => frontmatter.value.author === false)
 
 const tags = computed(() => currentArticle.value?.meta.tags || [])
 
-// watch(
-//   () => route.path,
-//   () => {
-//     // TODO: 调用接口取数据
-//     pv.value = 123
-//   },
-//   {
-//     immediate: true
-//   }
-// )
+watch(route, () => {
+  currentArticle.value = getCurrentArticle()
+})
+
 </script>
 
 <template>
@@ -202,7 +197,7 @@ const tags = computed(() => currentArticle.value?.meta.tags || [])
     </template>
     <!-- 封面展示 -->
     <ClientOnly>
-      <DocCover />
+      <DocCover :currentArticle="currentArticle" />
     </ClientOnly>
   </div>
 </template>

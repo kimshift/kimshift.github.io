@@ -38,7 +38,6 @@ function withConfigProvider(App) {
   return defineComponent({
     name: 'ConfigProvider',
     setup(_, { slots }) {
-      // console.log('测试ConfigProvidera:', app)
       const { initDocs } = useArticleStore()
       initDocs() //初始化缓存文章
       return () => h(App, null, slots)
