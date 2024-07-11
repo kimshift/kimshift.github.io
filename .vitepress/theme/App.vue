@@ -2,7 +2,7 @@
 import Theme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import { useDarkTransition } from './hooks/useDarkTransition'
+import { useDarkTransition } from './hooks'
 
 import Footer from './layout/Footer.vue'
 import HomeRight from './layout/HomeRight/index.vue'
