@@ -40,11 +40,11 @@ const readTime = computed(() => {
 
 // 获取标签
 const tags = computed(() => {
-  const { tag, tags, categories } = frontmatter.value
+  const { tag, tags } = frontmatter.value
   return [
     ...new Set(
       []
-        .concat(tag, tags, categories)
+        .concat(tag, tags)
         .flat()
         .filter(v => !!v)
     )

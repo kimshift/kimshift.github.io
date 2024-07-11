@@ -1,8 +1,8 @@
 <script setup name="统计数据">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useData } from 'vitepress'
-import { isCurrentWeek } from '../../utils/client'
-import { useArticles } from '../../config'
+import { storeToRefs } from 'pinia'
+import { useArticleStore } from '../../stores/article'
 import Author from './Author.vue'
 
 const { theme } = useData()
@@ -10,26 +10,12 @@ const { home } = theme.value
 
 const avatarMode = computed(() => home.avatarMode ?? 'card')
 const showCardAvatar = computed(() => avatarMode.value === 'card')
+const { getCountLogs } = useArticleStore()
+const { count, monthCount, weekCount } = storeToRefs(useArticleStore())
 
-const docs = useArticles()
-const notHiddenArticles = computed(() => {
-  return docs.value.filter(v => v.meta?.publish !== false)
-})
-const nowMonth = new Date().getMonth()
-const nowYear = new Date().getFullYear()
-const currentMonth = computed(() => {
-  return notHiddenArticles.value.filter((v) => {
-    const pubDate = new Date(v.meta?.date)
-    return pubDate?.getMonth() === nowMonth && pubDate.getFullYear() === nowYear
-  })
-})
+onMounted(getCountLogs)
 
-const currentWeek = computed(() => {
-  return notHiddenArticles.value.filter((v) => {
-    const pubDate = new Date(v.meta?.date)
-    return isCurrentWeek(pubDate)
-  })
-})
+
 </script>
 
 <template>
@@ -39,17 +25,17 @@ const currentWeek = computed(() => {
     <Author v-if="showCardAvatar" />
     <div class="overview-data">
       <div class="overview-item">
-        <span class="count">{{ notHiddenArticles.length }}</span>
+        <span class="count">{{ count }}</span>
         <span class="label">博客文章</span>
       </div>
       <div class="split" />
       <div class="overview-item">
-        <span class="count">+{{ currentMonth?.length }}</span>
+        <span class="count">+{{ monthCount }}</span>
         <span class="label">本月更新</span>
       </div>
       <div class="split" />
       <div class="overview-item">
-        <span class="count">+{{ currentWeek?.length }}</span>
+        <span class="count">+{{ weekCount }}</span>
         <span class="label">本周更新</span>
       </div>
     </div>

@@ -33,16 +33,6 @@ export function formatDate(d, fmt = 'yyyy-MM-dd hh:mm:ss') {
   return fmt
 }
 
-export function isCurrentWeek(date, target) {
-  const now = target || new Date()
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-  const oneDay = 1000 * 60 * 60 * 24
-  const nowWeek = today.getDay()
-  // 本周一的时间
-  const startWeek = today.getTime() - (nowWeek === 0 ? 6 : nowWeek - 1) * oneDay
-  return +date >= startWeek && +date <= startWeek + 7 * oneDay
-}
-
 export function formatShowDate(date) {
   const source = date ? +new Date(date) : +new Date()
   const now = +new Date()

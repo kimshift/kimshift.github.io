@@ -1,8 +1,10 @@
 <script setup name="精选文章">
 import { computed, onMounted, ref } from 'vue'
 import { ElButton } from 'element-plus'
+import { storeToRefs } from 'pinia'
 import { useData, useRouter, withBase } from 'vitepress'
-import { useArticles, useCleanUrls } from '../../config'
+import { useArticleStore } from '../../stores/article'
+import { useCleanUrls } from '../../config'
 import { formatShowDate, wrapperCleanUrls } from '../../utils/client'
 import { fireSVG } from '../../constants/svg'
 const { theme } = useData()
@@ -22,7 +24,7 @@ onMounted(() => {
 })
 
 
-const docs = useArticles()
+const { docs } = storeToRefs(useArticleStore())
 // 获取精选文章-排序
 const recommendList = computed(() => {
   const data = docs.value.filter(v => v.meta.hot)

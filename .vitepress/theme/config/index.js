@@ -13,8 +13,6 @@ import {
 import { useColorMode } from '@vueuse/core'
 
 const configSymbol = Symbol('theme-config')
-const activeTagSymbol = Symbol('active-tag')
-const currentPageNum = Symbol('home-page-num')
 // import { useArticleStore } from '../stores/article'
 // import { useThemeStore } from '../stores/theme'
 export function withConfigProvider(App) {
@@ -22,10 +20,6 @@ export function withConfigProvider(App) {
     name: 'ConfigProvider',
     setup(_, { slots }) {
       const { theme } = useData()
-      // const articleStore = useArticleStore()
-      // const t = useThemeStore()
-      // console.log('测试t:', t)
-      // console.log('测试articleStore-currentList:', articleStore.articleParams)
       const config = computed(() => resolveConfig(theme.value))
       provide(configSymbol, config)
 
@@ -53,12 +47,6 @@ export function useConfig() {
   return {
     config: inject(configSymbol)?.value,
   }
-}
-
-export function useArticles() {
-  const blogConfig = useConfig()
-  const articles = computed(() => blogConfig.config?.blog?.pagesData || [])
-  return articles
 }
 
 /*******

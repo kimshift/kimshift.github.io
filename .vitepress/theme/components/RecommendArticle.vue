@@ -2,10 +2,14 @@
 import { computed, onMounted, ref } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { ElButton } from 'element-plus'
+import { storeToRefs } from 'pinia'
 import { formatShowDate, wrapperCleanUrls } from '../utils/client'
-import { useArticles, useCleanUrls } from '../config'
+import { useCleanUrls } from '../config'
 import { recommendSVG } from '../constants/svg'
+import { useArticleStore } from '../stores/article'
+
 const { theme } = useData()
+const { docs } = storeToRefs(useArticleStore())
 
 const recommend = computed(() => theme.value.recommend)
 const sidebarStyle = computed(() => recommend.value?.style ?? 'sidebar')
@@ -15,11 +19,10 @@ const pageSize = computed(() => recommend.value?.pageSize || 9)
 const nextText = computed(() => recommend.value?.nextText ?? '换一组')
 const emptyText = computed(() => recommend.value?.empty ?? '暂无相关文章')
 
-const docs = useArticles()
 
 const route = useRoute()
 
-// 获取当前文章的分类
+// 获取当前文章所属分类
 function getRecommendCategory(page) {
   if (!page) return []
   const { meta } = page

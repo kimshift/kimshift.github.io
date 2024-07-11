@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useData } from 'vitepress'
+import dayjs from 'dayjs'
 import { deepCopy, getPagination, sortByKeyAndTime } from 'tools-for-js'
 import { getQueryParams } from '../utils/client'
 export const useArticleStore = defineStore(
@@ -17,15 +18,35 @@ export const useArticleStore = defineStore(
     const articles = ref([])
     const tags = ref([])
     const categories = ref([])
-    const total = ref(0)
+    const count = ref(0) //文章数量
+    const monthCount = ref(0) //本月更新
+    const weekCount = ref(0) //本周更新
 
     const docs = computed(() => {
       let blogs = theme.value.blogs || []
-      blogs = blogs.filter(v => !v.meta.hidden)
+      blogs = blogs.filter(v => v.meta?.publish !== false)
       tags.value = [...new Set(blogs.map(v => v.meta.tags || []).flat(3))]
       categories.value = [...new Set(blogs.map(v => v.meta.categories || []).flat(3))]
       return blogs
     })
+
+    // 获取新增日志
+    const getCountLogs = () => {
+      let mCount = 0
+      let wCount = 0
+      count.value = docs.value.length
+      docs.value.forEach(v => {
+        const pubDate = dayjs(v.meta?.date)
+        let isMonth = pubDate.isSame(dayjs(), 'month') //本月
+        let isWeek = pubDate.isSame(dayjs(), 'week') //本周
+        if (isMonth) {
+          mCount++
+          if (isWeek) wCount++
+        }
+      })
+      weekCount.value = wCount
+      monthCount.value = mCount
+    }
 
     // 文章列表
     const getArticleList = () => {
@@ -59,7 +80,18 @@ export const useArticleStore = defineStore(
       const rows = getArticleList() // 总数据
       articles.value = getPagination(rows, articleParams.value) // 当前页
     }
-    return { articleParams, tags, categories, articles, getArticles }
+    return {
+      articleParams,
+      count,
+      monthCount,
+      weekCount,
+      tags,
+      categories,
+      docs,
+      articles,
+      getCountLogs,
+      getArticles,
+    }
   },
   {
     persist: {
