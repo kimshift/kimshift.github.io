@@ -3,7 +3,7 @@ import headConf from './config/head'
 import themeConf, { blogTheme } from './config/theme'
 export default defineConfig({
   base: '/',
-  srcDir: 'docs',
+  srcDir: 'docs', //文档根路径对应目录
   extends: blogTheme,
   lang: 'zh-CN',
   title: 'KimShift 空间',

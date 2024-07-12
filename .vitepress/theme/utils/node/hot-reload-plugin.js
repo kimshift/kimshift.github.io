@@ -1,56 +1,65 @@
 import { getArticleMeta } from './theme'
 import { debounce, isEqual } from './index'
 
+// 热更新插件
 export function themeReloadPlugin() {
-  let blogConfig
+  let docs
   let vitepressConfig
   let docsDir
 
   const generateRoute = filepath => {
+    filepath = filepath.replace(/\\/g, '/') // 将路径中的反斜杠字符 \ 替换为斜杠 /
     return filepath.replace(docsDir, '').replace('.md', '')
   }
 
   return {
-    name: '@sugarat/theme-reload',
+    name: '@kimshift/theme-reload',
     apply: 'serve',
     configureServer(server) {
       const restart = debounce(() => {
         server.restart()
       }, 500)
+
+      // 监听新增的文件
       server.watcher.on('add', path => {
-        const route = generateRoute(path)
-        const meta = getArticleMeta(path, route, blogConfig?.timeZone)
-        blogConfig.pagesData.push({
-          route,
-          meta,
-        })
-        restart()
+        if (path.endsWith('.md')) {
+          const route = generateRoute(path)
+          const meta = getArticleMeta(path, route)
+          docs.push({
+            route,
+            meta,
+          })
+          restart()
+        }
       })
 
+      // 监听变更的文件
       server.watcher.on('change', path => {
-        const route = generateRoute(path)
-        const meta = getArticleMeta(path, route, blogConfig?.timeZone)
-        const matched = blogConfig.pagesData.find(v => v.route === route)
-
+        const route = generateRoute(path, docsDir)
+        const meta = getArticleMeta(path, route)
+        const matched = docs.find(v => v.route === route)
         if (matched && !isEqual(matched.meta, meta, ['date', 'description'])) {
           matched.meta = meta
           restart()
         }
       })
 
+      // 监听删除的文件
       server.watcher.on('unlink', path => {
         const route = generateRoute(path)
-        const idx = blogConfig.pagesData.findIndex(v => v.route === route)
-        if (idx >= 0) {
-          blogConfig.pagesData.splice(idx, 1)
-          restart()
+        if (path.endsWith('.md')) {
+          const idx = docs.findIndex(v => v.route === route)
+          if (idx >= 0) {
+            docs.splice(idx, 1)
+            restart()
+          }
         }
       })
     },
     configResolved(config) {
       vitepressConfig = config.vitepress
       docsDir = vitepressConfig.srcDir
-      blogConfig = config.vitepress.site.themeConfig.blog
+      docs = vitepressConfig.site.themeConfig.docs
     },
   }
 }

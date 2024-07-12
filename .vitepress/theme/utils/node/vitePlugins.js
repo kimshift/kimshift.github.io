@@ -1,6 +1,4 @@
 import path from 'node:path'
-import { execSync } from 'node:child_process'
-import process from 'node:process'
 import { existsSync, readFileSync } from 'node:fs'
 import { Buffer } from 'node:buffer'
 import { chineseSearchOptimize, pagefindPlugin } from 'vitepress-plugin-pagefind'
@@ -45,44 +43,6 @@ export function registerVitePlugins(vpCfg, plugins) {
   }
 }
 
-export function inlinePagefindPlugin(buildEndFn) {
-  buildEndFn.push(() => {
-    // 调用pagefind
-    const ignore = [
-      // 侧边栏内容
-      'div.aside',
-      // 标题锚点
-      'a.header-anchor',
-    ]
-    const { log } = console
-    log()
-    log('=== pagefind: https://pagefind.app/ ===')
-    const siteDir = path.join(process.argv.slice(2)?.[1] || '.', '.vitepress/dist')
-    let command = `npx pagefind --site ${siteDir} --output-subdir "_pagefind"`
-
-    if (ignore.length) {
-      command += ` --exclude-selectors "${ignore.join(', ')}"`
-    }
-
-    log(command)
-    log()
-    execSync(command, {
-      stdio: 'inherit',
-    })
-  })
-  return {
-    name: '@sugarar/theme-plugin-pagefind',
-    enforce: 'pre',
-    // 添加检索的内容标识
-    transform(code, id) {
-      if (id.endsWith('theme-default/Layout.vue')) {
-        return code.replace('<VPContent>', '<VPContent data-pagefind-body>')
-      }
-      return code
-    },
-  }
-}
-
 export function inlineBuildEndPlugin(buildEndFn) {
   let rewrite = false
   return {
@@ -90,13 +50,9 @@ export function inlineBuildEndPlugin(buildEndFn) {
     enforce: 'pre',
     configResolved(config) {
       // 避免重复定义
-      if (rewrite) {
-        return
-      }
+      if (rewrite) return
       const vitepressConfig = config.vitepress
-      if (!vitepressConfig) {
-        return
-      }
+      if (!vitepressConfig) return
       rewrite = true
       // 添加 自定义 vitepress build 的钩子
       const selfBuildEnd = vitepressConfig.buildEnd
@@ -110,7 +66,7 @@ export function inlineBuildEndPlugin(buildEndFn) {
 
 // TODO: 支持frontmatter中的相对路径图片自动处理
 export function coverImgTransform() {
-  let blogConfig
+  let docs
   let vitepressConfig
   let assetsDir
   return {
@@ -120,7 +76,7 @@ export function coverImgTransform() {
     configResolved(config) {
       vitepressConfig = config.vitepress
       assetsDir = vitepressConfig.assetsDir
-      blogConfig = config.vitepress.site.themeConfig.blog
+      docs = config.vitepress.site.themeConfig.docs
     },
     async generateBundle(_, bundle) {
       const assetsMap = Object.entries(bundle)
@@ -130,7 +86,7 @@ export function coverImgTransform() {
         .map(([_, value]) => {
           return value
         })
-      for (const page of blogConfig.pagesData) {
+      for (const page of docs) {
         const { cover } = page.meta
         // 是否相对路径引用
         if (!cover?.startsWith?.('/')) {

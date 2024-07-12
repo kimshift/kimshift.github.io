@@ -25,7 +25,7 @@ export const useArticleStore = defineStore(
 
     // 初始化
     const initDocs = () => {
-      let blogs = theme.value.blogs || []
+      let blogs = theme.value.docs || []
       blogs = blogs.filter(v => v.meta?.publish !== false)
       tags.value = [...new Set(blogs.map(v => v.meta.tags || []).flat(3))]
       categories.value = [...new Set(blogs.map(v => v.meta.categories || []).flat(3))]

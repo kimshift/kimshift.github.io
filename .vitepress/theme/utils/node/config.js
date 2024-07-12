@@ -32,10 +32,7 @@ export function getThemeConfig(cfg) {
 
   return {
     themeConfig: {
-      blog: {
-        pagesData: articles,
-      },
-      blogs: [...articles],
+      docs: [...articles],
       ...cfg,
       // 补充一些额外的配置用于继承
       ...patchVPThemeConfig(cfg),

@@ -93,7 +93,7 @@ export function getArticles(cfg) {
   return files
     .map(filepath => {
       const route = getPageRoute(filepath, srcDir)
-      const meta = getArticleMeta(filepath, route, cfg?.timeZone)
+      const meta = getArticleMeta(filepath, route)
       return {
         route,
         meta,
