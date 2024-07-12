@@ -1,67 +1,7 @@
-export function shuffleArray(arr) {
-  const array = [...arr]
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[array[i], array[j]] = [array[j], array[i]]
-  }
-  return array
-}
-export function formatDate(d, fmt = 'yyyy-MM-dd hh:mm:ss') {
-  if (!(d instanceof Date)) {
-    d = new Date(d)
-  }
-  const o = {
-    'M+': d.getMonth() + 1, // 月份
-    'd+': d.getDate(), // 日
-    'h+': d.getHours(), // 小时
-    'm+': d.getMinutes(), // 分
-    's+': d.getSeconds(), // 秒
-    'q+': Math.floor((d.getMonth() + 3) / 3), // 季度
-    S: d.getMilliseconds(), // 毫秒
-  }
-  if (/(y+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, `${d.getFullYear()}`.substr(4 - RegExp.$1.length))
-  }
-  // eslint-disable-next-line no-restricted-syntax
-  for (const k in o) {
-    if (new RegExp(`(${k})`).test(fmt))
-      fmt = fmt.replace(
-        RegExp.$1,
-        RegExp.$1.length === 1 ? o[k] : `00${o[k]}`.substr(`${o[k]}`.length)
-      )
-  }
-  return fmt
-}
-
-export function formatShowDate(date) {
-  const source = date ? +new Date(date) : +new Date()
-  const now = +new Date()
-  const diff = now - source
-  const oneSeconds = 1000
-  const oneMinute = oneSeconds * 60
-  const oneHour = oneMinute * 60
-  const oneDay = oneHour * 24
-  const oneWeek = oneDay * 7
-  if (diff < oneMinute) {
-    return `${Math.floor(diff / oneSeconds)}秒前`
-  }
-  if (diff < oneHour) {
-    return `${Math.floor(diff / oneMinute)}分钟前`
-  }
-  if (diff < oneDay) {
-    return `${Math.floor(diff / oneHour)}小时前`
-  }
-  if (diff < oneWeek) {
-    return `${Math.floor(diff / oneDay)}天前`
-  }
-
-  return formatDate(new Date(date), 'yyyy-MM-dd')
-}
-
 const pattern =
   /[a-zA-Z0-9_\u0392-\u03C9\u00C0-\u00FF\u0600-\u06FF\u0400-\u04FF]+|[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF\u3040-\u309F\uAC00-\uD7AF]+/g
 
-export default function countWord(data) {
+export function countWord(data) {
   const m = data.match(pattern)
   let count = 0
   if (!m) {
@@ -135,51 +75,4 @@ export function getImageUrl(image, isDarkMode) {
     return isDarkMode ? image.dark : image.light
   } // 如果 ThemeableImage 类型不是上述情况，则返回空字符串
   return ''
-}
-
-export function wrapperCleanUrls(cleanUrls, route = '') {
-  const tempUrl = route.replace(/\.html$/, '')
-  return cleanUrls ? tempUrl : `${tempUrl}.html`
-}
-
-/*******
- * @description: 获取哈希路由参数
- * @author: 琴时
- * @param {String} key
- * @return {*}
- */
-export const getHashParam = key => {
-  const reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)')
-  const queryString = window.location.href.split('?')[1] || ''
-  const result = queryString.match(reg)
-  return result ? decodeURIComponent(result[2]) : null
-}
-
-/*******
- * @description: 获取路由参数
- * @author: 琴时
- * @return {*}
- */
-export const getQueryParams = () => {
-  const queryString = window.location.href.split('?')[1] || ''
-  if (!queryString) return null
-  const params = {}
-  queryString.split('&').forEach(param => {
-    const [key, value] = param.split('=')
-    params[decodeURIComponent(key)] = decodeURIComponent(value)
-  })
-  return params
-}
-
-// 获取当前路径
-export function getPath() {
-  const { pathname } = window.location
-  const currentPath = pathname.replace(/.html$/, '')
-  // 兼容中文路径
-  const okPaths = [currentPath, decodeURIComponent(currentPath)]
-  // 兼容 /(index.md)
-  if (currentPath.endsWith('/')) {
-    okPaths.push(...[`${currentPath}index`, `${decodeURIComponent(currentPath)}index`])
-  }
-  return [...new Set(okPaths)]
 }

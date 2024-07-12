@@ -5,7 +5,7 @@ import { storeToRefs } from 'pinia'
 import { useDark } from '@vueuse/core'
 import { useData, useRouter } from 'vitepress'
 import { useArticleStore } from '../../stores/article'
-import { getQueryParams } from '../../utils/client'
+import { getQueryParams } from 'tools-for-web'
 const router = useRouter()
 const { theme } = useData()
 

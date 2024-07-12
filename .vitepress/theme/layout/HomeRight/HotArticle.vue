@@ -4,7 +4,8 @@ import { ElButton } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { useData, useRouter, withBase } from 'vitepress'
 import { useArticleStore } from '../../stores/article'
-import { formatShowDate, wrapperCleanUrls } from '../../utils/client'
+import { transformDate } from 'tools-for-js';
+import { wrapperCleanUrls } from 'tools-for-web';
 import { fireSVG } from '../../constants/svg'
 const { theme, site } = useData()
 
@@ -96,7 +97,7 @@ const showChangeBtn = computed(() => {
           <!-- 描述信息 -->
           <div class="suffix">
             <!-- 日期 -->
-            <span class="tag">{{ formatShowDate(v.meta.date) }}</span>
+            <span class="tag">{{ transformDate(v.meta.date) }}</span>
           </div>
         </div>
       </li>

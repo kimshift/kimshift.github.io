@@ -41,9 +41,15 @@ export default {
         avatar: '/favicon.ico',
         url: 'https://vitepress.dev/',
       },
+      {
+        nickname: 'Vitepress1',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: '/favicon.ico',
+        url: 'https://vitepress.dev/',
+      },
     ],
     limit: 3, // 展示数量
-    random: false, // 是否随机展示
+    random: true, // 是否随机展示
     scrollSpeed: 2000, // 滚动速度
   }, //友情链接配置
   footer: {

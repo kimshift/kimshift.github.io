@@ -3,7 +3,8 @@ import { computed, onMounted, ref } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { ElButton } from 'element-plus'
 import { storeToRefs } from 'pinia'
-import { formatShowDate, wrapperCleanUrls } from '../utils/client'
+import { transformDate } from 'tools-for-js';
+import { wrapperCleanUrls } from 'tools-for-web';
 import { recommendSVG } from '../constants/svg'
 import { useArticleStore } from '../stores/article'
 
@@ -152,7 +153,7 @@ function handleLinkClick(link) {
           <!-- 描述信息 -->
           <div class="suffix">
             <!-- 日期 -->
-            <span class="tag">{{ formatShowDate(v.meta.date) }}</span>
+            <span class="tag">{{ transformDate(v.meta.date) }}</span>
           </div>
         </div>
       </li>

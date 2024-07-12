@@ -28,7 +28,6 @@ const handleCurrentChange = (page) => {
   articleStore.getArticles()
   window.scrollTo(0, 0)// 界面置顶
 }
-console.log('测试:', articles.value)
 </script>
 
 <template>

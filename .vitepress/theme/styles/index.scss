@@ -25,6 +25,14 @@ html.dark {
 }
 
 .VPHome {
+  margin-bottom: 0 !important;
+  padding-bottom: 96px;
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse,
+    rgba(var(--bg-gradient-home), 1) 0%,
+    rgba(var(--bg-gradient-home), 0) 700%
+  );
   &::before {
     content: '';
     inset: 0;
@@ -35,19 +43,6 @@ html.dark {
     background-repeat: repeat;
     min-height: 100%;
   }
-
-  min-height: 100vh;
-  background: radial-gradient(
-    ellipse,
-    rgba(var(--bg-gradient-home), 1) 0%,
-    rgba(var(--bg-gradient-home), 0) 700%
-  );
-}
-
-// 样式重写
-.VPHome {
-  margin-bottom: 0 !important;
-  padding-bottom: 96px;
 }
 
 @media (min-width: 768px) {
@@ -169,10 +164,9 @@ html.dark {
 
 main .vp-doc a {
   text-decoration: none;
-}
-
-main .vp-doc a:hover {
-  text-decoration: underline dotted;
+  &:hover {
+    text-decoration: underline dotted;
+  }
 }
 
 // 自定义全局样式

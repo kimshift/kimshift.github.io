@@ -11,8 +11,9 @@ import {
   EditPen,
   UserFilled
 } from '@element-plus/icons-vue'
+import { transformDate } from 'tools-for-js';
 import { useArticleStore } from '../stores/article';
-import countWord, { formatShowDate } from '../utils/client'
+import { countWord } from '../utils/client'
 import DocCover from './DocCover.vue'
 
 const { getCurrentArticle } = useArticleStore()
@@ -99,7 +100,7 @@ onMounted(() => {
 const route = useRoute()
 
 const publishDate = computed(() => {
-  return formatShowDate(currentArticle.value.meta?.date || '')
+  return transformDate(currentArticle.value.meta?.date || '')
 })
 
 const timeTitle = computed(() =>

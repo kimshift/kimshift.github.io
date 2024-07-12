@@ -2,6 +2,7 @@
 /* eslint-disable prefer-rest-params */
 import { spawn, spawnSync } from 'node:child_process'
 import path from 'node:path'
+import dayjs from 'dayjs'
 
 export function clearMatterContent(content) {
   let first___
@@ -35,23 +36,18 @@ export function getDefaultTitle(content) {
   return match?.[2] || ''
 }
 
+// 获取指定仓库的最新提交时间戳
 export function getFileBirthTime(url) {
-  let date = new Date()
-
   try {
     // 参考 vitepress 中的 getGitTimestamp 实现
     const infoStr = spawnSync('git', ['log', '-1', '--pretty="%ci"', url])
       .stdout?.toString()
       .replace(/["']/g, '')
       .trim()
-    if (infoStr) {
-      date = new Date(infoStr)
-    }
+    return infoStr ? dayjs(infoStr) : dayjs()
   } catch (error) {
-    return date
+    return dayjs()
   }
-
-  return date
 }
 
 export function getGitTimestamp(file) {

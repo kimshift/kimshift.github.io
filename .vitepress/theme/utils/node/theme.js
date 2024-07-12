@@ -4,7 +4,7 @@ import path from 'node:path'
 import process from 'node:process'
 import glob from 'fast-glob'
 import matter from 'gray-matter'
-import { formatDate } from '../client'
+import dayjs from 'dayjs'
 import { getDefaultTitle, getFileBirthTime, getFirstImagURLFromMD, getTextSummary } from './index'
 
 export function patchDefaultThemeSideBar(cfg) {
@@ -39,28 +39,31 @@ export function getPageRoute(filepath, srcDir) {
 }
 
 // 获取文章元信息
-export function getArticleMeta(filepath, route, timeZone = new Date().getTimezoneOffset() / -60) {
+export function getArticleMeta(filepath, route) {
   const fileContent = fs.readFileSync(filepath, 'utf-8')
-
   const {
     data: frontmatter,
     excerpt,
     content,
   } = matter(fileContent, {
     excerpt: true,
-  })
+  }) //解析md单元
 
   const meta = {
     ...frontmatter,
   }
 
   if (!meta.title) {
-    meta.title = getDefaultTitle(content)
+    meta.title = getDefaultTitle(content) //标题不存在获取md一级标题
   }
   if (!meta.date) {
-    meta.date = formatDate(getFileBirthTime(filepath))
+    meta.date = getFileBirthTime(filepath).format('YYYY-MM-DD HH:mm:ss')
   } else {
-    meta.date = formatDate(new Date(`${new Date(meta.date).toUTCString()}+${timeZone}`))
+    const timeZon = new Date().getTimezoneOffset() / -60
+    // 减去时差
+    const timeMinus8Hours = dayjs(meta.date).subtract(timeZon, 'hour')
+    // 格式化时间
+    meta.date = timeMinus8Hours.format('YYYY-MM-DD HH:mm:ss')
   }
 
   // 处理tags和categories,兼容历史文章
@@ -78,10 +81,7 @@ export function getArticleMeta(filepath, route, timeZone = new Date().getTimezon
   meta.cover = meta.cover ?? getFirstImagURLFromMD(fileContent, route)
 
   // 是否发布 默认发布
-  if (meta.publish === false) {
-    meta.hidden = true
-    meta.recommend = false
-  }
+  meta.publish = !(meta.publish === false)
   return meta
 }
 
