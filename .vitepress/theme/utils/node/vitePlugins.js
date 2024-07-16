@@ -46,7 +46,7 @@ export function registerVitePlugins(vpCfg, plugins) {
 export function inlineBuildEndPlugin(buildEndFn) {
   let rewrite = false
   return {
-    name: '@sugarar/theme-plugin-build-end',
+    name: '@kimshift/theme-plugin-build-end',
     enforce: 'pre',
     configResolved(config) {
       // 避免重复定义
@@ -70,7 +70,7 @@ export function coverImgTransform() {
   let vitepressConfig
   let assetsDir
   return {
-    name: '@sugarat/theme-plugin-cover-transform',
+    name: '@kimshift/theme-plugin-cover-transform',
     apply: 'build',
     enforce: 'pre',
     configResolved(config) {

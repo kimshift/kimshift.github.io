@@ -1,6 +1,5 @@
 /* eslint-disable global-require */
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
-import timeline from 'vitepress-markdown-timeline'
 import mdCheckbox from 'markdown-it-task-checkbox'
 import { aliasObjectToArray } from './index'
 
@@ -17,9 +16,6 @@ export function getMarkdownPlugins(cfg) {
     )
   }
 
-  if (cfg?.timeline !== false) {
-    markdownPlugin.push(timeline)
-  }
   return markdownPlugin
 }
 

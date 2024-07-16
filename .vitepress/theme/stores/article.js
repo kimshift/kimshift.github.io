@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useData, withBase } from 'vitepress'
 import dayjs from 'dayjs'
-import { deepCopy, getPagination, sortByKeyAndTime } from 'tools-for-js'
+import { deepCopy, getPagination, sortByKeyAndTime, dateFormat } from 'tools-for-js'
 import { getQueryParams, getPath } from 'tools-for-web'
 export const useArticleStore = defineStore(
   'article',
@@ -26,7 +26,7 @@ export const useArticleStore = defineStore(
     // 初始化
     const initDocs = () => {
       let blogs = theme.value.docs || []
-      blogs = blogs.filter(v => v.meta?.publish !== false)
+      blogs = blogs.filter(v => v.meta?.publish !== false && v.meta?.title)
       tags.value = [...new Set(blogs.map(v => v.meta.tags || []).flat(3))]
       categories.value = [...new Set(blogs.map(v => v.meta.categories || []).flat(3))]
       docs.value = blogs
@@ -91,6 +91,26 @@ export const useArticleStore = defineStore(
       articles.value = getPagination(rows, articleParams.value) // 当前页
     }
 
+    const getTimeLine = () => {
+      let pages = [...docs.value]
+      pages.sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
+      const yearObj = {}
+      const pagesArr = []
+      pages.forEach(v => {
+        let year = dateFormat(v.meta?.date, 'YYYY')
+        if (yearObj[year]) yearObj[year].push(v)
+        else yearObj[year] = [v]
+      })
+      for (const key in yearObj) {
+        const value = yearObj[key]
+        pagesArr.unshift({
+          year: key,
+          data: value,
+        })
+      }
+      return pagesArr
+    }
+
     return {
       docs,
       articles,
@@ -103,6 +123,7 @@ export const useArticleStore = defineStore(
       initDocs,
       getCountLogs,
       getArticles,
+      getTimeLine,
       getCurrentArticle,
     }
   },

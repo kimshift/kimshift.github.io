@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable prefer-rest-params */
-import { spawn, spawnSync } from 'node:child_process'
+import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 import dayjs from 'dayjs'
 
@@ -48,20 +48,6 @@ export function getFileBirthTime(url) {
   } catch (error) {
     return dayjs()
   }
-}
-
-export function getGitTimestamp(file) {
-  return new Promise((resolve, reject) => {
-    const child = spawn('git', ['log', '-1', '--pretty="%ci"', file])
-    let output = ''
-    child.stdout.on('data', d => {
-      output += String(d)
-    })
-    child.on('close', () => {
-      resolve(+new Date(output))
-    })
-    child.on('error', reject)
-  })
 }
 
 export function getTextSummary(text, count = 100) {

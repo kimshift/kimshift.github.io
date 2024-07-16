@@ -226,5 +226,5 @@ useDarkTransition()
 </style>
 
 <style>
-@import url(./styles/dark-transition.css);
+@import url(./styles/theme/dark-transition.css);
 </style>

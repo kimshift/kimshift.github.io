@@ -6,10 +6,7 @@ import pinia from './stores'
 import { useArticleStore } from './stores/article'
 import App from './App.vue'
 // 时间线组件
-import TimelinePage from './components/TimelinePage.vue'
-
-// 引入时间线组件样式
-import 'vitepress-markdown-timeline/dist/theme/index.css'
+import Timeline from './layout/Timeline.vue'
 
 // 内置一些特殊的主题色
 import './styles/theme/inline-theme.var.css'
@@ -52,7 +49,7 @@ const customTheme = {
     ctx.app.use(pinia)
     enhanceAppWithTabs(ctx.app)
     DefaultTheme.enhanceApp(ctx)
-    ctx.app.component('TimelinePage', TimelinePage)
+    ctx.app.component('Timeline', Timeline)
   },
 }
 

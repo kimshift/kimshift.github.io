@@ -50,9 +50,6 @@ importers:
       tools-for-web:
         specifier: ^0.0.4
         version: 0.0.4
-      vitepress-markdown-timeline:
-        specifier: ^1.2.1
-        version: 1.2.1
       vitepress-plugin-pagefind:
         specifier: ^0.3.3
         version: 0.3.3(pagefind@1.1.0)
@@ -1019,9 +1016,6 @@ packages:
       terser:
         optional: true
 
-  vitepress-markdown-timeline@1.2.1:
-    resolution: {integrity: sha512-XPYl/btTcTzW+XF20ITB51L8jPjbS72tSKPcv/CHJgM+3LbBvW8Az/X7RcBTJSXDNOwCY5mGkjA7CXQtuxOKgw==}
-
   vitepress-plugin-pagefind@0.3.3:
     resolution: {integrity: sha512-sko3JDj+2ig6czeeHH5ajAqzoIISgn2PATVC2PSvvL3PICU0grIBTrdfFthrfTdKLwcbcIQOBInbD7r5YbFl7Q==}
     peerDependencies:
@@ -1983,10 +1977,6 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
       sass: 1.77.8
-
-  vitepress-markdown-timeline@1.2.1:
-    dependencies:
-      dayjs: 1.11.11
 
   vitepress-plugin-pagefind@0.3.3(pagefind@1.1.0):
     dependencies:
