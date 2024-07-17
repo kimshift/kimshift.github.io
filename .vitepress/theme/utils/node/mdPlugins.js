@@ -1,15 +1,10 @@
 /* eslint-disable global-require */
-import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import mdCheckbox from 'markdown-it-task-checkbox'
 import { aliasObjectToArray } from './index'
 
 export function getMarkdownPlugins(cfg) {
   const markdownPlugin = []
-  // tabs支持,默认开启
-  if (cfg?.tabs !== false) {
-    markdownPlugin.push(tabsMarkdownPlugin)
-  }
-
+  // taskCheckbox支持,默认开启
   if (cfg?.taskCheckbox !== false) {
     markdownPlugin.push(
       taskCheckboxPlugin(typeof cfg?.taskCheckbox === 'boolean' ? {} : cfg?.taskCheckbox)
@@ -54,7 +49,6 @@ export function patchOptimizeDeps(config) {
   if (!config.vite.optimizeDeps) {
     config.vite.optimizeDeps = {}
   }
-  config.vite.optimizeDeps.exclude = ['vitepress-plugin-tabs']
   config.vite.optimizeDeps.include = ['element-plus']
 }
 

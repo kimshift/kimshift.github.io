@@ -4,6 +4,6 @@
  */
 export default [
   { text: '首页', link: '/', icon: 'reco-home' },
-  { text: '例子', link: '/examples/markdown-examples' },
+  { text: '例子', link: '/examples/markdown' },
   { text: '时间线', link: '/timeline' },
 ]

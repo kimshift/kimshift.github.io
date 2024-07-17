@@ -1,7 +1,6 @@
 import { defineComponent, h } from 'vue'
 // https://vitepress.dev/guide/custom-theme
 import DefaultTheme from 'vitepress/theme'
-import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import pinia from './stores'
 import { useArticleStore } from './stores/article'
 import App from './App.vue'
@@ -47,7 +46,6 @@ const customTheme = {
   Layout: withConfigProvider(App),
   enhanceApp(ctx) {
     ctx.app.use(pinia)
-    enhanceAppWithTabs(ctx.app)
     DefaultTheme.enhanceApp(ctx)
     ctx.app.component('Timeline', Timeline)
   },

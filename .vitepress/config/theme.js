@@ -38,14 +38,14 @@ export default {
       {
         nickname: 'Vitepress',
         des: 'Vite & Vue Powered Static Site Generator',
-        avatar: '/favicon.ico',
-        url: 'https://vitepress.dev/',
+        avatar: 'https://vitepress.dev/vitepress-logo-mini.svg',
+        url: 'https://vitepress.dev/zh/',
       },
       {
-        nickname: 'Vitepress1',
-        des: 'Vite & Vue Powered Static Site Generator',
+        nickname: 'KimShift 空间',
+        des: '记得要奔走在自己的热爱里🌹',
         avatar: '/favicon.ico',
-        url: 'https://vitepress.dev/',
+        url: 'https://kimshift.github.io/',
       },
     ],
     limit: 3, // 展示数量

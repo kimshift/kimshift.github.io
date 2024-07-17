@@ -1,15 +1,11 @@
 ---
-hot: 1
-date: 2024-07-12
-categories: [examples, api]
+categories:
+  - 文章例子
 tags:
-  - 软件
   - 示例
-# sidebar: false
-publish: false
 ---
 
-# 测试
+# API 示例
 
 ::: tip 摘要
 
@@ -20,8 +16,6 @@ publish: false
 
 [[toc]]
 
-<!-- more -->
-
 ```md
 <script setup>
 import { useData } from 'vitepress'
@@ -31,15 +25,15 @@ const { theme, page, frontmatter } = useData()
 
 ## Results
 
-### Theme Data
+### 主题信息
 
 <pre>{{ theme }}</pre>
 
-### Page Data
+### 页面信息
 
 <pre>{{ page }}</pre>
 
-### Page Frontmatter
+### 文档配置
 
 <pre>{{ frontmatter }}</pre>
 ```
@@ -52,18 +46,18 @@ const { site, theme, page, frontmatter } = useData()
 
 ## Results
 
-### Theme Data
+### 主题信息
 
 <pre>{{ theme }}</pre>
 
-### Page Data
+### 页面信息
 
 <pre>{{ page }}</pre>
 
-### Page Frontmatter
+### 文档配置
 
 <pre>{{ frontmatter }}</pre>
 
-## More
+## 更多
 
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+查看文档以获得 [运行时 api 的完整列表](https://vitepress.dev/zh/reference/runtime-api#usedata).
