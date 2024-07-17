@@ -149,26 +149,24 @@ html.dark {
   }
 }
 
+/* 修改滚动条样式---start */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 10px;
+  height: 10px;
 }
 
-::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 10px;
+  background-color: var(--vp-c-brand-1);
+}
+
+/* 修改滚动条轨道样式 */
+::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
 
-::-webkit-scrollbar-thumb:vertical {
-  height: 4px;
-  border-radius: 4px;
-  background-color: var(--vp-c-brand-1);
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  width: 4px;
-  border-radius: 4px;
-  background-color: var(--vp-c-brand-1);
-}
+/* 修改滚动条样式---end */
 
 main .vp-doc a {
   text-decoration: none;
