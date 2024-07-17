@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable prefer-rest-params */
 import { spawnSync } from 'node:child_process'
-import path from 'node:path'
 import dayjs from 'dayjs'
 
 export function clearMatterContent(content) {
@@ -83,17 +82,6 @@ export function aliasObjectToArray(obj) {
 
 export const EXTERNAL_URL_RE = /^[a-z]+:/i
 
-/**
- * Join two paths by resolving the slash collision.
- */
-export function joinPath(base, path) {
-  return `${base}${path}`.replace(/\/+/g, '/')
-}
-
-export function withBase(base, path) {
-  return EXTERNAL_URL_RE.test(path) || path.startsWith('.') ? path : joinPath(base, path)
-}
-
 function isBase64ImageURL(url) {
   // Base64 图片链接的格式为 data:image/[image format];base64,[Base64 编码的数据]
   const regex = /^data:image\/[a-z]+;base64,/
@@ -103,27 +91,15 @@ function isBase64ImageURL(url) {
 const imageRegex = /!\[.*?\]\((.*?)\s*(".*?")?\)/
 
 /**
- * 从文档内容中提取封面
+ * 从文档内容中提取封面:目前只读取在线图片地址
  * @param content 文档内容
  */
-export function getFirstImagURLFromMD(content, route) {
-  const url = content.match(imageRegex)?.[1]
-  const isHTTPSource = url && url.startsWith('http')
-  if (!url) {
-    return ''
-  }
-
-  if (isHTTPSource || isBase64ImageURL(url)) {
-    return url
-  }
-
-  // TODO: 其它协议，待补充
-
-  const paths = joinPath('/', route).split('/')
-  paths.splice(paths.length - 1, 1)
-  const relativePath = url.startsWith('/') ? url : path.join(paths.join('/') || '', url)
-
-  return joinPath('/', relativePath)
+export function getFirstImagURLFromMD(content) {
+  let url = content.match(imageRegex)?.[1]
+  if (!url) return ''
+  const isHTTPSource = url.startsWith('http')
+  if (isHTTPSource || isBase64ImageURL(url)) return url
+  return ''
 }
 
 export function debounce(func, delay = 1000) {

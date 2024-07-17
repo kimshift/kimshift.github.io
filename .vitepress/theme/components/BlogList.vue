@@ -12,7 +12,6 @@ const { articleParams, articles } = storeToRefs(articleStore)
 const { theme } = useData()
 
 onMounted(() => {
-  articleParams.value.page = 1
   articleStore.getArticles()
 })
 

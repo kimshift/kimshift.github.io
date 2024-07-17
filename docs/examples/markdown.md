@@ -1,4 +1,5 @@
 ---
+hot: 1
 categories:
   - 文章例子
 tags:

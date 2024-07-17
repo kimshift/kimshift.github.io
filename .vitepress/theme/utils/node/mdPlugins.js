@@ -28,6 +28,9 @@ export function registerMdPlugins(vpCfg, plugins) {
           plugin?.(...rest)
         })
       },
+      image: {
+        lazyLoading: true, //开启图片懒加载
+      },
     }
   }
 }

@@ -39,7 +39,7 @@ export function getPageRoute(filepath, srcDir) {
 }
 
 // 获取文章元信息
-export function getArticleMeta(filepath, route) {
+export function getArticleMeta(filepath) {
   const fileContent = fs.readFileSync(filepath, 'utf-8')
   const {
     data: frontmatter,
@@ -78,8 +78,7 @@ export function getArticleMeta(filepath, route) {
   meta.description = meta.description || getTextSummary(content, 100) || excerpt
 
   // 获取封面图
-  meta.cover = meta.cover ?? getFirstImagURLFromMD(fileContent, route)
-
+  meta.cover = meta.cover ?? getFirstImagURLFromMD(fileContent)
   // 是否发布 默认发布
   meta.publish = !(meta.publish === false)
   return meta

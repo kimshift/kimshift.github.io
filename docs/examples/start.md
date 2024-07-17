@@ -1,6 +1,5 @@
 ---
 sticky: 1
-hot: 1
 categories:
   - 文章例子
 tags:
@@ -9,7 +8,7 @@ tags:
 
 # 编写第一篇文章
 
-<!-- 在`docs`文件夹下创建文章，文章的格式为`.md`，例如`start.md`。 -->
+在`docs`文件夹下创建文章，文章的格式为`.md`，例如`start.md`。
 
 ## 配置关键词
 
@@ -32,6 +31,8 @@ tags:
 | description     | 文章描述                             |
 | descriptionHTML | 文章描述代码形式                     |
 | `[[toc]]`       | 生成目录及链接                       |
+
+**注意**：`cover`封面图地址请使用线上图片地址 或者 将图片放置在 public 目录下。
 
 **例子**
 
