@@ -151,13 +151,13 @@ html.dark {
 
 /* 修改滚动条样式---start */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb:vertical,
 ::-webkit-scrollbar-thumb:horizontal {
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: var(--vp-c-brand-1);
 }
 
