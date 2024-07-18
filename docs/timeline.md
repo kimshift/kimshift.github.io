@@ -6,4 +6,8 @@ publish: false
 pagefind-indexed: false
 ---
 
+<script setup>
+import Timeline from '../.vitepress/theme/layout/Timeline.vue'
+</script>
+
 <Timeline />

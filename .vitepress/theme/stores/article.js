@@ -34,7 +34,7 @@ export const useArticleStore = defineStore('article', () => {
   // 当前文章
   const getCurrentArticle = () => {
     const okPaths = getPath()
-    let current = docs.value?.find(v => okPaths.includes(withBase(v.route)))
+    let current = docs.value?.find(v => okPaths.includes(withBase(v.route))) || {}
     return current
   }
 

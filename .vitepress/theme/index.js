@@ -47,7 +47,7 @@ const customTheme = {
   enhanceApp(ctx) {
     ctx.app.use(pinia)
     DefaultTheme.enhanceApp(ctx)
-    ctx.app.component('Timeline', Timeline)
+    // ctx.app.component('Timeline', Timeline) //全局注册组件
   },
 }
 

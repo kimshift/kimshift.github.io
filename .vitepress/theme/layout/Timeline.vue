@@ -31,7 +31,7 @@ const goPath = (url) => {
     </li>
   </ul>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 $textColorSub: #888;
 
 ul {
