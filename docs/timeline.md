@@ -7,7 +7,7 @@ pagefind-indexed: false
 ---
 
 <script setup>
-import Timeline from '../.vitepress/theme/layout/Timeline.vue'
+import Timeline from '../.vitepress/theme/components/Timeline.vue'
 </script>
 
 <Timeline />
