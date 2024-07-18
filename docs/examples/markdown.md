@@ -7,7 +7,7 @@ tags:
   - markdown
 ---
 
-# Markdown 扩展例子
+# Markdown 扩展
 
 这个页面展示了一些由 VitePress 提供的内置降价扩展。
 
