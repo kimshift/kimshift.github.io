@@ -1,10 +1,3 @@
-<template>
-  <div id="time-clock">
-    <span class="date">{{ date }}</span>
-    <span class="time">{{ time }}</span>
-  </div>
-</template>
-
 <script setup name="时间组件">
 import { ref, onMounted, onUnmounted } from 'vue';
 
@@ -52,8 +45,15 @@ onUnmounted(() => {
 
 </script>
 
+<template>
+  <div class="kt-clock">
+    <span class="date">{{ date }}</span>
+    <span class="time">{{ time }}</span>
+  </div>
+</template>
+
 <style lang="scss" scoped>
-#time-clock {
+.kt-clock {
   font-family: 'Share Tech Mono', monospace;
   text-align: center;
   color: #daf6ff;

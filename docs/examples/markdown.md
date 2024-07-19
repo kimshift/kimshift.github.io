@@ -110,7 +110,7 @@ This is a details block.
 **输入**
 
 ````md
-:::code-group
+::: code-group
 
 ```md [页面1]
 内容 1
@@ -125,7 +125,7 @@ This is a details block.
 
 **输出**
 
-:::code-group
+::: code-group
 
 ```md [页面1]
 内容 1
@@ -144,7 +144,3 @@ This is a details block.
 ## 更多
 
 查看文档以获得 [markdown 扩展的完整列表](https://vitepress.dev/zh/guide/markdown).
-
-```
-
-```

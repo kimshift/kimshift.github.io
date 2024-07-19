@@ -13,6 +13,9 @@ const previewImageInfo = reactive(
 function previewImage(e) {
   const target = e.target
   const currentTarget = e.currentTarget
+  // 自定义属性控制是否预览图片
+  let notPreview = e.target.getAttribute('data-not-preview') !== null
+  if (notPreview) return
   if (target.tagName.toLowerCase() === 'img') {
     const imgs = currentTarget.querySelectorAll(
       '.content-container .main img'

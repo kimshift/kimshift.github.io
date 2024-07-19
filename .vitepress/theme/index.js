@@ -9,6 +9,7 @@ import App from './App.vue'
 
 // 内置一些特殊的主题色
 import './styles/theme/inline-theme.var.css'
+import './styles/theme/dark-transition.css'
 
 // override style
 import './styles/index.scss'

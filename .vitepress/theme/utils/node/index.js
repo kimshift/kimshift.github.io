@@ -81,8 +81,6 @@ export function aliasObjectToArray(obj) {
   }))
 }
 
-export const EXTERNAL_URL_RE = /^[a-z]+:/i
-
 function isBase64ImageURL(url) {
   // Base64 图片链接的格式为 data:image/[image format];base64,[Base64 编码的数据]
   const regex = /^data:image\/[a-z]+;base64,/

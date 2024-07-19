@@ -6,7 +6,7 @@ export default {
   logo: '/favicon.ico',
   nav: nav,
   // editLink: {
-  //   pattern: 'https://github.com/kimshift/<repo>/tree/master/packages/theme/docs/:path',
+  //   pattern: 'https://github.com/<用户名>/<仓库名>/tree/master/packages/theme/docs/:path',
   //   text: '去 GitHub 上编辑内容',
   // },
   socialLinks: [{ icon: 'github', link: 'https://github.com/kimshift' }],
@@ -16,7 +16,7 @@ export default {
   lastUpdatedText: '上次更新于',
   returnToTopLabel: '回到顶部',
   sidebarMenuLabel: '相关推荐',
-  author: 'kimshift', // 文章默认作者
+  author: '琴时', // 作者
   startYear: '2021', //项目开始时间
   custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
