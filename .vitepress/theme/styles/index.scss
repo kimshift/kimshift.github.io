@@ -151,6 +151,7 @@ html.dark {
 ::-webkit-scrollbar-thumb:horizontal {
   border-radius: 8px;
   background-color: var(--vp-c-brand-1);
+  cursor: grab; //鼠标小手样式
 }
 
 /* 修改滚动条轨道样式 */

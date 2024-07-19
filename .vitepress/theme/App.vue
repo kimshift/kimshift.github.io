@@ -22,6 +22,7 @@ import CommentGiscus from './components/CommentGiscus.vue'
 
 const { theme, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout)
+const showAnalyze = computed(() => frontmatter.value.showAnalyze)
 const openTransition = computed(() => theme.value.darkTransition ?? true)
 const isBlogTheme = computed(() => theme.value.custom ?? true)
 const { Layout } = Theme
@@ -40,7 +41,7 @@ useDarkTransition()
       <slot name="doc-before" />
       <!-- 阅读时间分析 -->
       <ClientOnly>
-        <ArticleAnalyze />
+        <ArticleAnalyze v-if="showAnalyze !== false" />
         <!-- 图片预览 -->
         <ImagePreview />
       </ClientOnly>

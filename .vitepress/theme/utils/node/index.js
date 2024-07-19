@@ -73,6 +73,7 @@ export function getTextSummary(text, count = 100) {
   )
 }
 
+// 将obj转数组
 export function aliasObjectToArray(obj) {
   return Object.entries(obj).map(([find, replacement]) => ({
     find,

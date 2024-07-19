@@ -1,12 +1,7 @@
-import {
-  getMarkdownPlugins,
-  patchMermaidPluginCfg,
-  patchOptimizeDeps,
-  registerMdPlugins,
-} from './mdPlugins'
+import { registerMdPlugins } from './mdPlugins'
 import { getArticles, patchVPThemeConfig } from './theme'
 import { getVitePlugins, registerVitePlugins } from './vitePlugins'
-
+import { aliasObjectToArray } from './index'
 /**
  * 获取主题的配置
  * @param cfg 主题配置
@@ -14,20 +9,17 @@ import { getVitePlugins, registerVitePlugins } from './vitePlugins'
 export function getThemeConfig(cfg) {
   // 文章数据
   const articles = getArticles(cfg)
-  const extraVPConfig = {}
 
-  // 获取要加载的vite插件
+  const extraVPConfig = {}
+  // 获取vite插件
   const vitePlugins = getVitePlugins(cfg)
   // 注册Vite插件
   registerVitePlugins(extraVPConfig, vitePlugins)
-
-  // 获取要加载的markdown插件
-  const markdownPlugin = getMarkdownPlugins(cfg)
   // 注册markdown插件
-  registerMdPlugins(extraVPConfig, markdownPlugin)
+  registerMdPlugins(extraVPConfig)
 
   // patch extraVPConfig
-  patchMermaidPluginCfg(extraVPConfig)
+  patchAliasCfg(extraVPConfig)
   patchOptimizeDeps(extraVPConfig)
 
   return {
@@ -39,4 +31,22 @@ export function getThemeConfig(cfg) {
     },
     ...extraVPConfig,
   }
+}
+
+export function patchAliasCfg(config) {
+  if (!config.vite.resolve) config.vite.resolve = {}
+  if (!config.vite.resolve.alias) config.vite.resolve.alias = {}
+  config.vite.resolve.alias = [
+    ...aliasObjectToArray({
+      ...config.vite.resolve.alias,
+    }),
+    { find: /^dayjs\/(.*).js/, replacement: 'dayjs/esm/$1' },
+  ]
+}
+
+export function patchOptimizeDeps(config) {
+  if (!config.vite.optimizeDeps) {
+    config.vite.optimizeDeps = {}
+  }
+  config.vite.optimizeDeps.include = ['element-plus']
 }

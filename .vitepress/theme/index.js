@@ -5,7 +5,7 @@ import pinia from './stores'
 import { useArticleStore } from './stores/article'
 import App from './App.vue'
 // 时间线组件
-import Timeline from './layout/Timeline.vue'
+// import Timeline from './components/Timeline.vue'
 
 // 内置一些特殊的主题色
 import './styles/theme/inline-theme.var.css'
