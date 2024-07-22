@@ -9,7 +9,7 @@ export function registerMdPlugins(vpCfg) {
   vpCfg.markdown = {
     config(md) {
       md.use(mdCheckbox) //使用任务列表复选框插件
-      let typeList = ['cardImgList']
+      let typeList = ['cardImgList', 'cardList']
       typeList.forEach(type => containerPlugin(md, type))
     },
     image: {
@@ -119,12 +119,12 @@ function getCardImgListDOM(list, row) {
     dom += `
       <div class="card-item row-${row}" >
         <div class="box-img">
-          <a href="${item.link}" target="_blank">
+          <a href="${item.link}" >
             <img src="${item.img}" class="no-zoom" data-not-preview>
           </a>
         </div>
         <div class="box-info">
-          <a href="${item.link}" target="_blank">
+          <a href="${item.link}" >
             <p class="name">${item.name}</p>
             ${item.desc ? `<p class="desc">${item.desc}</p>` : ''}
           </a>
@@ -132,7 +132,7 @@ function getCardImgListDOM(list, row) {
         ${
           item.avatar || item.author
             ? `<div class="box-footer">
-              <a href="${item.link}" target="_blank">
+              <a href="${item.link}" >
                 ${item.avatar ? `<img src="${item.avatar}" class="no-zoom">` : ''}
                 ${item.author ? `<span>${item.author}</span>` : ''}
               </a>
