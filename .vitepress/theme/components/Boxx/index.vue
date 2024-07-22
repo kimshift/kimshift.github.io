@@ -1,5 +1,5 @@
 <template>
-  <div id="boxx">
+  <div id="boxx" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
     <div :class="class_boxx" :style="props.blockStyle" v-if="!text">
       <p class="custom-block-title" v-if="show_title" :style="props.titleStyle">{{ boxx.title }}</p>
       <p :style="style_content">{{ boxx.content }}</p>
@@ -114,14 +114,23 @@ const dynamicUpdateType = (time) => {
   }
 }
 
-onMounted(() => {
+const handleMouseEnter = () => {
+  interval.value && clearInterval(interval.value); //停止
+}
+const handleMouseLeave = () => {
+  initData()
+}
+
+const initData = () => {
   getContent(() => {
     checkTitleAndContent();
     let index = typeList.findIndex((item) => item.type === showType.value)
     index = index > -1 ? index : 0
     getShowType(index);
   })
-})
+}
+
+onMounted(initData)
 onBeforeUnmount(() => {
   interval.value && clearInterval(interval.value)
 })
