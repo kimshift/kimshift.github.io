@@ -100,12 +100,12 @@ export default {
       des: '你的指尖,拥有改变世界的力量',
     },
   ], //转载作者列表
-  buttonAfterArticle: {
-    openTitle: '投"币"支持',
+  reward: {
+    openTitle: '打赏一下',
     closeTitle: '下次一定',
-    content: '<img src="/img/wechat_pay.jpg">',
+    qRCode: '/img/wechat_pay.jpg',
     icon: 'wechat',
-  }, // 文章底部按钮
+  }, // 赞赏组件
   recommend: {
     pageSize: 9, // 推荐文章展示数量
     nextText: '下一页',

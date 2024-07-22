@@ -15,7 +15,7 @@ import ArticleAnalyze from './components/ArticleAnalyze.vue'
 
 import HomeHeaderAvatar from './components/HomeHeaderAvatar.vue'
 import BackToTop from './components/BackToTop.vue'
-import ButtonAfterArticle from './components/ButtonAfterArticle.vue'
+import Reward from './components/Reward.vue'
 
 import CommentWrapper from './components/CommentWrapper.vue'
 import CommentGiscus from './components/CommentGiscus.vue'
@@ -76,7 +76,7 @@ useDarkTransition()
       <slot name="doc-after" />
       <ClientOnly>
         <!-- 赞赏 -->
-        <ButtonAfterArticle />
+        <Reward />
         <!-- 返回顶部 -->
         <BackToTop />
         <!-- 评论 -->
