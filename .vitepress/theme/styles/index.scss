@@ -50,8 +50,12 @@ html.dark {
   }
 }
 
-.VPNavBarMenuLink {
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup {
   font-size: 15px !important;
+  .text {
+    font-size: 15px !important;
+  }
 }
 
 @media (min-width: 768px) {

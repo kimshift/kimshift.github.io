@@ -11,7 +11,7 @@ showAnalyze: false
   }
 </script>
 
-<!-- <Boxx /> -->
+<Boxx />
 
 ### 高质量友人帐
 

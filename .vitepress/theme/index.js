@@ -6,6 +6,7 @@ import { useArticleStore } from './stores/article'
 import App from './App.vue'
 // 时间线组件
 // import Timeline from './components/Timeline.vue'
+import Boxx from './components/Boxx/index.vue'
 
 // 内置一些特殊的主题色
 import './styles/theme/inline-theme.var.css'
@@ -49,6 +50,7 @@ const customTheme = {
     ctx.app.use(pinia)
     DefaultTheme.enhanceApp(ctx)
     // ctx.app.component('Timeline', Timeline) //全局注册组件
+    ctx.app.component('Boxx', Boxx)
   },
 }
 
