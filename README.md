@@ -6,9 +6,9 @@
 
 - 记得要奔走在自己的热爱里 🌹
 
-### `Vitepress`博客预览
+### `Kimshift 空间`博客预览
 
-> github 预览地址：https://kimshift.github.io
+> github 预览地址：[https://kimshift.github.io](https://kimshift.github.io)
 
 **白嫖有罪，如有帮助，点赞收藏！**
 
@@ -23,7 +23,7 @@
 
 - node 环境：`v20.12.2`
 - 在项目文件夹下执行命令，安装依赖：`pnpm i`
-- 在项目文件夹下执行命令，运行项目：`pnpm start`
+- 在项目文件夹下执行命令，运行项目：`pnpm dev`
 - 编译完成访问：`http://localhost:5173`
 
 ### 项目架构
@@ -78,7 +78,8 @@ notebook
 
 ### 如何使用
 
-对准备发布的文章（Markdown 格式），放置在项目`docs/`目录下，并在 Markdown 文件头部添加以下元素，项目发布后会自动识别发布时间、标签、分类、是否开启评论、是否置顶、是否精选、是否发布等一系列状态。
+对准备发布的文章（Markdown 格式），放置在项目`docs/`目录下，并在 Markdown 文件头部添加以下元素，
+项目发布后会自动识别发布时间、标签、分类、是否开启评论、是否置顶、是否精选、是否发布等一系列状态。
 
 下面是关键字说明及参考示例：
 
@@ -88,7 +89,6 @@ notebook
 
 ```yaml
 ---
-title: 文章标题
 date: 时间
 tags:
  - 标签
@@ -102,13 +102,11 @@ sidebar: false
 showComment: false
 publish: true
 ---
-<Boxx />
+# 文章标题
 
 [[toc]]
 
 - 这里可以写`摘要`等其它
-
-<!-- more -->
 
 ## 正式开始你的markdown
 

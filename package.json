@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "sh start.sh",
+    "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
