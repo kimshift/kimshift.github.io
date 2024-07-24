@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { registerMdPlugins } from './mdPlugins'
 import { getArticles, patchVPThemeConfig } from './theme'
 import { getVitePlugins, registerVitePlugins } from './vitePlugins'
@@ -41,6 +42,11 @@ export function patchAliasCfg(config) {
       ...config.vite.resolve.alias,
     }),
     { find: /^dayjs\/(.*).js/, replacement: 'dayjs/esm/$1' },
+    {
+      // 重写导航栏组件
+      find: /^.*\/VPNavBarMenu\.vue$/,
+      replacement: fileURLToPath(new URL('../../components/VPNavBarMenu.vue', import.meta.url)),
+    },
   ]
 }
 

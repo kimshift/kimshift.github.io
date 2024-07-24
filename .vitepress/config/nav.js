@@ -3,14 +3,14 @@
  * @author: 琴时
  */
 export default [
-  { text: '首页', link: '/', icon: 'reco-home' },
+  { text: '<i class="iconfont kt-home-filling"> 首页</i>', link: '/' },
   {
-    text: '例子',
+    text: '<i class="iconfont kt-menu"> 例子</i>',
     items: [
       { text: 'API 示例', link: '/examples/api' },
       { text: 'Markdown 扩展', link: '/examples/markdown' },
     ],
   },
-  { text: '时间线', link: '/timeline' },
-  { text: '关于作者', link: '/about/' },
+  { text: '<i class="iconfont kt-clock-filling"> 时间线</i>', link: '/timeline' },
+  { text: '<i class="iconfont kt-comment-filling"> 关于作者</i>', link: '/about/' },
 ]

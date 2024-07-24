@@ -1,4 +1,6 @@
 @import url('./theme/markdown.scss');
+@import url('//at.alicdn.com/t/c/font_4534441_gaab33a5ah9.css');
+
 html {
   --bg-gradient: 255, 255, 255, 0.1;
   --bg-gradient-home: 255, 255, 255;
@@ -50,14 +52,6 @@ html.dark {
   }
 }
 
-.VPNavBarMenuLink,
-.VPNavBarMenuGroup {
-  font-size: 15px !important;
-  .text {
-    font-size: 15px !important;
-  }
-}
-
 @media (min-width: 768px) {
   .VPHome {
     padding-bottom: 128px;
@@ -90,11 +84,6 @@ html.dark {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
-  .VPNavBarMenuGroup .button span.text,
-  .VPNavBarMenuLink {
-    font-size: 15px !important;
-  }
-
   .VPNavBar {
     height: auto !important;
   }
