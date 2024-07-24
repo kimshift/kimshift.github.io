@@ -20,6 +20,7 @@ export default {
   startYear: '2021', //项目开始时间
   custom: true, // 自定义主题配置
   darkTransition: true, // 黑白模式下切换文章时，是否使用动画效果
+  themeColor: 'vp-green',
   article: {
     readingTimePosition: 'inline', //阅读时间位置
     readingTime: true, //是否显示阅读时间

@@ -29,10 +29,8 @@ const switchover = (themeColor) => {
 }
 
 onMounted(() => {
-  const themeColor = localStorage.getItem('themeColor')
-  if (themeColor) {
-    switchover(themeColor)
-  }
+  let themeColor = localStorage.getItem('themeColor') ?? theme.value.themeColor ?? 'vp-green'
+  switchover(themeColor)
 })
 
 </script>
