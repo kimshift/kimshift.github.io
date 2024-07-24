@@ -89,18 +89,11 @@ notebook
 
 ```yaml
 ---
-date: 时间
+date: 发布时间
 tags:
- - 标签
+ - 标签名
 categories:
- - 分类
-keys:
- - '123456'
-sticky: 1  #
-cover: 封面图地址
-sidebar: false
-showComment: false
-publish: true
+ - 分类名
 ---
 # 文章标题
 

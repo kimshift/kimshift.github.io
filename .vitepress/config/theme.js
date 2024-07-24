@@ -45,7 +45,7 @@ export default {
       {
         nickname: 'KimShift 空间',
         des: '记得要奔走在自己的热爱里🌹',
-        avatar: 'https://kimshift.github.io/avatar.png',
+        avatar: '/img/avatar.png',
         url: 'https://kimshift.github.io/',
       },
     ],
