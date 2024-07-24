@@ -1,11 +1,11 @@
 name: Deploy Pages
 
-# 触发条件，push到master分支或者pull request到master分支
+# 触发条件，push到notebook分支或者pull request到notebook分支
 on:
   push:
-    branches: [master]
+    branches: [notebook]
   pull_request:
-    branches: [master]
+    branches: [notebook]
 
   # 支持手动在工作流上触发
   workflow_dispatch:
