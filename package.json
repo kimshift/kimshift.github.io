@@ -1,8 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "sh start.sh",
-    "dev": "vitepress dev",
+    "start": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
@@ -29,5 +28,8 @@
     "tools-for-js": "^1.2.6",
     "tools-for-web": "^0.0.5",
     "vitepress-plugin-pagefind": "^0.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
