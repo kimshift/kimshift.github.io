@@ -42,6 +42,12 @@ jobs:
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
 
+      # 安装 PNPM
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
       # 设置使用 Node.js 版本
       - name: Setup Node
@@ -49,12 +55,6 @@ jobs:
         with:
           node-version: 20
           cache: pnpm # npm | pnpm | yarn
-
-      # 安装 PNPM
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
