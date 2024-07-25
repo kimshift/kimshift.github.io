@@ -29,5 +29,9 @@
     "tools-for-js": "^1.2.6",
     "tools-for-web": "^0.0.5",
     "vitepress-plugin-pagefind": "^0.3.3"
-  }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
 }
