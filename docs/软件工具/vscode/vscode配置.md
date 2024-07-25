@@ -1,0 +1,325 @@
+---
+title: vscode 配置
+date: 2023-05-11 09:07:12
+categories:
+  - 软件工具
+tags:
+  - vscode
+  - 配置
+---
+
+# vscode 配置
+
+### 常用配置
+
+```json
+{
+  "workbench.startupEditor": "none",
+  "terminal.integrated.defaultProfile.windows": "Git Bash", //默认终端
+  // "terminal.integrated.defaultProfile.windows": "Command Prompt", //默认终端
+  "terminal.integrated.fontSize": 14, //终端字体大小
+  "terminal.integrated.commandsToSkipShell": [
+    "\"-c\", \"export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8;\""
+  ],
+  "workbench.colorTheme": "One Dark Pro Mix", //主题
+  "workbench.iconTheme": "material-icon-theme", //目录图标主题
+  "workbench.editor.enablePreview": false, //关闭预览
+  "editor.formatOnSave": true, //保存自动格式化
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 14, //代码字体大小
+  "editor.autoClosingBrackets": "always", //输入自动插入右括号
+  "editor.autoClosingDelete": "never", //删除时-不删除相邻的右引号或右方括号
+  "editor.guides.bracketPairs": true, //显示括号匹配
+  "editor.guides.bracketPairsHorizontal": true, //显示水平括号匹配
+  "editor.guides.indentation": true, //显示缩进
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true, //括号颜色
+  "explorer.confirmDelete": false, //删除是否需要确认
+  "explorer.confirmPasteNative": false, //粘贴是否需要确认
+  "explorer.confirmDragAndDrop": false, //拖放是否需要确认
+  "update.mode": "none", //取消自动更新
+  "update.enableWindowsBackgroundUpdates": false,
+  "update.showReleaseNotes": false,
+  "git.confirmSync": false,
+  "search.followSymlinks": false,
+  /* 文件格式化配置 */
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "vue.autoInsert.dotValue": true, //ref参数自动追加value
+  // "vue.splitEditors.layout.left": ["script", "scriptSetup", "styles"],
+  // "vue.inlayHints.vBindShorthand": true,
+  // 指定解释器
+  "code-runner.executorMap": {
+    "typescript": "tsc $fileName && node $fileNameWithoutExt.js"
+    // "javascript": "node $fullFileName && del $dir\"tempCodeRunnerFile.js\""
+  },
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package"
+  },
+  "code-runner.saveFileBeforeRun": false,
+  "prettier.semi": false, //末尾不加分号
+  "prettier.singleQuote": true, //使用单引号
+  "prettier.printWidth": 100, //每行长度限制
+  "prettier.arrowParens": "avoid", //箭头函数参数括号
+  "prettier.enableDebugLogs": true,
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.triggerExpansionOnTab": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  "backgroundCover.randomImageFolder": "D:\\Program Files\\Microsoft VS Code\\image", //背景图目录
+  "backgroundCover.imagePath": "D:\\Program Files\\Microsoft VS Code\\image\\default.jpg", //背景图路径
+  "backgroundCover.opacity": 0.25, //透明度
+  "diffEditor.ignoreTrimWhitespace": false,
+  /* fileheader 插件配置 */
+  //此为头部注释
+  "fileheader.customMade": {
+    "Description": "",
+    "Version": "1.0",
+    "Author": "琴时", //设置后默认设置开发者名字
+    "Date": "Do not edit", // 设置后默认设置文件生成时间
+    "LastEditors": "琴时", // 设置后，保存文件更改默认更新最后编辑人
+    "LastEditTime": "Do not edit" // 设置后，保存文件更改默认更新最后编辑时间
+    // "FilePath": "Do not edit" // 设置后，默认生成文件相对于项目的路径
+  },
+  //此为函数注释
+  "fileheader.cursorMode": {
+    "description": "",
+    "author": "琴时",
+    "param": "",
+    "return": ""
+  },
+  // 插件配置项
+  "fileheader.configObj": {
+    "createFileTime": true,
+    "autoAdd": false, //关闭自动添加文件头部注释
+    "autoAddLine": 100, // 文件超过多少行数 不再自动添加头部注释
+    "autoAlready": true, //只添加插件支持的语言以及用户通过`language`选项自定义的注释
+    "supportAutoLanguage": [], //在数组内的文件才支持自动添加
+    "prohibitAutoAdd": ["js", "vue", "json", "md"], // 禁止.json .md文件，自动添加头部注释
+    // 项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加
+    "prohibitItemAutoAdd": [], //禁止项目自动添加头部注释
+    "folderBlacklist": ["node_modules"], //文件夹禁止自动添加头部注释
+    "wideSame": false, // 头部注释等宽设置
+    "wideNum": 13, // 头部注释字段长度 默认为13
+    "functionWideNum": 0, //函数注释等宽设置 设为0 即为关闭
+    // 头部注释第几行插入
+    "headInsertLine": {
+      "php": 2, // php文件 插入到第二行
+      "sh": 2
+    },
+    "beforeAnnotation": {
+      "文件后缀": "该文件后缀的头部注释之前添加某些内容"
+    },
+    "afterAnnotation": {
+      "文件后缀": "该文件后缀的头部注释之后添加某些内容"
+    },
+    "specialOptions": {
+      "特殊字段": "自定义比如LastEditTime/LastEditors"
+    },
+    "switch": {
+      "newlineAddAnnotation": false
+    }, // 默认遇到换行符(\r\n \n \r)添加注释符号
+    "moveCursor": true, // 自动移动光标到Description所在行
+    "dateFormat": "YYYY-MM-DD HH:mm:ss", //格式化时间
+    "atSymbol": ["@", "@"], // 更改所有文件的自定义注释中的@符号
+    "atSymbolObj": {
+      "文件后缀": ["头部注释@符号", "函数注释@符号"]
+    }, //  更改单独语言/文件的@
+    "colon": [": ", ": "], // 更改所有文件的注释冒号
+    "colonObj": {
+      "文件后缀": ["头部注释冒号", "函数注释冒号"]
+    }, //  更改单独语言/文件的冒号
+    "filePathColon": "路径分隔符替换", //默认值： mac: / window是: \
+    "showErrorMessage": false, // 是否显示插件错误通知 用于debugger
+    "writeLog": false, // 错误日志生成
+    "CheckFileChange": false, // 单个文件保存时进行diff检查
+    "createHeader": true, // 新建文件自动添加头部注释
+    "useWorker": false, // 是否使用工作区设置
+    "designAddHead": false, // 添加注释图案时添加头部注释
+    "headDesignName": "random", // 图案注释使用哪个图案
+    "headDesign": false, // 是否使用图案注释替换头部注释
+    // 自定义配置是否在函数内生成注释 不同文件类型和语言类型
+    "cursorModeInternalAll": {}, // 默认为false 在函数外生成函数注释
+    "openFunctionParamsCheck": true, // 开启关闭自动提取添加函数参数
+    "functionParamsShape": ["{", "}"], // 函数参数外形自定义
+    "functionBlankSpaceAll": {}, // 函数注释空格缩进 默认为空对象 默认值为0 不缩进
+    "functionTypeSymbol": "*", // 参数没有类型时的默认值
+    "typeParamOrder": "type param", //参数类型 和 参数的位置自定义
+    // 自定义语言注释，自定义取消 head、end 部分
+    // 不设置自定义配置language无效 默认都有head、end
+    "customHasHeadEnd": {}, // "cancel head and function" | "cancel head" | "cancel function"
+    "throttleTime": 60000, // 对同一个文件 需要过1分钟再次修改文件并保存才会更新注释
+    // 自定义语言注释符号，覆盖插件的注释格式
+    "language": {
+      // js后缀文件
+      "js": {
+        "head": "/**",
+        "middle": " * @",
+        "end": " */",
+        // 函数自定义注释符号：如果有此配置 会默认使用
+        "functionSymbol": {
+          "head": "/******* ", // 统一增加几个*号
+          "middle": " * @",
+          "end": " */"
+        }
+      },
+      // 一次匹配多种文件后缀文件 不用重复设置
+      "h/hpp/cpp": {
+        "head": "/*** ", // 统一增加几个*号
+        "middle": " * @",
+        "end": " */"
+      },
+      // 针对有特殊要求的文件如：test.blade.php
+      "blade.php": {
+        "head": "<!--",
+        "middle": " * @",
+        "end": "-->"
+      }
+    },
+    // 默认注释  没有匹配到注释符号的时候使用。
+    "annotationStr": {
+      "head": "/*",
+      "middle": " * @",
+      "end": " */",
+      "use": false
+    }
+  },
+  /* todo-tree 插件配置 */
+  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS):|^\\s*- \\[ \\])",
+  "todo-tree.general.tags": ["TODO", "FIXME", "tag", "done", "bug"],
+  "todo-tree.regex.regexCaseSensitive": false,
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "#FFF",
+    "background": "#FFA500",
+    "icon": "checklist",
+    "rulerColour": "#FFA500",
+    "type": "tag",
+    "iconColour": "#FFA500"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "FIXME": {
+      "background": "#FF0000",
+      "icon": "beaker",
+      "rulerColour": "#FF0000",
+      "iconColour": "#FF0000",
+      "opacity": 50
+    },
+    "tag": {
+      "background": "#FF00FF",
+      "icon": "pin",
+      "rulerColour": "#FF00FF",
+      "iconColour": "#FF00FF",
+      "rulerLane": "full",
+      "opacity": 50
+    },
+    "done": {
+      "background": "#00CED1",
+      "icon": "verified",
+      "rulerColour": "#00CED1",
+      "iconColour": "#00CED1",
+      "opacity": 50
+    },
+    "bug": {
+      "background": "#00FF00",
+      "icon": "bug",
+      "rulerColour": "#00FF00",
+      "iconColour": "#00FF00",
+      "opacity": 50
+    }
+  },
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "githubPullRequests.createOnPublishBranch": "never",
+  "security.workspace.trust.untrustedFiles": "open", //信任工作区
+  "Codegeex.Privacy": true,
+  "database-client.autoSync": true,
+  "cSpell.userWords": [
+    "Codegeex",
+    "Colour",
+    "cssrem",
+    "donot",
+    "dont",
+    "esbenp",
+    "fileheader",
+    "Parens",
+    "pinia",
+    "unplugin",
+    "vsicons",
+    "vuepress",
+    "vueuse",
+    "wxss"
+  ], //忽略拼音检查单词
+  "cssrem.fixedDigits": 5,
+  "cssrem.rootFontSize": 75,
+  "cssrem.wxssDeviceWidth": 750,
+  // "javascript.preferences.importModuleSpecifierEnding": "auto", //导入js是否保留后缀
+  "files.associations": {
+    "*.vue": "vue"
+  }
+}
+```
+
+### 切换编辑模式
+
+- 搜索框搜索： enablePreview （取消踢 √）==>取消单击预览功能
+
+### 快捷键
+
+- 单行注释：Ctrl + /
+- 多行注释：Shift + Alt + A
+- 复制当前行：Shift + Alt + ↓
+- 查看方法参数：Ctrl + Shift + 空格
+
+### 配置别名路径
+
+在项目根目录创建 `jsconfig.json` 文件，比如在 webpack、vite 配置了 `@src` 的别名，配置如下：
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*"]
+}
+```
+
+### 可能会出现的问题
+
+运行 tsc 命令时报错，错误信息如下：
+
+法加载文件 C:\Users\xxx\AppData\Roaming\npm\tsc.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 ht tps:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。
+
+解决方式：
+
+1. win+X 启动 windows PowerShell（管理员）
+2. 输入 set-ExecutionPolicy RemoteSigned 命令，敲回车
+3. 提示输入内容时，输入 Y ，再敲回车即可。
