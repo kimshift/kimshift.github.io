@@ -45,9 +45,9 @@ const friendList = computed(() => {
     data.splice(limit.value)
   }
   const list = data.map((v) => {
-    const { avatar, nickname } = v
+    const { avatar, name } = v
     const avatarUrl = getImageUrl(avatar, isDark.value)
-    let alt = nickname
+    let alt = name
     if (typeof avatar !== 'string') {
       alt = avatar.alt || ''
     }
@@ -113,10 +113,10 @@ onUnmounted(() => {
     }">
       <ol class="friend-list swiper-wrapper">
         <li v-for=" (v, idx) in friendList" :key="idx" class="swiper-slide">
-          <a :href="v.url" target="_blank">
+          <a :href="v.link" target="_blank">
             <ElAvatar :size="50" :src="v.avatar" :alt="v.alt" />
             <div class="info-wrapper">
-              <span class="nickname">{{ v.nickname }}</span>
+              <span class="name">{{ v.name }}</span>
               <p class="des">{{ v.des }}</p>
             </div>
           </a>
@@ -202,7 +202,7 @@ onUnmounted(() => {
       overflow: hidden;
     }
 
-    .nickname {
+    .name {
       font-size: 16px;
       font-weight: 450;
     }
