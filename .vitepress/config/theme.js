@@ -45,7 +45,7 @@ export default {
       {
         nickname: 'KimShift 空间',
         des: '记得要奔走在自己的热爱里🌹',
-        avatar: '/img/avatar.png',
+        avatar: 'https://kimshift.github.io/avatar.png',
         url: 'https://kimshift.github.io/',
       },
     ],
@@ -63,7 +63,7 @@ export default {
   home: {
     title: '记事录',
     homeTags: true, // 是否开启首页标签
-    avatar: '/img/avatar.png', //首页头像
+    avatar: '/avatar.png', //首页头像
     avatarMode: 'card',
     minScreenAvatar: false, // 移动端是否显示头像
     pageSize: 6, //首页文章展示数量

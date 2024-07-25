@@ -14,7 +14,7 @@ import Relation from '../../.vitepress/theme/components/Relation.vue'
 </script>
 
 <p align="center">
-  <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="/img/tx.jpg" alt="kims-head" width=160 />
+  <img style="border-radius:41%;pointer-events:none;transform: scale(0.9);" src="/avatar.png" alt="kims-head" width=160 />
 </p>
 
 <!-- 时间组件 -->
