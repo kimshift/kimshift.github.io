@@ -42,20 +42,23 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v3
+        # uses: actions/checkout@v3 替换最新版
+        uses: actions/checkout@vX
         with:
           # 保留 Git 信息
           fetch-depth: 0
 
       # 设置使用 Node.js 版本
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        # uses: actions/setup-node@v3 替换最新版
+        uses: actions/setup-node@vX
         with:
           node-version: ${{ matrix.node-version }}
 
       # 使用 最新的 PNPM
       # 你也可以指定为具体的版本
-      - uses: pnpm/action-setup@v2
+      # - uses: pnpm/action-setup@v2 替换最新版
+      - uses: pnpm/action-setup@vX
         name: Install pnpm
         with:
           version: latest
