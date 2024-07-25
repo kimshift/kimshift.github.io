@@ -8,6 +8,8 @@ const headConf = [
       href: '/favicon.ico',
     },
   ],
+  // HTTP 缓存标头
+  ['meta', { 'http-equiv': 'Cache-Control', content: 'max-age=31536000, immutable' }],
   ['meta', { name: 'keywords', content: 'KimShift空间,vitepress,自建博客,琴时' }],
   [
     'meta',

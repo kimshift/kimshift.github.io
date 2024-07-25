@@ -24,9 +24,6 @@ import 'element-plus/theme-chalk/el-avatar.css'
 import 'element-plus/theme-chalk/el-image.css'
 import 'element-plus/theme-chalk/el-image-viewer.css'
 import 'element-plus/theme-chalk/el-pagination.css'
-import 'element-plus/theme-chalk/el-carousel.css'
-import 'element-plus/theme-chalk/el-carousel-item.css'
-import 'element-plus/theme-chalk/el-alert.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
 // custom theme

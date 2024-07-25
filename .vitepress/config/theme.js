@@ -37,20 +37,20 @@ export default {
   friend: {
     list: [
       {
-        nickname: 'Vitepress',
-        des: 'Vite & Vue Powered Static Site Generator',
-        avatar: 'https://vitepress.dev/vitepress-logo-mini.svg',
-        url: 'https://vitepress.dev/zh/',
-      },
-      {
-        nickname: 'KimShift 空间',
+        name: 'KimShift 空间',
         des: '记得要奔走在自己的热爱里🌹',
         avatar: 'https://kimshift.github.io/avatar.png',
-        url: 'https://kimshift.github.io/',
+        link: 'https://kimshift.github.io/',
+      },
+      {
+        name: 'Vitepress',
+        des: 'Vite & Vue Powered Static Site Generator',
+        avatar: 'https://vitepress.dev/vitepress-logo-mini.svg',
+        link: 'https://vitepress.dev/zh/',
       },
     ],
     limit: 3, // 展示数量
-    random: true, // 是否随机展示
+    random: false, // 是否随机展示
     scrollSpeed: 2000, // 滚动速度
   }, //友情链接配置
   footer: {
@@ -81,24 +81,9 @@ export default {
   }, // 返回顶部配置
   authorList: [
     {
-      nickname: '粥里有勺糖',
-      url: 'https://sugarat.top/aboutme.html',
-      des: '你的指尖,拥有改变世界的力量',
-    },
-    {
-      nickname: '粥里有勺糖',
-      url: 'https://sugarat.top/aboutme.html',
-      des: '你的指尖,拥有改变世界的力量',
-    },
-    {
       nickname: 'kimshift',
-      url: 'https://sugarat.top/aboutme.html',
-      des: '你的指尖,拥有改变世界的力量',
-    },
-    {
-      nickname: '琴时',
-      url: 'https://sugarat.top/aboutme.html',
-      des: '你的指尖,拥有改变世界的力量',
+      url: '转载文章地址',
+      des: '记得要奔走在自己的热爱里🌹',
     },
   ], //转载作者列表
   reward: {

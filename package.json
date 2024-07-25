@@ -1,4 +1,7 @@
 {
+  "name": "notebook",
+  "description": "个人笔记",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "sh start.sh",
