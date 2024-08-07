@@ -1,4 +1,6 @@
 ---
+title: Markdown 扩展
+description: VitePress 带有内置的 Markdown 扩展
 hot: 1
 categories:
   - 文章例子
@@ -9,7 +11,7 @@ tags:
 
 # Markdown 扩展
 
-这个页面展示了一些由 VitePress 提供的内置降价扩展。
+这个页面展示了一些由 VitePress 提供的内置扩展。
 
 ## 语法高亮显示
 
