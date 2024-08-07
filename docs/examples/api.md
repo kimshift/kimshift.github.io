@@ -1,4 +1,5 @@
 ---
+description: 本页演示了 VitePress 提供的一些运行时 API 的用法
 categories:
   - 文章例子
 tags:
